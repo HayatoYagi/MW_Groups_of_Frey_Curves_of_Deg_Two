@@ -1,0 +1,62 @@
+%! TEX root = ../main.tex
+\documentclass[main]{subfiles}
+
+\begin{document}
+\chapter{Introduction}
+\section{セクション}
+
+\begin{thm}{(Shioda-Tate formula)}
+    \label{thm:shioda}
+    \begin{equation}
+        \rho (S) = 2 + \sum_{v \in R} (m_{v} - 1) + \rank(E(K))
+    \end{equation}
+    である．
+\end{thm}
+
+
+\begin{equation}
+    \label{eq:E_{1s}}
+    E_{1,s}: y^{2} = x(x - 4 * s^{2})(x + (s^{2} - 1)^{2})
+\end{equation}
+
+\begin{equation}
+    \Delta_{E_{1,s}} = 256s^{4} (s + 1)^{4} (s - 1)^{4} (s^{2} + 1)^{4}
+\end{equation}
+
+\begin{table}[h]
+    \centering
+    \caption{Sample Table}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        s          & type  & $m_v$ \\
+        \hline
+        $s=0$      & $I_4$ & 4     \\
+        \hline
+        $s=\pm 1$  & $I_4$ & 4     \\
+        \hline
+        $s=\pm i$  & $I_4$ & 4     \\
+        $s=\infty$ & $I_4$ & 4     \\
+    \end{tabular}
+    \label{tab:sample}
+\end{table}
+
+\begin{equation}
+    e(\mathcal{E}_{1,s}) = 24
+\end{equation}
+したがって $\mathcal{E}_{1,s}$ はK3曲面であり． $\rho(\mathcal{E}_{1,s}) \leq 24$ である．
+\ref{thm:shioda} より
+\begin{equation}
+    \rank(E_{1,s}) = 0
+\end{equation}
+
+\begin{equation}
+    \label{eq:E_{4t}}
+    E_{4,t}: y^{2} = x(x - 4 * s^{2})(x + (s^{2} - 1)^{2}), s = \frac{2t}{t^{2} - 3}
+\end{equation}
+は
+\begin{equation}
+    \left(s^{2} - 1, \sqrt{-1} s(s^{2} - 1) \frac{t^{2} + 3}{t^{2} - 3} \right)
+\end{equation}
+を通る．
+
+\end{document}
