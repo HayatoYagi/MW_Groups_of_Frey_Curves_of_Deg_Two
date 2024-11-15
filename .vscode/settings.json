@@ -72,5 +72,5 @@
     ],
     "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?．。，、（）「」［］｛｝《》てにをはがのともへでや",
     "editor.formatOnSave": true,
-    "files.autoSave": "afterDelay",
+    "files.autoSave": "onFocusChange",
 }
