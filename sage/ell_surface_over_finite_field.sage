@@ -24,7 +24,6 @@ def zeros_count(q,f_str):
     return cnt
 
 q = 17
-# f = "y^2 - (x * (x - (- 1 + 5 * s) * (s - 1)^2) * (x - 4 * s * (- 1 + 5 * s)))"
 f = "-(-1+5*s)*y^2-x*(x-(s-1)^2)*(x-4*s)"
 print(q,f)
 print(zeros_count(q,f))
