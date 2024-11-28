@@ -2,13 +2,17 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
 	"name": "LaTeX",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "ghcr.io/being24/latex-docker",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"James-Yu.latex-workshop",
-				"mhutchie.git-graph"
+				"mhutchie.git-graph",
+				"lov3.sagemath-enhanced",
+				"wakatime.vscode-wakatime",
+				"eamodio.gitlens"
 			]
 		}
 	},
