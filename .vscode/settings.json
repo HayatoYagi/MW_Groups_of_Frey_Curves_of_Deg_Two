@@ -71,6 +71,6 @@
         "--keep"
     ],
     "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?．。，、（）「」［］｛｝《》てにをはがのともへでや",
-    "editor.formatOnSave": true,
-    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": false,
+    "files.autoSave": "afterDelay",
 }
