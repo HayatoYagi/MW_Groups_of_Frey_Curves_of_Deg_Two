@@ -1,5 +1,5 @@
-K.<s> = FunctionField(QQ)
-# K.<s> = FunctionField(GF(17))
+# K.<s> = FunctionField(QQ)
+K.<s> = FunctionField(GF(17))
 R.<x,y> = K[]
 
 def my_factor(f):

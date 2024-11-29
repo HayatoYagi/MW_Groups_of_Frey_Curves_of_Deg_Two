@@ -1,13 +1,3 @@
-def calc(f,q):
-    F = GF(q,'a')
-    K.<s> = FunctionField(F)
-    E = EllipticCurve(K,f)
-
-# # f = "y^2 - (x * (x - (- 1 + 5 * s) * (s - 1)^2) * (x - 4 * s * (- 1 + 5 * s)))"
-# f = [0, -5*s^3 - 9*s^2 - 3*s + 1, 0, 100*s^5 - 240*s^4 + 184*s^3 - 48*s^2 + 4*s, 0]
-# calc(f,17)
-
-
 def zeros_count(q,f_str):
     F = GF(q)
     R = PolynomialRing(F, ('x', 'y', 's'))
@@ -23,7 +13,10 @@ def zeros_count(q,f_str):
                     cnt += 1
     return cnt
 
-q = 17
+p = 17
+m = 2
+q = p^m
 f = "-(-1+5*s)*y^2-x*(x-(s-1)^2)*(x-4*s)"
-print(q,f)
+print("q:", q)
+print("f:", f)
 print(zeros_count(q,f))
