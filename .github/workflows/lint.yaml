@@ -17,6 +17,9 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-20.04
+    permissions:
+      contents: read
+      pull-requests: write
     timeout-minutes: 10
     steps:
       - name: Checkout
