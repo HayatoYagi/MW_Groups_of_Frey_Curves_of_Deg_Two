@@ -158,3 +158,13 @@
 
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{4}
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{eg}[thm]{Example}
+\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+
+\DeclareMathOperator{\rank}{rank}
