@@ -1,0 +1,43 @@
+%! TEX root = ../main.tex
+\documentclass[main]{subfiles}
+
+\begin{document}
+
+\chapter{Torsions}
+
+\section{セクション}
+
+\begin{thm}
+    \begin{equation}
+        E_{4,t}(\overline{\mathbb{Q}}(t))_ \text{tors} = \mathbb{Z} / 4 \mathbb{Z} \times \mathbb{Z} / 4 \mathbb{Z}
+    \end{equation}
+    \begin{align}
+        T_1 & = (2s(s+1)^2,2s(s+1)^2(s^2+1))   \\
+        T_2 & = (2is(s^2-1),2is(s+i)^2(s^2-1))
+    \end{align}
+    で生成される．
+\end{thm}
+\begin{proof}
+    \begin{equation}
+        E_{4,t}(\overline{\mathbb{Q}}(t))[2] = E_{1,s}(\overline{\mathbb{Q}}(s))[2] = \{\mathcal{O}, (0,0), (4s^{2},0),( - (s^{2} - 1)^{2},0)\}
+    \end{equation}
+    \begin{align}
+        2T_1 & = (4s^2,0) \\
+        2T_2 & = (0,0)
+    \end{align}
+    \cite{ref:naskrecki2013} の Lem.3.5 より
+    \begin{equation}
+        E_{4,t}(\overline{\mathbb{Q}}(t))_ \text{tors} \hookrightarrow (\mathbb{Z} / 4 \mathbb{Z})^{12}
+    \end{equation}
+    なので位数8の点は存在しない.
+\end{proof}
+
+\begin{rem}
+    これは
+    \begin{equation}
+        E_{1,s}(\overline{\mathbb{Q}}(s))_ \text{tors} = \mathbb{Z} / 2 \mathbb{Z} \times \mathbb{Z} / 4 \mathbb{Z}
+    \end{equation}
+    の別証明になっている．
+\end{rem}
+
+\end{document}
