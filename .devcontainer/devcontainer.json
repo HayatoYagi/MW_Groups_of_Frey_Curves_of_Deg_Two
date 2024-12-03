@@ -12,7 +12,8 @@
 				"mhutchie.git-graph",
 				"lov3.sagemath-enhanced",
 				"wakatime.vscode-wakatime",
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"taichi.vscode-textlint"
 			]
 		}
 	},
