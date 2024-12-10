@@ -1,43 +1,36 @@
-def zeros_count(p,m,twist_str, rh_str):
-    q = p^m
+def zeros_count(q,f_str):
     F = GF(q)
     R = PolynomialRing(F, ('x', 'y', 's'))
 
     x, y, s = R.gens()
-    twist = R(twist_str)
-    rh = R(rh_str)
+    f = R(f_str)
 
-    squares_count: dict[F,int] = {}
-    for x_val in F:
-        if x_val^2 not in squares_count:
-            squares_count[x_val^2] = 0
-        squares_count[x_val^2] += 1
-    # print(squares_count)
-
-    cnt = 0
-    progress = 0
+    singular_filbers = []
+    count = 0
     for s_val in F:
-        progress += 1
-        print(round(progress*100/q,2), "%")
-        twist_val = twist(0, 0, s_val)
-        if twist_val == 0:
-            cnt += q*3
-        else:
-            for x_val in F:
-                y2 = rh(x_val, 0, s_val)/twist_val
-                if y2 in squares_count:
-                    cnt += squares_count[y2]
-
-    # 無限遠点
-    cnt += q*(p-1)+1
-
-    return cnt
-
+        try:
+            fs = f.subs(s=s_val)
+            Es = EllipticCurve(fs)
+            count += Es.cardinality()
+        except ArithmeticError:
+            singular_filbers.append(s_val)
+    print("singular_filbers:", singular_filbers)
+    return count
+    
 p = 17
-m = 3
-twist = "-(-1+5*s)"
-rh = "x*(x-(s-1)^2)*(x-4*s)"
+m = 1
+q= p^m
+f = "y^2 - x * (x + (- 1 + 5 * s) * (s - 1)^2) * (x + 4 * s * (- 1 + 5 * s))"
 print("p:", p)
 print("m:", m)
-print("f:", twist, "y^2 =", rh)
-print(zeros_count(p,m,twist,rh))
+print("f:", f)
+count = zeros_count(q,f)
+# I_2 * 3
+count += 2 * q * 3
+# I_4
+count += 4 * q
+# I_0^*
+count += 5 * q + 1
+# I_2^*
+count += (2 + 5) * q + 1
+print(count)
