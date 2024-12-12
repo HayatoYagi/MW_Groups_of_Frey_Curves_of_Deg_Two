@@ -16,10 +16,15 @@ def zeros_count(q,f_str):
             singular_filbers.append(s_val)
     print("singular_filbers:", singular_filbers)
     return count
-    
-f = "y^2 - x * (x + (- 1 + 5 * s) * (s - 1)^2) * (x + 4 * s * (- 1 + 5 * s))"
+
+# 論文のE_1'
+# f = "y^2 - x * (x + (- 1 + 5 * s) * (s - 1)^2) * (x + 4 * s * (- 1 + 5 * s))"
+
+# E_{0,s}^{(1 + 3s)}
+f = "y^2 - x * (x - s * (1 + 3 * s) * 4 * s) * (x + s * (1 + 3 * s) * (s - 1)^2)"
+
 print("f:", f)
-p = 17
+p = 5
 print("p:", p)
 for m in range(1,5):
     q = p^m
