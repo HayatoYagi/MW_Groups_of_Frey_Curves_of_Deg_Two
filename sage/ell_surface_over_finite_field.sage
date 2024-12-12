@@ -17,20 +17,22 @@ def zeros_count(q,f_str):
     print("singular_filbers:", singular_filbers)
     return count
     
-p = 17
-m = 1
-q= p^m
 f = "y^2 - x * (x + (- 1 + 5 * s) * (s - 1)^2) * (x + 4 * s * (- 1 + 5 * s))"
-print("p:", p)
-print("m:", m)
 print("f:", f)
-count = zeros_count(q,f)
-# I_2 * 3
-count += 2 * q * 3
-# I_4
-count += 4 * q
-# I_0^*
-count += 5 * q + 1
-# I_2^*
-count += (2 + 5) * q + 1
-print(count)
+p = 17
+print("p:", p)
+for m in range(1,5):
+    q = p^m
+    print("m:", m)
+    count = zeros_count(q,f)
+    # I_2 * 3
+    count += 2 * q * 3
+    # I_4
+    count += 4 * q
+    # I_0^*
+    count += 5 * q + 1
+    # I_2^*
+    count += (2 + 5) * q + 1
+    print(count)
+    print("t:", count - 1 - p ^ (2 * m) - 18 * 17^m)
+    print("")
