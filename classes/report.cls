@@ -168,5 +168,6 @@
 \newtheorem{rem}[thm]{Remark}
 
 \DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\NS}{NS}
 
 \usepackage[T1]{fontenc}

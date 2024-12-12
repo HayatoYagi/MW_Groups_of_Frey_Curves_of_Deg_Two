@@ -108,6 +108,13 @@
         E_{1,s}^{(1 + 3s^{2})}: (1 + 3s^{2}) y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2})          \\
         \rank E_{1,s}(\overline{\mathbb{Q}}(s)) + \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = \rank E_{4,t}(\overline{\mathbb{Q}}(t))
     \end{align}
+    さらに
+    \begin{align}
+        E_{0,s}: y^{2} = x(x - 4s)(x + (s - 1)^{2})                         \\
+        E_{0,s}^{(1 + 3s)}: (1 + 3s) y^{2} = x(x - 4s)(x + (s - 1)^{2})     \\
+        E_{0,s}^{(s(1 + 3s))}: s(1 + 3s) y^{2} = x(x - 4s)(x + (s - 1)^{2}) \\
+        \rank E_{0,s}^{(1 + 3s)}(\overline{\mathbb{Q}}(s)) + \rank E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s)) = \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s))
+    \end{align}
 \end{thm}
 \begin{proof}
     \begin{equation}
@@ -152,9 +159,78 @@
     \begin{equation}
         e(\mathcal{E}_{1,s}^{(1 + 3s^{2})}) = 36
     \end{equation}
-    K3ですらないので，$H^2$の次元が分からず，計算が進められない．
+    Theorem~\ref{thm:shioda}からは
+    \begin{equation}
+        \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) \leq 2
+    \end{equation}
+    しか分からない．
+    K3ですらないので， $H^2$の次元が分からず， reduction を取る方法でも計算が進められない．
     \begin{equation}
         \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = ? (1 or 2)
+    \end{equation}
+\end{proof}
+
+
+\begin{thm}
+    TODO
+    \begin{equation}
+        \rank E_{0,s}^{(1 + 3s)}(\overline{\mathbb{Q}}(s)) \leq 1
+    \end{equation}
+\end{thm}
+\begin{proof}
+    \begin{equation}
+        \Delta(E_{0,s}^{(1 + 3s)}) = 256s^{2}(s - 1)^{4}(s + 1)^{4}(3s + 1)^{6}
+    \end{equation}
+    \begin{table}[h]
+        \centering
+        \caption{Singular fibers of $E_{0,s}^{(1 + 3s)}$}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Place            & Type    & $m_v$ \\
+            \hline
+            $s=0$            & $I_2$   & 2     \\
+            $s=\pm 1$        & $I_4$   & 4     \\
+            $s=-\frac{1}{3}$ & $I_0^*$ & 5     \\
+            $s=\infty$       & $I_2^*$ & 7     \\
+            \hline
+        \end{tabular}
+    \end{table}
+    \begin{equation}
+        e(\mathcal{E}_{0,s}^{(1 + 3s)}) = 24
+    \end{equation}
+    Theorem~\ref{thm:shioda}からは
+    \begin{equation}
+        \rank E_{0,s}^{(1 + 3s)}(\overline{\mathbb{Q}}(s)) \leq 1
+    \end{equation}
+\end{proof}
+
+\begin{thm}
+    TODO
+    \begin{equation}
+        \rank E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s)) \leq 1
+    \end{equation}
+\end{thm}
+\begin{proof}
+    \begin{equation}
+        \Delta(E_{0,s}^{(s(1 + 3s))}) = 256s^{8}(s - 1)^{4}(s + 1)^{4}(3s + 1)^{6}
+    \end{equation}
+    \begin{table}[h]
+        \centering
+        \caption{Singular fibers of $E_{0,s}^{(s(1 + 3s))}$}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Place            & Type    & $m_v$ \\
+            \hline
+            $s=0$            & $I_2^*$ & 7     \\
+            $s=\pm 1$        & $I_4$   & 4     \\
+            $s=-\frac{1}{3}$ & $I_0^*$ & 5     \\
+            $s=\infty$       & $I_2$   & 2     \\
+            \hline
+        \end{tabular}
+    \end{table}
+    上と同様に
+    \begin{equation}
+        \rank E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s)) \leq 1
     \end{equation}
 \end{proof}
 
