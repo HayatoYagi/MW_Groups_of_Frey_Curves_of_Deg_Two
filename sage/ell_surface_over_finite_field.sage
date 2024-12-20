@@ -4,27 +4,32 @@ def zeros_count(q,f_str):
 
     x, y, s = R.gens()
     f = R(f_str)
+    print(factor(diff(f, x)))
 
     singular_filbers = []
     count = 0
     for s_val in F:
+        fs = f.subs(s=s_val)
         try:
-            fs = f.subs(s=s_val)
             Es = EllipticCurve(fs)
             count += Es.cardinality()
         except ArithmeticError:
+            print("singular:", s_val)
+            print(fs)
+            print(factor(diff(fs, x)))
+            print(diff(fs, y))
             singular_filbers.append(s_val)
     print("singular_filbers:", singular_filbers)
     return count
 
 # 論文のE_1'
-# f = "y^2 - x * (x + (- 1 + 5 * s) * (s - 1)^2) * (x + 4 * s * (- 1 + 5 * s))"
+f = "y^2 - x * (x + (- 1 + 5 * s) * (s - 1)^2) * (x + 4 * s * (- 1 + 5 * s))"
 
 # E_{0,s}^{(1 + 3s)}
-f = "y^2 - x * (x - s * (1 + 3 * s) * 4 * s) * (x + s * (1 + 3 * s) * (s - 1)^2)"
+# f = "y^2 - x * (x - s * (1 + 3 * s) * 4 * s) * (x + s * (1 + 3 * s) * (s - 1)^2)"
 
 print("f:", f)
-p = 5
+p = 17
 print("p:", p)
 for m in range(1,5):
     q = p^m
