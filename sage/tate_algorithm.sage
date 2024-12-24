@@ -14,7 +14,6 @@ def tate(f):
     print("b2:", my_factor(E.b2()))
     print("b6:", my_factor(E.b6()))
     print("b8:", my_factor(E.b8()))
-    print("c4:", my_factor(E.c4()))
     DiscP = -4 * E.a2()^3 * E.a6() + E.a2()^2 * E.a4()^2 - 4 * E.a4()^3 - 27 * E.a6()^3 + 18 * E.a2() * E.a4() * E.a6()
     print("DiscP*pi^6:", my_factor(DiscP))
     print("")
