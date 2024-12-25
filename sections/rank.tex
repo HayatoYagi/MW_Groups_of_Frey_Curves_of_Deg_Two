@@ -1,0 +1,71 @@
+%! TEX root = ../main.tex
+\documentclass[main]{subfiles}
+
+\begin{document}
+\chapter{Ranks}
+
+\begin{thm}
+    TODO
+    \begin{equation}
+        \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = ?
+    \end{equation}
+\end{thm}
+
+\begin{proof}
+    \begin{equation}
+        \Delta(E_{1,s}^{(1 + 3s^{2})}) = (1 + 3s^{2})^{6} \Delta(E_{1,s})
+    \end{equation}
+    \begin{equation}
+        e(\mathcal{E}_{1,s}^{(1 + 3s^{2})}) = 36
+    \end{equation}
+    Theorem~\ref{thm:shioda}からは
+    \begin{equation}
+        \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) \leq 2
+    \end{equation}
+    しか分からない．
+    K3ですらないので， $H^2$の次元が分からず， reduction を取る方法でも計算が進められない．
+    \begin{equation}
+        \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = ? (1 or 2)
+    \end{equation}
+\end{proof}
+
+
+\begin{thm}
+    TODO
+    \begin{equation}
+        \rank E_{0,s}^{(1 + 3s)}(\overline{\mathbb{Q}}(s)) \leq 1
+    \end{equation}
+\end{thm}
+\begin{proof}
+    \begin{equation}
+        \Delta(E_{0,s}^{(1 + 3s)}) = 256s^{2}(s - 1)^{4}(s + 1)^{4}(3s + 1)^{6}
+    \end{equation}
+    \begin{equation}
+        e(\mathcal{E}_{0,s}^{(1 + 3s)}) = 24
+    \end{equation}
+    Theorem~\ref{thm:shioda}からは
+    \begin{equation}
+        \rank E_{0,s}^{(1 + 3s)}(\overline{\mathbb{Q}}(s)) \leq 1
+    \end{equation}
+\end{proof}
+
+\begin{thm}
+    \begin{equation}
+        \rank E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s)) = 1
+    \end{equation}
+\end{thm}
+\begin{proof}
+    \begin{equation}
+        (s - 1, \sqrt{-1}(s - 1)) \in E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s))
+    \end{equation}
+    より rank は正である．
+    \begin{equation}
+        \Delta(E_{0,s}^{(s(1 + 3s))}) = 256s^{8}(s - 1)^{4}(s + 1)^{4}(3s + 1)^{6}
+    \end{equation}
+
+    上と同様に
+    \begin{equation}
+        \rank E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s)) \leq 1
+    \end{equation}
+\end{proof}
+\end{document}
