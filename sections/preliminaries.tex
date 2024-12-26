@@ -9,16 +9,44 @@ It is more difficult to get the upper bound of the rank.
 The following theorem behaves a key role in the proof of the main theorem.
 \begin{thm}{(Shioda-Tate formula, \cite{ref:naskrecki2013} Theorem 3.4)}
     \label{thm:shioda}
+    Let $C$ be a smooth irreducible projective curve over an algebraically closed field $k$ and $E$ an elliptic curve over a function field $k(C)$.
+    Let $\mathcal{E} \to C$ be the N \'eron model of $E$.
+    Let $R \subset C$ be the set of points where the special fiber of $\mathcal{E}$ is singular.
+    For each $v \in R$, let $m_{v}$ be the number of components of the special fiber of $\mathcal{E}$ at $v$.
+    Let $\rho(\mathcal{E})$ denote the rank of the N \'eron-Severi group of $\mathcal{E}$.
+    Then, we have
     \begin{equation}
-        \rho (S) = 2 + \sum_{v \in R} (m_{v} - 1) + \rank(E(K))
+        \rho (\mathcal{E}) = 2 + \sum_{v \in R} (m_{v} - 1) + \rank(E(k(C))).
     \end{equation}
-    である．
 \end{thm}
+
+We can calculate $R$ and $m_{v}$ by Tate's algorithm.
+一方$\rho$については
+
+\begin{equation}
+    12 \chi = \sum e(F_{v})
+\end{equation}
 
 \begin{thm}
     \label{thm:rho}
-    rational や K3 のときの $\rho$ はわかっている．
+    \begin{equation}
+        \rho(\mathcal{E}) \leq 10 \chi + 2g
+    \end{equation}
 \end{thm}
+
+\begin{dfn}
+    Let $C$ be a smooth curve over an algebraically closed field $k$.
+    Let $E$ be an elliptic curve over a function field $k(C)$ given by the Weierstrass equation
+    \begin{equation}
+        E: y^{2} = x^{3} + a_{2} x + a_{4} x + a_{6}
+    \end{equation}
+    where $a_{2}, a_{4}, a_{6} \in k(C)$.
+    For a fixed $u \in k(C)^*$, we denote
+    \begin{equation}
+        E^{(u)}: u y^{2} = x^{3} + a_{2} x + a_{4} x + a_{6}
+    \end{equation}
+    to be the quadratic twist of $E$ by $u$.
+\end{dfn}
 
 In order to make it easier to calculate the rank, we can use the following theorem.
 
@@ -30,6 +58,6 @@ In order to make it easier to calculate the rank, we can use the following theor
 
 However, Theorem~\ref{thm:rho} is still not enough to get the upper bound of the rank in our case.
 
-TODO: etale cohomology を使う
+TODO: \'etale cohomology を使う
 
 \end{document}
