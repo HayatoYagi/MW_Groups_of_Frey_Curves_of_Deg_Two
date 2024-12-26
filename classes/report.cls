@@ -164,6 +164,7 @@
 \newtheorem{dfn}[thm]{Definition}
 \newtheorem{eg}[thm]{Example}
 \newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
 \theoremstyle{remark}
 \newtheorem{rem}[thm]{Remark}
 
