@@ -16,6 +16,8 @@ def tate(f):
     print("b8:", my_factor(E.b8()))
     DiscP = -4 * E.a2()^3 * E.a6() + E.a2()^2 * E.a4()^2 - 4 * E.a4()^3 - 27 * E.a6()^3 + 18 * E.a2() * E.a4() * E.a6()
     print("DiscP*pi^6:", my_factor(DiscP))
+    S.<T> = K[]
+    print("sp", T^2 + E.a1() * T - E.a2()) # split or non-split を判定する用の多項式
     print("")
 
 # 論文のE_1

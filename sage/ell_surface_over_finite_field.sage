@@ -1,4 +1,4 @@
-def zeros_count(q,f_str):
+def zeros_count(q,f_str,sp_str):
     F = GF(q)
     R = PolynomialRing(F, ('x', 'y', 's'))
 
@@ -13,15 +13,21 @@ def zeros_count(q,f_str):
             Es = EllipticCurve(fs)
             count += Es.cardinality()
         except ArithmeticError:
+            S.<T> = R[]
+            sp = S(sp_str)
+            sp = sp.subs(s=s_val)
+            print(s_val, factor(sp))
             singular_filbers.append(s_val)
     print("singular_filbers:", singular_filbers)
     return count
 
 # 論文のE_1'
 # f = "y^2 - x * (x + (- 1 + 5 * s) * (s - 1)^2) * (x + 4 * s * (- 1 + 5 * s))"
+# sp = "T^2 - 5*s^3 - 9*s^2 - 3*s + 1"
 
 # E_{0,s}^{(1 + 3s)}
 f = "y^2 - x * (x - s * (1 + 3 * s) * 4 * s) * (x + s * (1 + 3 * s) * (s - 1)^2)"
+sp = "T^2 - 3*s^3 + 17*s^2 + 3*s - 1"
 
 print("f:", f)
 p = 5
@@ -29,7 +35,7 @@ print("p:", p)
 for m in range(1,5):
     q = p^m
     print("m:", m)
-    count = zeros_count(q,f)
+    count = zeros_count(q,f,sp)
     # I_2 * 3
     count += 2 * q * 3
     # I_4
