@@ -170,5 +170,7 @@
 
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\chara}{char}
 
 \usepackage[T1]{fontenc}
