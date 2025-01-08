@@ -172,5 +172,6 @@
 \DeclareMathOperator{\NS}{NS}
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\chara}{char}
+\newcommand{\Neron}{N\'eron}
 
 \usepackage[T1]{fontenc}
