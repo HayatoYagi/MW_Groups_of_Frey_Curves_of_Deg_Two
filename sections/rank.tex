@@ -8,7 +8,7 @@
     \begin{equation}
         \Delta_{E_{1,s}} = 256s^{4} (s + 1)^{4} (s - 1)^{4} (s^{2} + 1)^{4}
     \end{equation}
-
+    
     \begin{equation}
         e(\mathcal{E}_{1,s}) = 24
     \end{equation}
@@ -19,27 +19,27 @@
     \end{equation}
 \end{proof}
 
-\begin{proof}{of Theorem~\ref{thm:E_{4,t}}}
+\begin{proof}{of Theorem~\ref{thm:E_{2,t}}}
     \begin{equation}
-        \Delta_{E_{4,t}} = 4096t^{4}(t - 1)^{4}(t + 1)^{4}(t - 3)^{4}(t + 3)^{4}(t^{2} - 3)^{4}(t^{4} - 2t^{2} + 9)^{4}
+        \Delta_{E_{2,t}} = 4096t^{4}(t - 1)^{4}(t + 1)^{4}(t - 3)^{4}(t + 3)^{4}(t^{2} - 3)^{4}(t^{4} - 2t^{2} + 9)^{4}
     \end{equation}
-
+    
     \begin{equation}
         e(\mathcal{E}_{4,t}) = 48
     \end{equation}
     TODO: $\rho(\mathcal{E}_{4,t}) \leq 40$ である．
     Theorem~\ref{thm:shioda} より
     \begin{equation}
-        \rank E_{4,t}(\overline{\mathbb{Q}}(t)) \leq 2
+        \rank E_{2,t}(\overline{\mathbb{Q}}(t)) \leq 2
     \end{equation}
 \end{proof}
 
 上の評価は不十分．生成元は1つしか見つかっていないので，ランクの上界が1であることを示したい．
 \begin{thm}
     \begin{align}
-        E_{4,t}(\overline{\mathbb{Q}}(t)) = E_{1,s}(\overline{\mathbb{Q}}(s)(\sqrt{1 + 3s^{2}})) \\
+        E_{2,t}(\overline{\mathbb{Q}}(t)) = E_{1,s}(\overline{\mathbb{Q}}(s)(\sqrt{1 + 3s^{2}})) \\
         E_{1,s}^{(1 + 3s^{2})}: (1 + 3s^{2}) y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2})          \\
-        \rank E_{1,s}(\overline{\mathbb{Q}}(s)) + \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = \rank E_{4,t}(\overline{\mathbb{Q}}(t))
+        \rank E_{1,s}(\overline{\mathbb{Q}}(s)) + \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = \rank E_{2,t}(\overline{\mathbb{Q}}(t))
     \end{align}
     さらに
     \begin{align}
@@ -59,7 +59,7 @@
     \end{equation}
     したがって
     \begin{equation}
-        E_{4,t}(\overline{\mathbb{Q}}(t)) = E_{1,s}(\overline{\mathbb{Q}}(s)(\sqrt{1 + 3s^{2}}))
+        E_{2,t}(\overline{\mathbb{Q}}(t)) = E_{1,s}(\overline{\mathbb{Q}}(s)(\sqrt{1 + 3s^{2}}))
     \end{equation}
 \end{proof}
 
@@ -121,7 +121,7 @@
     \begin{equation}
         \Delta(E_{0,s}^{(s(1 + 3s))}) = 256s^{8}(s - 1)^{4}(s + 1)^{4}(3s + 1)^{6}
     \end{equation}
-
+    
     上と同様に
     \begin{equation}
         \rank E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s)) \leq 1
@@ -186,7 +186,7 @@
     \begin{equation}
         \Delta(E_{0,s}^{(s(1 + 3s))}) = 256s^{8}(s - 1)^{4}(s + 1)^{4}(3s + 1)^{6}
     \end{equation}
-
+    
     上と同様に
     \begin{equation}
         \rank E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s)) \leq 1
