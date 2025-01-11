@@ -57,12 +57,12 @@ TODO: \'etale cohomology を使うことを説明する．
     Let $C$ be a smooth curve over an algebraically closed field $k$.
     Let $E$ be an elliptic curve over a function field $k(C)$ given by the Weierstrass equation
     \begin{equation}
-        E: y^{2} = x^{3} + a_{2} x^2 + a_{4} x + a_{6}
+        E: y^{2} = x^{3} + a_{2} x^{2} + a_{4} x + a_{6}
     \end{equation}
     where $a_{2}, a_{4}, a_{6} \in k(C)$.
     For a fixed $u \in k(C)^*$, we denote
     \begin{equation}
-        E^{(u)}: u y^{2} = x^{3} + a_{2} x^2 + a_{4} x + a_{6}
+        E^{(u)}: u y^{2} = x^{3} + a_{2} x^{2} + a_{4} x + a_{6}
     \end{equation}
     to be the quadratic twist of $E$ by $u$.
 \end{dfn}
@@ -77,7 +77,8 @@ The following theorem is used to reduce the order of coefficients in the Weierst
     \end{equation}
 \end{thm}
 
-\begin{thm}{TODO: どこに書くか検討}
+\begin{thm}{\cite[Lem.3.5]{ref:naskrecki2013} TODO: どこに書くか検討}
+    \label{thm:torsion}
     \begin{equation}
         E(\overline{\mathbb{Q}}(s))_{\text{tors}} \hookrightarrow \prod_{v \in R} G(F_{v})
     \end{equation}
