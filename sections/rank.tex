@@ -2,194 +2,227 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-\chapter{Ranks}
+\chapter{The Generic Rank of $E_{2,t}$}
 
-\begin{proof}{of Theorem~\ref{thm:E_{1,s}}}
-    \begin{equation}
-        \Delta_{E_{1,s}} = 256s^{4} (s + 1)^{4} (s - 1)^{4} (s^{2} + 1)^{4}
-    \end{equation}
-
-    \begin{equation}
-        e(\mathcal{E}_{1,s}) = 24
-    \end{equation}
-    したがって $\mathcal{E}_{1,s}$ はK3曲面であり． $\rho(\mathcal{E}_{1,s}) \leq 20$ である．
-    Theorem~\ref{thm:shioda} より
-    \begin{equation}
-        \rank(E_{1,s}) = 0
-    \end{equation}
-\end{proof}
-
-\begin{proof}{of Theorem~\ref{thm:E_{2,t}}}
+In order to prove Theorem~\ref{thm:E_{2,t}}, Theorem~\ref{thm:rho} is not enough to get the exact upper bound of the ranks of the \Neron-Severi group.
+Actually, we get $\rank E_{2,t}(\overline{\mathbb{Q}}(t)) \leq 2$ from Theorem~\ref{thm:shioda} and Theorem~\ref{thm:rho}.
+\begin{table}[h]
+    \centering
+    \caption{Singular fibers of $E_{2,t}$}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Place            & Type  & $m_v$ \\
+        \hline
+        $t=0$            & $I_4$ & 4     \\
+        $t=\pm 1$        & $I_4$ & 4     \\
+        $t=\pm 3$        & $I_4$ & 4     \\
+        $t=\pm \sqrt{3}$ & $I_4$ & 4     \\
+        $t^4-2t^2+9=0$   & $I_4$ & 4     \\
+        $t=\infty$       & $I_4$ & 4     \\
+        \hline
+    \end{tabular}
+\end{table}
+\begin{proof}
     \begin{equation}
         \Delta_{E_{2,t}} = 4096t^{4}(t - 1)^{4}(t + 1)^{4}(t - 3)^{4}(t + 3)^{4}(t^{2} - 3)^{4}(t^{4} - 2t^{2} + 9)^{4}
     \end{equation}
 
     \begin{equation}
-        e(\mathcal{E}_{4,t}) = 48
+        e(\mathcal{E}_{2,t}) = 48
     \end{equation}
-    TODO: $\rho(\mathcal{E}_{4,t}) \leq 40$ である．
+    TODO: $\rho(\mathcal{E}_{2,t}) \leq 40$ である．
     Theorem~\ref{thm:shioda} より
     \begin{equation}
         \rank E_{2,t}(\overline{\mathbb{Q}}(t)) \leq 2
     \end{equation}
 \end{proof}
 
-上の評価は不十分．生成元は1つしか見つかっていないので，ランクの上界が1であることを示したい．
+\begin{lem}
+    \begin{equation}
+        E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}} \cong \mathbb{Z} / 4 \mathbb{Z} \oplus \mathbb{Z} / 4 \mathbb{Z}.
+    \end{equation}
+\end{lem}
+\begin{proof}
+    By Theorem~\ref{thm:torsion}, we have
+    \begin{equation}
+        E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}} \hookrightarrow (\mathbb{Z} / 4 \mathbb{Z})^{12}.
+    \end{equation}
+    Obviously, we have
+    \begin{equation}
+        E_{1,s}(\overline{\mathbb{Q}}(s))_{\text{tors}} \subset E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}}.
+    \end{equation}
+\end{proof}
+
+
+On the other hand, we have only one point of infinite order in $E_{2,t}(\overline{\mathbb{Q}}(t))$.
+\begin{lem}
+    \begin{equation}
+        \rank E_{2,t}(\overline{\mathbb{Q}}(t)) \geq 1
+    \end{equation}
+\end{lem}
+Now, our goal is to show the upper bound of the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ is $1$.
+
+We use another method to estimate the upper bound of the rank of \Neron-Severi group, which we will explain in Chapter~\ref{chap:reduction}.
+Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms of ranks of elliptic curves with lower order coefficients in the Weierstrass equations to make the later computation feasible.
+
+\begin{dfn}
+    Let $C$ be a smooth curve over an algebraically closed field $k$.
+    Let $E$ be an elliptic curve over a function field $k(C)$ given by the Weierstrass equation
+    \begin{equation}
+        E: y^{2} = x^{3} + a_{2} x^{2} + a_{4} x + a_{6}
+    \end{equation}
+    where $a_{2}, a_{4}, a_{6} \in k(C)$.
+    For a fixed $u \in k(C)^*$, we denote
+    \begin{equation}
+        E^{(u)}: u y^{2} = x^{3} + a_{2} x^{2} + a_{4} x + a_{6}
+    \end{equation}
+    to be the quadratic twist of $E$ by $u$.
+\end{dfn}
+
+\begin{thm}{(\cite[Exercise 10.16]{ref:aec})}
+    \label{thm:twist}
+    Let $E$ be an elliptic curve over a function field $k(C)$ and $u \in k(C)^*$.
+    Then, the following equation holds
+    \begin{equation}
+        \rank E(k(C)(\sqrt{u})) = \rank E(k(C)) + \rank E^{(u)}(k(C)).
+    \end{equation}
+\end{thm}
+
 \begin{thm}
+    Let
+    \begin{equation}
+        E_{0,u}: y^{2} = x(x - 4u)(x + (u - 1)^{2})
+    \end{equation}
+    be an elliptic curve over $\overline{\mathbb{Q}}(u)$.
+    Then, we have
     \begin{align}
-        E_{2,t}(\overline{\mathbb{Q}}(t)) = E_{1,s}(\overline{\mathbb{Q}}(s)(\sqrt{1 + 3s^{2}})) \\
-        E_{1,s}^{(1 + 3s^{2})}: (1 + 3s^{2}) y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2})          \\
-        \rank E_{1,s}(\overline{\mathbb{Q}}(s)) + \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = \rank E_{2,t}(\overline{\mathbb{Q}}(t))
+        \rank E_{2,t}(\overline{\mathbb{Q}}(t))                & = \rank E_{1,s}(\overline{\mathbb{Q}}(s)) + \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)), \label{eq:twist1}           \\
+        \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) & = \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) + \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)). \label{eq:twist2}
     \end{align}
-    さらに
-    \begin{align}
-        E_{0,s}: y^{2} = x(x - 4s)(x + (s - 1)^{2})                         \\
-        E_{0,s}^{(1 + 3s)}: (1 + 3s) y^{2} = x(x - 4s)(x + (s - 1)^{2})     \\
-        E_{0,s}^{(s(1 + 3s))}: s(1 + 3s) y^{2} = x(x - 4s)(x + (s - 1)^{2}) \\
-        \rank E_{0,s}^{(1 + 3s)}(\overline{\mathbb{Q}}(s)) + \rank E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s)) = \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s))
-    \end{align}
+    Therefore, we have
+    \begin{equation}
+        \rank E_{2,t}(\overline{\mathbb{Q}}(t)) = \rank E_{1,s}(\overline{\mathbb{Q}}(s)) + \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) + \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)).
+    \end{equation}
 \end{thm}
 \begin{proof}
-    \begin{equation}
-        s = \frac{2t}{t^{2} - 3}
-    \end{equation}
-    を $t$ について解くと
-    \begin{equation}
-        t = \frac{1 \pm \sqrt{1 + 3s^{2}}}{s}
-    \end{equation}
-    したがって
+    Since solving $s = \frac{2t}{t^{2} - 3}$ for $t$ yields $t = \frac{1 \pm \sqrt{1 + 3s^{2}}}{s}$, we have
     \begin{equation}
         E_{2,t}(\overline{\mathbb{Q}}(t)) = E_{1,s}(\overline{\mathbb{Q}}(s)(\sqrt{1 + 3s^{2}}))
     \end{equation}
+    By Theorem~\ref{thm:twist}, we get \eqref{eq:twist1}.
+    Similarly, $E_{1,s}$ is obtained by substituting $u = s^{2}$ into $E_{0,u}$, so we have
+    \begin{equation}
+        E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)(\sqrt{u})),
+    \end{equation}
+    then we get \eqref{eq:twist2}.
 \end{proof}
+
+% \begin{thm}
+    % TODO
+    % \begin{equation}
+        % \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = ?
+        %\end{equation}
+    % \end{thm}
+
+% \begin{proof}
+    % \begin{equation}
+        % \Delta(E_{1,s}^{(1 + 3s^{2})}) = (1 + 3s^{2})^{6} \Delta(E_{1,s})
+        %\end{equation}
+    % \begin{table}[h]
+        % \centering
+        % \caption{Singular fibers of $E_{1,s}^{(1 + 3s^{2})}$}
+        % \begin{tabular}{|c|c|c|}
+            % \hline
+            % Place                        & Type    & $m_v$ \\
+            % \hline
+            % $s=0$                        & $I_4$   & 4     \\
+            % $s=\pm 1$                    & $I_4$   & 4     \\
+            % $s=\pm \sqrt{-1}$            & $I_4$   & 4     \\
+            % $s=\pm \frac{1}{\sqrt{-3}} $ & $I_0^*$ & 5     \\
+            % $s=\infty$                   & $I_4$   & 4     \\
+            % \hline
+            %\end{tabular}
+        % \end{table}
+    % \begin{equation}
+        % e(\mathcal{E}_{1,s}^{(1 + 3s^{2})}) = 36
+        %\end{equation}
+    % Theorem~\ref{thm:shioda}からは
+    % \begin{equation}
+        % \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) \leq 2
+        %\end{equation}
+    % しか分からない．
+    % K3ですらないので， $H^2$の次元が分からず， reduction を取る方法でも計算が進められない．
+    % \begin{equation}
+        % \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = ? (1 or 2)
+        %\end{equation}
+    % \end{proof}
+
 
 \begin{thm}
     TODO
     \begin{equation}
-        \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = ?
-    \end{equation}
-\end{thm}
-
-\begin{proof}
-    \begin{equation}
-        \Delta(E_{1,s}^{(1 + 3s^{2})}) = (1 + 3s^{2})^{6} \Delta(E_{1,s})
-    \end{equation}
-    \begin{equation}
-        e(\mathcal{E}_{1,s}^{(1 + 3s^{2})}) = 36
-    \end{equation}
-    Theorem~\ref{thm:shioda}からは
-    \begin{equation}
-        \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) \leq 2
-    \end{equation}
-    しか分からない．
-    K3ですらないので， $H^2$の次元が分からず， reduction を取る方法でも計算が進められない．
-    \begin{equation}
-        \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = ? (1 or 2)
-    \end{equation}
-\end{proof}
-
-
-\begin{thm}
-    TODO
-    \begin{equation}
-        \rank E_{0,s}^{(1 + 3s)}(\overline{\mathbb{Q}}(s)) \leq 1
+        \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) \leq 1
     \end{equation}
 \end{thm}
 \begin{proof}
     \begin{equation}
-        \Delta(E_{0,s}^{(1 + 3s)}) = 256s^{2}(s - 1)^{4}(s + 1)^{4}(3s + 1)^{6}
+        \Delta(E_{0,u}^{(1 + 3u)}) = 256u^{2}(u - 1)^{4}(u + 1)^{4}(3u + 1)^{6}
     \end{equation}
+    \begin{table}[h]
+        \centering
+        \caption{Singular fibers of $E_{0,u}^{(1 + 3u)}$}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Place            & Type    & $m_v$ \\
+            \hline
+            $u=0$            & $I_2$   & 2     \\
+            $u=\pm 1$        & $I_4$   & 4     \\
+            $u=-\frac{1}{3}$ & $I_0^*$ & 5     \\
+            $u=\infty$       & $I_2^*$ & 7     \\
+            \hline
+        \end{tabular}
+        \label{tab:E_{0,u}^{(1 + 3u)}}
+    \end{table}
     \begin{equation}
-        e(\mathcal{E}_{0,s}^{(1 + 3s)}) = 24
+        e(\mathcal{E}_{0,u}^{(1 + 3u)}) = 24
     \end{equation}
     Theorem~\ref{thm:shioda}からは
     \begin{equation}
-        \rank E_{0,s}^{(1 + 3s)}(\overline{\mathbb{Q}}(s)) \leq 1
+        \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) \leq 1
     \end{equation}
 \end{proof}
 
 \begin{thm}
     \begin{equation}
-        \rank E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s)) = 1
+        \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)) = 1
     \end{equation}
 \end{thm}
 \begin{proof}
     \begin{equation}
-        (s - 1, i(s - 1)) \in E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s))
+        (u - 1, \sqrt{-1}(u - 1)) \in E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u))
     \end{equation}
     より rank は正である．
     \begin{equation}
-        \Delta(E_{0,s}^{(s(1 + 3s))}) = 256s^{8}(s - 1)^{4}(s + 1)^{4}(3s + 1)^{6}
+        \Delta(E_{0,u}^{(u(1 + 3u))}) = 256u^{8}(u - 1)^{4}(u + 1)^{4}(3u + 1)^{6}
     \end{equation}
-
+    \begin{table}[h]
+        \centering
+        \caption{Singular fibers of $E_{0,u}^{(u(1 + 3u))}$}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Place            & Type    & $m_v$ \\
+            \hline
+            $u=0$            & $I_2^*$ & 7     \\
+            $u=\pm 1$        & $I_4$   & 4     \\
+            $u=-\frac{1}{3}$ & $I_0^*$ & 5     \\
+            $u=\infty$       & $I_2$   & 2     \\
+            \hline
+        \end{tabular}
+    \end{table}
     上と同様に
     \begin{equation}
-        \rank E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s)) \leq 1
+        \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)) \leq 1
     \end{equation}
 \end{proof}
 
-\begin{thm}
-    TODO
-    \begin{equation}
-        \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = ?
-    \end{equation}
-\end{thm}
-
-\begin{proof}
-    \begin{equation}
-        \Delta(E_{1,s}^{(1 + 3s^{2})}) = (1 + 3s^{2})^{6} \Delta(E_{1,s})
-    \end{equation}
-    \begin{equation}
-        e(\mathcal{E}_{1,s}^{(1 + 3s^{2})}) = 36
-    \end{equation}
-    Theorem~\ref{thm:shioda}からは
-    \begin{equation}
-        \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) \leq 2
-    \end{equation}
-    しか分からない．
-    K3ですらないので， $H^2$の次元が分からず， reduction を取る方法でも計算が進められない．
-    \begin{equation}
-        \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = ? (1 or 2)
-    \end{equation}
-\end{proof}
-
-
-\begin{thm}
-    TODO
-    \begin{equation}
-        \rank E_{0,s}^{(1 + 3s)}(\overline{\mathbb{Q}}(s)) \leq 1
-    \end{equation}
-\end{thm}
-\begin{proof}
-    \begin{equation}
-        \Delta(E_{0,s}^{(1 + 3s)}) = 256s^{2}(s - 1)^{4}(s + 1)^{4}(3s + 1)^{6}
-    \end{equation}
-    \begin{equation}
-        e(\mathcal{E}_{0,s}^{(1 + 3s)}) = 24
-    \end{equation}
-    Theorem~\ref{thm:shioda}からは
-    \begin{equation}
-        \rank E_{0,s}^{(1 + 3s)}(\overline{\mathbb{Q}}(s)) \leq 1
-    \end{equation}
-\end{proof}
-
-\begin{thm}
-    \begin{equation}
-        \rank E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s)) = 1
-    \end{equation}
-\end{thm}
-\begin{proof}
-    \begin{equation}
-        (s - 1, i(s - 1)) \in E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s))
-    \end{equation}
-    より rank は正である．
-    \begin{equation}
-        \Delta(E_{0,s}^{(s(1 + 3s))}) = 256s^{8}(s - 1)^{4}(s + 1)^{4}(3s + 1)^{6}
-    \end{equation}
-
-    上と同様に
-    \begin{equation}
-        \rank E_{0,s}^{(s(1 + 3s))}(\overline{\mathbb{Q}}(s)) \leq 1
-    \end{equation}
-\end{proof}
 \end{document}
