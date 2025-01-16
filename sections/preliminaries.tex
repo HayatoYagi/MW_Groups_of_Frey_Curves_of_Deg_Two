@@ -4,14 +4,12 @@
 \begin{document}
 \chapter{Preliminaries}
 
-For any elliptic curves $E$ over a function field $k(C)$ of a projective curve $C$ over an algebraically closed field $k$, there is an elliptic surface $\mathcal{E} \to \mathbb{P}^1$ with the generic fiber $E$ called the \Neron{} model, and we can use some theorems in the theory of surfaces.
-In order to get the lower bound of the rank of the Mordell-Weil group, finding generators is enough.
-It is more difficult to get the upper bound of the rank.
+For any elliptic curves $E$ over a function field $k(C)$ of a smooth irreducible projective curve $C$ over an algebraically closed field $k$, there is an elliptic surface $\mathcal{E} \to C$ with the generic fiber $E$ called the \Neron{} model, and we can use some theorems in the theory of surfaces.
+In order to get the lower bound of the rank of the Mordell-Weil group, finding points of infinite order is enough.
+It is quite difficult to get a good upper bound of the rank.
 The following theorem behaves a key role in the proof of the main theorem.
 \begin{thm}{(Shioda-Tate formula, \cite[Corollary 5.3]{ref:shioda1990})}
     \label{thm:shioda}
-    Let $C$ be a smooth irreducible projective curve over an algebraically closed field $k$ and $E$ an elliptic curve over a function field $k(C)$.
-    Let $\mathcal{E} \to C$ be the \Neron{} model of $E$.
     Let $R \subset C$ be the set of points where the special fiber of $\mathcal{E}$ is singular.
     For each $v \in R$, let $m_{v}$ be the number of components of the special fiber of $\mathcal{E}$ at $v$.
     Let $\rho(\mathcal{E})$ denote the rank of the \Neron-Severi group of $\mathcal{E}$.
@@ -22,7 +20,7 @@ The following theorem behaves a key role in the proof of the main theorem.
 \end{thm}
 
 We can calculate $R$ and $m_{v}$ by Tate's algorithm, but it is still difficult to determine $\rho(\mathcal{E})$.
-We have the following theorem to get the upper bound of $\rho(\mathcal{E})$.
+We have the following theorem to get an upper bound of $\rho(\mathcal{E})$.
 
 \begin{thm}
     \label{thm:rho}
@@ -49,6 +47,7 @@ We have the following theorem to get the upper bound of $\rho(\mathcal{E})$.
     オイラー数については \cite[pp. 136-137 付録2]{ref:shioda1993}, \cite[p.14 Table II]{ref:kodaira1963-3}
 \end{proof}
 
+For the torsion subgroup of the Mordell-Weil group, we have the following theorem.
 \begin{thm}{(\cite[Lem.3.5]{ref:naskrecki2013})}
     \label{thm:torsion}
     \begin{equation}
