@@ -36,7 +36,7 @@ Set $\varphi:=F^{r}$ and let $\varphi^{(i)}$ denote the automorphism on $H_{\tex
 \end{rem}
 
 Now we want to calculate the characteristic polynomial $\chara (\varphi^{(2)})$.
-Beforehand, we recall the Lefschetz trace formula.
+Beforehand, we recall the Lefschetz fixed point theorem.
 
 \begin{thm}
     \begin{equation}
@@ -97,11 +97,25 @@ Here, by \eqref{eq:tr-composition} and Corollary~\ref{cor:lefschetz}, we have
 \begin{proof}
 We denote by $S=\mathcal{E}_{0,u}^{(1 + 3u)} \to \mathbb{P}^1$ the elliptic surface with the generic fiber $E_{0,u}^{(1 + 3u)}$.
 
-Table~\ref{tab:E_{0,u}^{(1 + 3u)}} より K3 なので Lemma~\ref{lem:k3-betti} より
+\begin{table}[h]
+    \centering
+    \caption{Singular fibers of $E_{0,u}^{(1 + 3u)}$}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Place            & Type    & $m_v$ \\
+        \hline
+        $u=0$            & $I_2$   & 2     \\
+        $u=\pm 1$        & $I_4$   & 4     \\
+        $u=-\frac{1}{3}$ & $I_0^*$ & 5     \\
+        $u=\infty$       & $I_2^*$ & 7     \\
+        \hline
+    \end{tabular}
+    \label{tab:E_{0,u}^{(1 + 3u)}}
+\end{table}
+Then $S$ is a K3 surface and by Lemma~\ref{lem:k3-betti}, we have
 \begin{equation}
-    \dim_{\mathbb{Q}_{l}} H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_{l}) = 22
+    \dim_{\mathbb{Q}_{l}} H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_{l}) = 22.
 \end{equation}
-である．
 $V$ is of rank 19, on which the Frobenius automorphism acts by multiplication by $p$.
 
 \begin{equation}
@@ -146,5 +160,7 @@ Then by Theorem~\ref{thm:shioda}, we have
 \end{equation}
 
 \end{proof}
+
+This concludes the proof of the main theorem.
 
 \end{document}

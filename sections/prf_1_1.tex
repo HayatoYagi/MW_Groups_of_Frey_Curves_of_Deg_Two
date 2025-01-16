@@ -5,10 +5,12 @@
 \chapter{Proof of Theorem~\ref{thm:E_{1,s}}}
 
 \begin{proof}{of Theorem~\ref{thm:E_{1,s}}}
+    Let $\mathcal{E}_{1,s} \to \mathbb{P}^{1}$ be the elliptic surface with the generic fiber $E_{1,s}$.
+    The discriminant of $E_{1,s}$ is
     \begin{equation}
-        \Delta_{E_{1,s}} = 256s^{4} (s + 1)^{4} (s - 1)^{4} (s^{2} + 1)^{4}
+        \Delta_{E_{1,s}} = 256s^{4} (s + 1)^{4} (s - 1)^{4} (s^{2} + 1)^{4},
     \end{equation}
-
+    and by Tate's algorithm, we have the following table.
     \begin{table}[h]
         \centering
         \caption{Singular fibers of $E_{1,s}$}
@@ -24,11 +26,8 @@
         \end{tabular}
     \end{table}
 
-    \begin{equation}
-        e(\mathcal{E}_{1,s}) = 24
-    \end{equation}
-    したがって $\mathcal{E}_{1,s}$ はK3曲面であり． $\rho(\mathcal{E}_{1,s}) \leq 20$ である．
-    Theorem~\ref{thm:shioda} より
+    Then $e(\mathcal{E}_{1,s}) = 24$ and by Theorem~\ref{thm:rho}, we have $\rho(\mathcal{E}_{1,s}) \leq 20$.
+    By Shioda-Tate formula (Theorem~\ref{thm:shioda}), we have
     \begin{equation}
         \rank(E_{1,s}) = 0
     \end{equation}
@@ -42,10 +41,7 @@
         2T_1 & = (4s^2,0), \\
         2T_2 & = (0,0).
     \end{align}
-    By Theorem~\ref{thm:torsion}, we have
-    \begin{equation}
-        E_{1,s}(\overline{\mathbb{Q}}(s))_ \text{tors} \hookrightarrow (\mathbb{Z} / 4 \mathbb{Z})^{6}.
-    \end{equation}
+    By Theorem~\ref{thm:torsion}, we have $E_{1,s}(\overline{\mathbb{Q}}(s))_ \text{tors} \hookrightarrow (\mathbb{Z} / 4 \mathbb{Z})^{6}$.
     Therefore, we have
     \begin{equation}
         E_{1,s}(\overline{\mathbb{Q}}(s))_ \text{tors} \cong \mathbb{Z} / 4 \mathbb{Z} \oplus \mathbb{Z} / 4 \mathbb{Z}.
