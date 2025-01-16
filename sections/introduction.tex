@@ -15,7 +15,6 @@ We can parameterize the Frey curves of degree $2$ by $s \in \mathbb{Q}$, then th
     E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2}).
 \end{equation}
 We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mathbb{Q}}(s)$.
-Then there is a elliptic surface $\mathcal{E}_{1,s} \to \mathbb{P}^{1}$ with the generic fiber $E_{1,s}$ called the \Neron{} model, and we can use some theorems in the theory of elliptic surfaces.
 First, we determine the Mordell-Weil group of $E_{1,s}$.
 
 \begin{thm}
@@ -43,10 +42,11 @@ First, we determine the Mordell-Weil group of $E_{1,s}$.
     TODO: specialization theorem は injectivity しか言ってないので, 各 special fiber について 8-torsion point が存在しないことを示した課題研究は上の系より真に強い？
 \end{rem}
 
-Inspite of the fact that the generic rank of $E_{1,s}$ is $0$, we know that there are some examples of $s$ such that the rank is $1$.
-Actually, there are infinitely many $s \in \overline{\mathbb{Q}}$ such that the Mordell-Weil group of $E_{1,s}$ has positive rank over $\overline{\mathbb{Q}}$.
-In order to improve it, it is enough to find a subfamily of $E_{1,s}$ whose generic rank is positive, since the following theorem about the relation between an elliptic curve over a function field and its special fibers is known.
-\begin{thm}{(\cite[Theorem 11.4.]{ref:advancedaec})}
+Inspite of the fact that the generic rank of $E_{1,s}$ is $0$, Yoshida (\cite[Corollary 4.7.]{ref:yoshida}) showed that there are infinitely many $s \in \mathbb{Q}$ such that the Mordell-Weil group of $E_{1,s}$ has positive rank over $\mathbb{Q}$.
+However, the infinite family is not explicitly parameterized.
+We find the subset of $s \in \overline{{\mathbb{Q}}}$ with the positive rank of the Mordell-Weil group of $E_{1,s}$ parameterized by an rational function of one variable $t \in \overline{\mathbb{Q}}$.
+In order to prove it, it is enough to find a subfamily of $E_{1,s}$ whose generic rank is $1$, since the following theorem about the relation between an elliptic curve over a function field and its special fibers holds.
+\begin{thm}{(Specialization Theorem, \cite[Theorem 11.4.]{ref:advancedaec})}
     Let $E$ be an elliptic curve over a function field $k(C)$ of a smooth projective curve $C$ over an algebraically closed field $k$.
     Let $\pi: \mathcal{E} \to C$ be the \Neron{} model of $E$ and $F_v:=\pi^{-1}(v)$ be the special fiber for $v \in C(k)$.
     Then for all but finitely many $v \in C(k)$, a map
