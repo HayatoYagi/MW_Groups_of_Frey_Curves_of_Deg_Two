@@ -6,9 +6,9 @@
 
 In order to prove Theorem~\ref{thm:E_{2,t}}, Theorem~\ref{thm:rho} is not enough to get the sharp upper bound of the ranks of the \Neron-Severi group.
 Actually, the discriminant of $E_{2,t}$ is 
-\begin{equation}
+\begin{equation*}
     \Delta_{E_{2,t}} = 4096t^{4}(t - 1)^{4}(t + 1)^{4}(t - 3)^{4}(t + 3)^{4}(t^{2} - 3)^{4}(t^{4} - 2t^{2} + 9)^{4},
-\end{equation}
+\end{equation*}
 and the types of the singular fibers of $E_{2,t}$ are calculated as in Table~\ref{tab:E_{2,t}} below by Tate's algorithm.
 Then in a similar way to the proof of Theorem~\ref{thm:E_{1,s}}, we get $\rank E_{2,t}(\overline{\mathbb{Q}}(t)) \leq 2$.
 On the other hand, we have only one point of infinite order in $E_{2,t}(\overline{\mathbb{Q}}(t))$.
@@ -45,30 +45,30 @@ On the other hand, we have only one point of infinite order in $E_{2,t}(\overlin
 % \end{proof}
 
 \begin{lem}
-    \begin{equation}
+    \begin{equation*}
         E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}} \cong \mathbb{Z} / 4 \mathbb{Z} \oplus \mathbb{Z} / 4 \mathbb{Z}.
-    \end{equation}
+    \end{equation*}
 \end{lem}
 \begin{proof}
     By Theorem~\ref{thm:torsion}, we have
-    \begin{equation}
+    \begin{equation*}
         E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}} \hookrightarrow (\mathbb{Z} / 4 \mathbb{Z})^{12}.
-    \end{equation}
+    \end{equation*}
     Obviously, we have
-    \begin{equation}
+    \begin{equation*}
         E_{1,s}(\overline{\mathbb{Q}}(s))_{\text{tors}} \subset E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}}.
-    \end{equation}
+    \end{equation*}
 \end{proof}
 
 \begin{lem}
-    \begin{equation}
+    \begin{equation*}
         \rank E_{2,t}(\overline{\mathbb{Q}}(t)) \geq 1
-    \end{equation}
+    \end{equation*}
 \end{lem}
 \begin{proof}
-    \begin{equation}
+    \begin{equation*}
         \left(s^{2} - 1, \sqrt{-1} s(s^{2} - 1) \frac{t^{2} + 3}{t^{2} - 3} \right) \in E_{2,t}(\overline{\mathbb{Q}}(t)) \setminus E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}}.
-    \end{equation}
+    \end{equation*}
 \end{proof}
 Now, our goal is to show the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ is not greater than $1$.
 
@@ -78,14 +78,14 @@ Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms 
 \begin{dfn}
     Let $C$ be a smooth curve over an algebraically closed field $k$.
     Let $E$ be an elliptic curve over a function field $k(C)$ given by the Weierstrass equation
-    \begin{equation}
+    \begin{equation*}
         E: y^{2} = x^{3} + a_{2} x^{2} + a_{4} x + a_{6}
-    \end{equation}
+    \end{equation*}
     where $a_{2}, a_{4}, a_{6} \in k(C)$.
     For a fixed $u \in k(C)^*$, we denote
-    \begin{equation}
+    \begin{equation*}
         E^{(u)}: u y^{2} = x^{3} + a_{2} x^{2} + a_{4} x + a_{6}
-    \end{equation}
+    \end{equation*}
     to be the quadratic twist of $E$ by $u$.
 \end{dfn}
 
@@ -93,16 +93,16 @@ Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms 
     \label{thm:twist}
     Let $E$ be an elliptic curve over a function field $k(C)$ and $u \in k(C)^*$.
     Then, the following equation holds
-    \begin{equation}
+    \begin{equation*}
         \rank E(k(C)(\sqrt{u})) = \rank E(k(C)) + \rank E^{(u)}(k(C)).
-    \end{equation}
+    \end{equation*}
 \end{thm}
 
 \begin{thm}
     Let
-    \begin{equation}
+    \begin{equation*}
         E_{0,u}: y^{2} = x(x - 4u)(x + (u - 1)^{2})
-    \end{equation}
+    \end{equation*}
     be an elliptic curve over $\overline{\mathbb{Q}}(u)$.
     Then, we have
     \begin{align}
@@ -110,34 +110,34 @@ Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms 
         \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) & = \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) + \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)). \label{eq:twist2}
     \end{align}
     Therefore, we have
-    \begin{equation}
+    \begin{equation*}
         \rank E_{2,t}(\overline{\mathbb{Q}}(t)) = \rank E_{1,s}(\overline{\mathbb{Q}}(s)) + \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) + \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)).
-    \end{equation}
+    \end{equation*}
 \end{thm}
 \begin{proof}
     Since solving $s = \frac{2t}{t^{2} - 3}$ for $t$ yields $t = \frac{1 \pm \sqrt{1 + 3s^{2}}}{s}$, we have
-    \begin{equation}
+    \begin{equation*}
         E_{2,t}(\overline{\mathbb{Q}}(t)) = E_{1,s}(\overline{\mathbb{Q}}(s)(\sqrt{1 + 3s^{2}}))
-    \end{equation}
+    \end{equation*}
     By Theorem~\ref{thm:twist}, we get \eqref{eq:twist1}.
     Similarly, $E_{1,s}$ is obtained by substituting $u = s^{2}$ into $E_{0,u}$, so we have
-    \begin{equation}
+    \begin{equation*}
         E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)(\sqrt{u})),
-    \end{equation}
+    \end{equation*}
     then we get \eqref{eq:twist2}.
 \end{proof}
 
 % \begin{thm}
     % TODO
-    % \begin{equation}
+    % \begin{equation*}
         % \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = ?
-        %\end{equation}
+        %\end{equation*}
     % \end{thm}
 
 % \begin{proof}
-    % \begin{equation}
+    % \begin{equation*}
         % \Delta(E_{1,s}^{(1 + 3s^{2})}) = (1 + 3s^{2})^{6} \Delta(E_{1,s})
-        %\end{equation}
+        %\end{equation*}
     % \begin{table}[h]
         % \centering
         % \caption{Singular fibers of $E_{1,s}^{(1 + 3s^{2})}$}
@@ -153,18 +153,18 @@ Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms 
             % \hline
             %\end{tabular}
         % \end{table}
-    % \begin{equation}
+    % \begin{equation*}
         % e(\mathcal{E}_{1,s}^{(1 + 3s^{2})}) = 36
-        %\end{equation}
+        %\end{equation*}
     % Theorem~\ref{thm:shioda}からは
-    % \begin{equation}
+    % \begin{equation*}
         % \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) \leq 2
-        %\end{equation}
+        %\end{equation*}
     % しか分からない．
     % K3ですらないので， $H^2$の次元が分からず， reduction を取る方法でも計算が進められない．
-    % \begin{equation}
+    % \begin{equation*}
         % \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = ? (1 or 2)
-        %\end{equation}
+        %\end{equation*}
     % \end{proof}
 
 
@@ -204,20 +204,20 @@ Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms 
 % \end{proof}
 
 \begin{thm}
-    \begin{equation}
+    \begin{equation*}
         \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)) = 1
-    \end{equation}
+    \end{equation*}
 \end{thm}
 \begin{proof}
     We have a point of infinite order
-    \begin{equation}
+    \begin{equation*}
         (u - 1, \sqrt{-1}(u - 1)) \in E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u))
-    \end{equation}
+    \end{equation*}
     and thus the rank is positive.
     The discriminant of $E_{0,u}^{(u(1 + 3u))}$ is
-    \begin{equation}
+    \begin{equation*}
         \Delta(E_{0,u}^{(u(1 + 3u))}) = 256u^{8}(u - 1)^{4}(u + 1)^{4}(3u + 1)^{6},
-    \end{equation}
+    \end{equation*}
     and the types of the singular fibers of $E_{0,u}^{(u(1 + 3u))}$ are calculated as in Table~\ref{tab:E_{0,u}^{(u(1 + 3u))}} below by Tate's algorithm.
     \begin{table}[ht]
         \centering
@@ -235,9 +235,9 @@ Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms 
         \label{tab:E_{0,u}^{(u(1 + 3u))}}
     \end{table}
     In the same way as the proof of Theorem~\ref{thm:E_{1,s}}, we have
-    \begin{equation}
+    \begin{equation*}
         \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)) \leq 1.
-    \end{equation}
+    \end{equation*}
 \end{proof}
 
 \end{document}
