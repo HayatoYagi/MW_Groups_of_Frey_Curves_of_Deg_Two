@@ -4,38 +4,38 @@
 \begin{document}
 \section{Proof of Theorem~\ref{thm:E_{1,s}} and Theorem~\ref{thm:E_{1,s_0}}}
 
-\begin{thm}{(\cite[Exercise 3.9.]{ref:advancedaec})}
-    j-invariant が const でなければ non-split
-\end{thm}
-
 \begin{proof}[Proof of Theorem~\ref{thm:E_{1,s}}]
 
     Let $\mathcal{E}_{1,s} \to \mathbb{P}^{1}$ be the elliptic surface with the generic fiber $E_{1,s}$.
     The discriminant of $E_{1,s}$ is
     \begin{equation}
         \label{eq:discriminant1s}
-        \Delta_{E_{1,s}} = 256s^{4} (s + 1)^{4} (s - 1)^{4} (s^{2} + 1)^{4},
+        \Delta_{E_{1,s}} = 256s^{4} (s + 1)^{4} (s - 1)^{4} (s^{2} + 1)^{4}
     \end{equation}
-    and by Tate's algorithm, we have the following table.
+    and the $j$-invariant is
+    \begin{equation*}
+        j_{\mathcal{E}_{1,s}} = \frac{16 (s^{4} - 2 s^{3} + 2 s^{2} + 2 s + 1)^{3} (s^{4} + 2 s^{3} + 2 s^{2} - 2 s + 1)^{3}}{s ^{4} (s + 1)^{4} (s - 1)^{4}(s^{2} + 1)^{4}}.
+    \end{equation*}
+    By Tate's algorithm, we have the following table.
     \begin{table}[ht]
         \centering
         \caption{Singular fibers of $E_{1,s}$}
-        \begin{tabular}{|c|c|c|}
+        \begin{tabular}{|c|c|c|c|}
             \hline
-            Place             & Type  & $m_v$ \\
+            Place             & Type  & $m_v$ & $e$ \\
             \hline
-            $s=0$             & $I_4$ & 4     \\
-            $s=\pm 1$         & $I_4$ & 4     \\
-            $s=\pm \sqrt{-1}$ & $I_4$ & 4     \\
-            $s=\infty$        & $I_4$ & 4     \\
+            $s=0$             & $I_4$ & 4     & 4   \\
+            $s=\pm 1$         & $I_4$ & 4     & 4   \\
+            $s=\pm \sqrt{-1}$ & $I_4$ & 4     & 4   \\
+            $s=\infty$        & $I_4$ & 4     & 4   \\
             \hline
         \end{tabular}
     \end{table}
 
-    Then $e(\mathcal{E}_{1,s}) = 24$ and by Theorem~\ref{thm:rho}, we have $\rho(\mathcal{E}_{1,s}) \leq 20$.
+    Then $e(\mathcal{E}_{1,s}) = 4 \times 6 = 24$ and we have $\rho(\mathcal{E}_{1,s}) \leq 20$ by Theorem~\ref{thm:rho}.
     By Shioda-Tate formula (Theorem~\ref{thm:shioda}), we have
     \begin{equation*}
-        \rank(E_{1,s}) = 0
+        \rank(E_{1,s}) \leq 20 - (2 + (4 - 1) \times 6) = 0
     \end{equation*}
 
     As for the torsion subgroup, we have
@@ -65,7 +65,7 @@
 \end{thm}
 
 \begin{proof}[Proof of Theorem~{\ref{thm:E_{1,s_0}}}]
-    The non-singularity of the special fibers of $\mathcal{E}_{1,s}$ at $s\in \mathbb{Q}\setminus \{0,\pm 1\}$ follows from the equation \eqref{eq:discriminant1s}.
+    The non-singularity of the special fibers of $\mathcal{E}_{1,s}$ at $s \in \mathbb{Q} \setminus \{0,\pm 1 \}$ follows from the equation \eqref{eq:discriminant1s}.
     By the equation \eqref{eq:specialization} and Mazur's Theorem (Theorem~\ref{thm:mazur}), the only possibility of $E_{1,s_0}(\mathbb{Q})_{\text{tors}}$ is $\mathbb{Z} / 2 \mathbb{Z} \oplus \mathbb{Z} / 4 \mathbb{Z}$ or $\mathbb{Z} / 2 \mathbb{Z} \oplus \mathbb{Z} / 8 \mathbb{Z}$.
     For a point $P=(x,y) \in E_{1,s_0}(\mathbb{Q})$, we can calculate the $x$-coordinate of $2P$ as
     \begin{equation*}
@@ -74,19 +74,19 @@
     Assume that there is a rational point of order $8$, then there is a point $P=(x,y) \in E_{1,s_0}(\mathbb{Q})$ such that $2P = T_1 = (2s(s+1)^2, 2s(s+1)^2(s^2+1))$.
     Then we have
     \begin{equation*}
-        \frac{16s^{4}(s^{2} - 1)^{4} + 8 s^{2}(s^{2} - 1)^{2} x^{2} + x^{4}}{4 x (x - 4s^{2}) (x + (s^{2} - 1)^{2})} = 2s(s+1)^2.
+        \frac{16s^{4}(s^{2} - 1)^{4} + 8 s^{2}(s^{2} - 1)^{2} x^{2} + x^{4}}{4 x (x - 4s^{2}) (x + (s^{2} - 1)^{2})} = 2s(s + 1)^{2}.
     \end{equation*}
     Put $x' = x - 2s(s+1)^2$, then we have
     \begin{align*}
-        x'^4 &= 8s(s^{2} + 1)(s + 1)^{4}(x' + 2s(s^2+1))^{2},\\
-        x'^2 &= \pm \sqrt{8 s (s^2 + 1)} (s+1)^{2} (x' + 2s(s^2+1)).
+        x'^4 & = 8s(s^{2} + 1)(s + 1)^{4}(x' + 2s(s^2+1))^{2},        \\
+        x'^2 & = \pm \sqrt{8 s (s^2 + 1)} (s+1)^{2} (x' + 2s(s^2+1)).
     \end{align*}
     Since $x', s \in \mathbb{Q}$, we have $\sqrt{8 s (s^2 + 1)} \in \mathbb{Q}$.
     Then $(2s, \sqrt{8 s (s^2 + 1)})$ is a rational point on the elliptic curve $y^2 = x^3 + 4x$.
     However, we know that the Mordell-Weil group of $y^2 = x^3 + 4x$ over $\mathbb{Q}$ is
     \begin{equation*}
-        \{ \mathcal{O}, (0,0), (2,\pm 4) \}.
+        \{\mathcal{O}, (0,0), (2,\pm 4) \}.
     \end{equation*}
-    This contradicts the assumption that $s\in \mathbb{Q} \setminus \{0,\pm 1\}$.
+    This contradicts the assumption that $s \in \mathbb{Q} \setminus \{0,\pm 1 \}$.
 \end{proof}
 \end{document}

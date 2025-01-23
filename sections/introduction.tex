@@ -49,7 +49,7 @@ We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mat
 
 For any elliptic curves $E$ over a function field $k(C)$ of a smooth irreducible projective curve $C$ over an algebraically closed field $k$, there is an elliptic surface $\pi: \mathcal{E} \to C$ with the generic fiber $E$ called the \Neron{} model, and we can use some theorems in the theory of surfaces.
 The elliptic surface $E/k(C)$ is called the generic fiber of the elliptic surface $\mathcal{E} \to C$.
-For $s \in \overline{\mathbb{Q}}$, $\mathcal{E}_t:=\pi^{-1}(s)$ is called the special fiber at $s$.
+For $s \in \overline{\mathbb{Q}}$, $\mathcal{E}_s:=\pi^{-1}(s)$ is called the special fiber at $s$.
 For all but finitely many $s \in \overline{\mathbb{Q}}$, the special fiber at $s$ is non-singular, which means that is an elliptic curve.
 
 The Mordell's Theorem also holds for elliptic curves over a function field.
@@ -70,5 +70,15 @@ On the relation between the Mordell-Weil group of an elliptic curve over a funct
     \end{equation*}
     called the specialization homomorphism at $s$, is injective.
 \end{thm}
+
+\begin{lem}{(\cite[Exercise 3.9.(a)]{ref:advancedaec})}
+    Let $\mathcal{E}$ be an elliptic surface over $k$, and let $j_{\mathcal{E}}: C \to \mathbb{P}^1$ be a morphism such that $j_{\mathcal{E}}(v)$ gives the $j$-invariant for any non-singular fibers $\mathcal{E}_v$.
+    If $\mathcal{E}$ splits over $k$, then $j_{\mathcal{E}}$ is a constant map.
+\end{lem}
+
+\begin{rem}
+    We can easily check that all elliptic surfaces in this paper have non-constant $j$-invariants, therefore, they do not split.
+    Thus we can apply the Specialization Theorem (Theorem~\ref{thm:specialization}).
+\end{rem}
 
 \end{document}

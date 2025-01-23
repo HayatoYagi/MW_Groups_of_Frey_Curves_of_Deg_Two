@@ -15,34 +15,20 @@ On the other hand, we have only one point of infinite order in $E_{2,t}(\overlin
 \begin{table}[ht]
     \centering
     \caption{Singular fibers of $E_{2,t}$}
-    \begin{tabular}{|c|c|c|}
+    \begin{tabular}{|c|c|c|c|}
         \hline
-        Place            & Type  & $m_v$ \\
+        Place            & Type  & $m_v$ & $e$ \\
         \hline
-        $t=0$            & $I_4$ & 4     \\
-        $t=\pm 1$        & $I_4$ & 4     \\
-        $t=\pm 3$        & $I_4$ & 4     \\
-        $t=\pm \sqrt{3}$ & $I_4$ & 4     \\
-        $t^4-2t^2+9=0$   & $I_4$ & 4     \\
-        $t=\infty$       & $I_4$ & 4     \\
+        $t=0$            & $I_4$ & 4     & 4   \\
+        $t=\pm 1$        & $I_4$ & 4     & 4   \\
+        $t=\pm 3$        & $I_4$ & 4     & 4   \\
+        $t=\pm \sqrt{3}$ & $I_4$ & 4     & 4   \\
+        $t^4-2t^2+9=0$   & $I_4$ & 4     & 4   \\
+        $t=\infty$       & $I_4$ & 4     & 4   \\
         \hline
     \end{tabular}
     \label{tab:E_{2,t}}
 \end{table}
-% \begin{proof}
-%     \begin{equation}
-%         \Delta_{E_{2,t}} = 4096t^{4}(t - 1)^{4}(t + 1)^{4}(t - 3)^{4}(t + 3)^{4}(t^{2} - 3)^{4}(t^{4} - 2t^{2} + 9)^{4}
-%     \end{equation}
-
-%     \begin{equation}
-%         e(\mathcal{E}_{2,t}) = 48
-%     \end{equation}
-%     TODO: $\rho(\mathcal{E}_{2,t}) \leq 40$ である．
-%     Theorem~\ref{thm:shioda} より
-%     \begin{equation}
-%         \rank E_{2,t}(\overline{\mathbb{Q}}(t)) \leq 2
-%     \end{equation}
-% \end{proof}
 
 \begin{lem}
     \begin{equation*}
@@ -71,7 +57,6 @@ On the other hand, we have only one point of infinite order in $E_{2,t}(\overlin
     \end{equation*}
 \end{proof}
 Now, our goal is to show the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ is not greater than $1$.
-
 We use another method to estimate an upper bound of the rank of \Neron-Severi group, which we will explain in Section~\ref{sec:reduction}.
 Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms of ranks of elliptic curves with lower order coefficients in the Weierstrass equations to make the later computation feasible.
 
@@ -110,9 +95,10 @@ Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms 
         \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) & = \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) + \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)). \label{eq:twist2}
     \end{align}
     Therefore, we have
-    \begin{equation*}
+    \begin{equation}
+        \label{eq:rankdecomposition}
         \rank E_{2,t}(\overline{\mathbb{Q}}(t)) = \rank E_{1,s}(\overline{\mathbb{Q}}(s)) + \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) + \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)).
-    \end{equation*}
+    \end{equation}
 \end{thm}
 \begin{proof}
     Since solving $s = \frac{2t}{t^{2} - 3}$ for $t$ yields $t = \frac{1 \pm \sqrt{1 + 3s^{2}}}{s}$, we have
@@ -127,81 +113,8 @@ Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms 
     then we get \eqref{eq:twist2}.
 \end{proof}
 
-% \begin{thm}
-    % TODO
-    % \begin{equation*}
-        % \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = ?
-        %\end{equation*}
-    % \end{thm}
-
-% \begin{proof}
-    % \begin{equation*}
-        % \Delta(E_{1,s}^{(1 + 3s^{2})}) = (1 + 3s^{2})^{6} \Delta(E_{1,s})
-        %\end{equation*}
-    % \begin{table}[h]
-        % \centering
-        % \caption{Singular fibers of $E_{1,s}^{(1 + 3s^{2})}$}
-        % \begin{tabular}{|c|c|c|}
-            % \hline
-            % Place                        & Type    & $m_v$ \\
-            % \hline
-            % $s=0$                        & $I_4$   & 4     \\
-            % $s=\pm 1$                    & $I_4$   & 4     \\
-            % $s=\pm \sqrt{-1}$            & $I_4$   & 4     \\
-            % $s=\pm \frac{1}{\sqrt{-3}} $ & $I_0^*$ & 5     \\
-            % $s=\infty$                   & $I_4$   & 4     \\
-            % \hline
-            %\end{tabular}
-        % \end{table}
-    % \begin{equation*}
-        % e(\mathcal{E}_{1,s}^{(1 + 3s^{2})}) = 36
-        %\end{equation*}
-    % Theorem~\ref{thm:shioda}からは
-    % \begin{equation*}
-        % \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) \leq 2
-        %\end{equation*}
-    % しか分からない．
-    % K3ですらないので， $H^2$の次元が分からず， reduction を取る方法でも計算が進められない．
-    % \begin{equation*}
-        % \rank E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = ? (1 or 2)
-        %\end{equation*}
-    % \end{proof}
-
-
-% \begin{thm}
-%     \begin{equation}
-%         \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) \leq 1
-%     \end{equation}
-% \end{thm}
-% \begin{proof}
-%     The discriminant of $E_{0,u}^{(1 + 3u)}$ is
-%     \begin{equation}
-%         \Delta(E_{0,u}^{(1 + 3u)}) = 256u^{2}(u - 1)^{4}(u + 1)^{4}(3u + 1)^{6},
-%     \end{equation}
-%     and the types of the singular fibers of $E_{0,u}^{(1 + 3u)}$ are calculated as in Table~\ref{tab:E_{0,u}^{(1 + 3u)}} below by Tate's algorithm.
-%     \begin{table}[h]
-%         \centering
-%         \caption{Singular fibers of $E_{0,u}^{(1 + 3u)}$}
-%         \begin{tabular}{|c|c|c|}
-%             \hline
-%             Place            & Type    & $m_v$ \\
-%             \hline
-%             $u=0$            & $I_2$   & 2     \\
-%             $u=\pm 1$        & $I_4$   & 4     \\
-%             $u=-\frac{1}{3}$ & $I_0^*$ & 5     \\
-%             $u=\infty$       & $I_2^*$ & 7     \\
-%             \hline
-%         \end{tabular}
-%         \label{tab:E_{0,u}^{(1 + 3u)}}
-%     \end{table}
-%     \begin{equation}
-%         e(\mathcal{E}_{0,u}^{(1 + 3u)}) = 24
-%     \end{equation}
-%     Theorem~\ref{thm:shioda}からは
-%     \begin{equation}
-%         \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) \leq 1
-%     \end{equation}
-% \end{proof}
+We already know that the rank of $E_{1,s}(\overline{\mathbb{Q}})$ is $0$.
+The rank of $E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u))$ in the equation \eqref{eq:rankdecomposition} can also be calculated easily as follows.
 
 \begin{thm}
     \begin{equation*}
@@ -222,22 +135,26 @@ Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms 
     \begin{table}[ht]
         \centering
         \caption{Singular fibers of $E_{0,u}^{(u(1 + 3u))}$}
-        \begin{tabular}{|c|c|c|}
+        \begin{tabular}{|c|c|c|c|}
             \hline
-            Place            & Type    & $m_v$ \\
+            Place            & Type    & $m_v$ & $e$ \\
             \hline
-            $u=0$            & $I_2^*$ & 7     \\
-            $u=\pm 1$        & $I_4$   & 4     \\
-            $u=-\frac{1}{3}$ & $I_0^*$ & 5     \\
-            $u=\infty$       & $I_2$   & 2     \\
+            $u=0$            & $I_2^*$ & 7     & 8   \\
+            $u=\pm 1$        & $I_4$   & 4     & 4   \\
+            $u=-\frac{1}{3}$ & $I_0^*$ & 5     & 6   \\
+            $u=\infty$       & $I_2$   & 2     & 2   \\
             \hline
         \end{tabular}
         \label{tab:E_{0,u}^{(u(1 + 3u))}}
     \end{table}
-    In the same way as the proof of Theorem~\ref{thm:E_{1,s}}, we have
+    In the same way as the proof of Theorem~\ref{thm:E_{1,s}}, we have $e(\mathcal{E}_{0,u}^{(u(1 + 3u))}) = 8 + 4 \times 2 + 6 + 2 = 24$ and
     \begin{equation*}
-        \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)) \leq 1.
+        \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)) \leq 20 - (2 + (7 - 1) + (4 - 1) \times 2 + (5 - 1) + (2 - 1)) = 1.
     \end{equation*}
 \end{proof}
+
+The remaining task is to calculate the rank of $E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u))$.
+Theorem~\ref{thm:rho} gives the rank is not greater than $1$, which is not sharp.
+We will show the rank is $0$ in the next section.
 
 \end{document}

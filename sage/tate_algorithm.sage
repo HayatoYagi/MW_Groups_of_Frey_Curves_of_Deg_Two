@@ -10,8 +10,8 @@ def my_factor(f):
 def tate(f):
     E = EllipticCurve(f)
     print("[" + str(E.a1()) + ", " + str(E.a2()) + ", " + str(E.a3()) + ", " + str(E.a4()) + ", " + str(E.a6()) + "]")
-    print("j:", E.j_invariant())
     print("discriminant:", factor(E.discriminant()))
+    print("j:", latex(factor(E.j_invariant())))
     print("b2:", my_factor(E.b2()))
     print("b6:", my_factor(E.b6()))
     print("b8:", my_factor(E.b8()))
