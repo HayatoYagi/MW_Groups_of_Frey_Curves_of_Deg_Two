@@ -1,0 +1,80 @@
+% pLaTeX でタイプセットする
+% platex masterabs.tex && dvipdfmx masterabs.dvi
+% dvipdfmx masterabs.dvi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%  Example: extended abstract for master thesis
+%%%%%%%  version 1.0
+%%%%%%%  file name: template.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------------- start preamble -------------------------------
+\documentclass[a4paper]{jarticle} % 10pt fonts, default fonts
+%\documentclass[a4paper,11pt]{jarticle} % 11pt fonts
+%\documentclass[a4paper,12pt]{jarticle} % 12pt fonts
+%--------------------------------------------------------------
+\usepackage{masterabs} % 修士論文アブストラクトのスタイルファイル
+%--------------------------------------------------------------
+% \usepackage{amsmath,amsthm,mathrsfs} % amslatex モードの指定
+% \usepackage{amsfonts,amssymb,txfonts} % amsfonts の指定
+% \usepackage{graphicx} % 図の挿入の指定 (\includegraphicsなど)
+%--------------------------------------------------------------
+% \columnseprule = 0.4pt % two columnの真ん中に縦線を引く
+%--------   英文の場合: 表，図、参考文献を英語に変更 ----------------
+\initenglish % 本文が英文の場合は % を取る(表＝>Tab., 図＝>Fig.など)
+%--------------------------------------------------------------------
+%
+
+
+%-------------- end preamble ----------------------------------
+%
+%%%%%%    TEXT START    %%%%%%
+
+\begin{document}
+%
+%-------------- two column -------------------------
+% \twocolumn[ % two column の場合は，先頭の % を取る
+%---------------------------------------------------
+%
+%---------------------------------------------------------------------------
+\no_tlfnmark % タイトルの最後にfootnote markを付けない場合は，先頭の % を取る
+%---------------------------------------------------------------------------
+%%% タイトルが １行 \title{タイトル}を使う
+%%% タイトルが 2 行にわたるときは \2ltitle{１行目}{２行目}を使う
+%---------------------------------------------------------------
+% \title{On the Mordell-Weil groups of elliptic surfaces associated with Frey curves of degree two} % 1 行用
+%
+\2ltitle{On the Mordell-Weil groups of elliptic surfaces}{associated with Frey curves of degree two} % 2 行用
+%
+%-------------------------------------------
+% 日本語指導教員，著者名など
+%-------------------------------------------
+\begin{preliminary}
+\profname{栗原将人教授}       %% 指導教員の名前 + 講師，准教授，教授
+\name{82313206}{八木颯仁} %% 学籍番号, 著者名
+\end{preliminary}
+%
+%---------- two column ----------------------
+% ]% two columnの場合は，先頭の % を取る
+%--------------------------------------------
+%
+%------- footnote に英文のタイトルを記述したいとき ----------------
+% \etitle{On the Mordell-Weil groups of elliptic surfaces associated with Frey curves of degree two}
+%----------------------------------------------------------------
+%
+\init_fnmark % 脚注マークの初期化(アラビア数字に変更）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  本文　%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+intro description
+
+
+
+%%%%%%%%%%%%% 参考文献 %%%%%%%%%%%
+%\begin{thebibliography}{99}
+%\bibitem
+%\bibitem
+%
+%\end{thebibliography}
+
+
+\end{document}

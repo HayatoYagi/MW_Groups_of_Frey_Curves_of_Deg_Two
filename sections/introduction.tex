@@ -2,84 +2,83 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-\chapter{Introduction}
-Let $(a,b,c)$ be a Pythagorean triple, i.e., $a^{2} + b^{2} = c^{2}$, $abc\neq0$, and $a,b,c \in \mathbb{Z}$, and consider the elliptic curve defined by a Weierstrass equation
-\begin{equation}
-    y^{2} = x(x - a^{2})(x + b^{2}),
-\end{equation}
-which we call the Frey curve of degree $2$.
-There are several examples of this form with rank $0$ and $1$.
+\section{Introduction}
 
-We can parameterize the Frey curves of degree $2$ by $s \in \mathbb{Q}$, then the family of the Frey curves of degree $2$ is equivalent to a family of elliptic curves with the following Weierstrass equation
+Let $a,b,c$ be positive integers which satisfy the Fermat's equation
+\begin{equation*}
+    a^{n} + b^{n} = c^{n}.
+\end{equation*}
+for any integer $n \geq 3$ and consider the elliptic curve defined by the Weierstrass equation
+\begin{equation*}
+    y^{2} = x(x - a^{n})(x + b^{n}),
+\end{equation*}
+which is called the Frey curve.
+The Frey curve took an important role in the proof of Fermat's Last Theorem by Wiles.
+Wiles proved that the Frey curve cannot exist, which implies that the Fermat's equation has no nontrivial solution.
+
+In this paper, we consider elliptic curves in the form of the Frey curves for $n=2$.
+In other words, let $(a,b,c)$ be a Pythagorean triple, i.e., $a^{2} + b^{2} = c^{2}$, and consider the elliptic curve defined by the Weierstrass equation
+\begin{equation*}
+    y^{2} = x(x - a^{2})(x + b^{2}),
+\end{equation*}
+which we call the Frey curve of degree $2$.
+The Frey curves of degree $2$ do exist infinitely unlike for $n \geq 3$.
+
+% 楕円曲線の研究において Mordell-Weil 群は重要な対象であることを書く
+For an elliptic curve $E$ defined over a field $K$, the Mordell-Weil group $E(K)$ is a group consisting of all K-rational points on $E$.
+The Mordell-Weil group is an important object in the study of elliptic curves.
+
+\begin{thm}{(Mordell's Theorem)}
+    \label{thm:mordell}
+    Let $E$ be an elliptic curve defined over a number field $K$.
+    Then the Mordell-Weil group $E(K)$ is a finitely generated abelian group.
+\end{thm}
+By the structure theorem of finite abelian groups, the Mordell-Weil group can be decomposed into a free part and a torsion part:
+\begin{equation*}
+    E(K) \cong \mathbb{Z}^{\oplus r} \oplus E(K)_{\text{tors}}
+\end{equation*}
+where $r$ is the rank of the Mordell-Weil group and $E(K)_{\text{tors}}$ is the torsion subgroup of $E(K)$.
+
+We can one-parameterize Pythagorean triples by rational numbers and then the Frey curves of degree $2$ are isomorphic to
 \begin{equation}
-    E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2}).
+    \label{eq:E_{1,s}}
+    E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2})
 \end{equation}
+for some $s \in \mathbb{Q}$.
 We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mathbb{Q}}(s)$.
-On the relation between an elliptic curve over a function field and its special fibers, the following theorem is known.
+
+For any elliptic curves $E$ over a function field $k(C)$ of a smooth irreducible projective curve $C$ over an algebraically closed field $k$, there is an elliptic surface $\pi: \mathcal{E} \to C$ with the generic fiber $E$ called the \Neron{} model, and we can use some theorems in the theory of surfaces.
+The elliptic surface $E/k(C)$ is called the generic fiber of the elliptic surface $\mathcal{E} \to C$.
+For $s \in \overline{\mathbb{Q}}$, $\mathcal{E}_s:=\pi^{-1}(s)$ is called the special fiber at $s$.
+For all but finitely many $s \in \overline{\mathbb{Q}}$, the special fiber at $s$ is non-singular, which means that is an elliptic curve.
+
+The Mordell's Theorem also holds for elliptic curves over a function field.
+\begin{thm}{(\cite[Theorem 6.1.]{ref:advancedaec})}
+    \label{thm:mordell_function_field}
+    Let $\mathcal{E} \to C$ be an elliptic surface defined over a field $k$ and $E$ be the corresponding elliptic curve over the function field $k(C)$.
+    If $\mathcal{E} \to C$ does not split, then the Mordell-Weil group $E(k(C))$ is a finitely generated abelian group.
+\end{thm}
+
+On the relation between the Mordell-Weil group of an elliptic curve over a function field and its special fibers, the following theorem is known.
 \begin{thm}{(Specialization Theorem, \cite[Theorem 11.4.]{ref:advancedaec})}
     \label{thm:specialization}
-    Let $E$ be an elliptic curve over a function field $k(C)$ of a smooth projective curve $C$ over an algebraically closed field $k$.
-    Let $\pi: \mathcal{E} \to C$ be the \Neron{} model of $E$ and $F_v:=\pi^{-1}(v)$ be the special fiber for $v \in C(k)$.
-    Then for all but finitely many $v \in C(k)$, a map
-    \begin{equation}
-        E(k(C)) \hookrightarrow F_{v}(k),
-    \end{equation}
-    called the specialization map at $v \in C(k)$, is injective
+    Let $\mathcal{E} \to C$ be a non-split elliptic surface defined over a number field $k$ and $E$ be the corresponding elliptic curve over the function field $k(C)$.
+    Let $k'=k$ or $\overline{k}$.
+    Then for all but finitely many $s \in C(k')$, a homomorphism
+    \begin{equation*}
+        E(k(C)) \hookrightarrow \mathcal{E}_{s}(k'),
+    \end{equation*}
+    called the specialization homomorphism at $s$, is injective.
 \end{thm}
 
-First, we determine the Mordell-Weil group of $E_{1,s}$.
-
-\begin{thm}
-    \label{thm:E_{1,s}}
-    The Mordell-Weil group of $E_{1,s}$ over $\overline{\mathbb{Q}}(s)$ satisfies
-    \begin{equation}
-        E_{1,s}(\overline{\mathbb{Q}}(s)) \cong \mathbb{Z} / 4 \mathbb{Z} \oplus \mathbb{Z} / 4 \mathbb{Z},
-    \end{equation}
-    especially the rank is $0$. The torsion subgroup is generated by
-    \begin{align}
-        T_1 & := (2s(s+1)^2, 2s(s+1)^2(s^2+1)),                              \\
-        T_2 & := (2 \sqrt{-1} s(s^2-1),2 \sqrt{-1} s(s+\sqrt{-1})^2(s^2-1)).
-    \end{align}
-\end{thm}
-
-\begin{cor}
-    \begin{equation}
-        E_{1,s}(\mathbb{Q}(s)) \cong \mathbb{Z} / 2 \mathbb{Z} \oplus \mathbb{Z} / 4 \mathbb{Z}
-    \end{equation}
-    is generated by $T_1$ and $2T_2=(0,0)$.
-\end{cor}
+\begin{lem}{(\cite[Exercise 3.9.(a)]{ref:advancedaec})}
+    Let $\mathcal{E}$ be an elliptic surface over $k$, and let $j_{\mathcal{E}}: C \to \mathbb{P}^1$ be a morphism such that $j_{\mathcal{E}}(v)$ gives the $j$-invariant for any non-singular fibers $\mathcal{E}_v$.
+    If $\mathcal{E}$ splits over $k$, then $j_{\mathcal{E}}$ is a constant map.
+\end{lem}
 
 \begin{rem}
-    課題研究では，多項式の解の非存在から背理法を用いて 8-torsion point が存在しないことを示した．
-    TODO: specialization theorem は injectivity しか言ってないので, 各 special fiber について 8-torsion point が存在しないことを示した課題研究は上の系より真に強い？
+    We can easily check that all elliptic surfaces in this paper have non-constant $j$-invariants, therefore, they do not split.
+    Thus we can apply the Specialization Theorem (Theorem~\ref{thm:specialization}).
 \end{rem}
-
-Inspite of the fact that the generic rank of $E_{1,s}$ is $0$, Yoshida (\cite[Corollary 4.7.]{ref:yoshida}) showed that there are infinitely many $s \in \mathbb{Q}$ such that the Mordell-Weil group of $E_{1,s}$ has positive rank over $\mathbb{Q}$.
-However, the infinite family is not explicitly parameterized.
-We find the subset of $s \in \overline{{\mathbb{Q}}}$ with the positive rank of the Mordell-Weil group of $E_{1,s}$ parameterized by an rational function of one variable $t \in \overline{\mathbb{Q}}$.
-In order to prove it, by the specialization theorem (Theorem~\ref{thm:specialization}), it is enough to find a subfamily of $E_{1,s}$ whose generic rank is $1$.
-
-By substituting $s = \frac{2t}{t^{2} - 3}$ into $E_{1,s}$, we get a new family of elliptic curves
-\begin{equation}
-    \label{eq:E_{2,t}}
-        E_{2,t}: y^{2} = x\left(x - 4\left(\frac{2t}{t^{2} - 3}\right)^{2}\right)\left(x + \left(\left(\frac{2t}{t^{2} - 3}\right)^{2} - 1\right)^{2}\right),
-    \end{equation}
-which is a subfamily of $E_{1,s}$.
-
-The following is our main result.
-\begin{thm}
-    \label{thm:E_{2,t}}
-    The Mordell-Weil group of $E_{2,t}$ over $\overline{\mathbb{Q}}(t)$ satisfies
-    \begin{equation}
-        E_{2,t}(\overline{\mathbb{Q}}(t)) \cong \mathbb{Z} \oplus \mathbb{Z} / 4 \mathbb{Z} \oplus \mathbb{Z} / 4 \mathbb{Z},
-    \end{equation}
-    especially the rank is $1$.
-    We denote $s = \frac{2t}{t^{2} - 3}$. The torsion subgroup is generated by $T_1$ and $T_2$ in Theorem~\ref{thm:E_{1,s}} and the free part is generated by
-    \begin{equation}
-        \left(s^{2} - 1, \sqrt{-1} s(s^{2} - 1) \frac{t^{2} + 3}{t^{2} - 3} \right).
-    \end{equation}
-\end{thm}
-The important point is that we prove that the generic rank of $E_{2,t}$ is exactly $1$, not only the existence of a point of infinite order.
-Our proof is based on the method of Naskręcki in \cite{ref:naskrecki2013}.
 
 \end{document}
