@@ -6,15 +6,15 @@
 \section{Reductions}
 \label{sec:reduction}
 
-Let $A$ be a discrete valuation ring of a number field $K$ with maximal ideal $\mathfrak{m}$, whose residue field $k$ has $q=p^r$ elements with $p$ prime.
+Let $A$ be a discrete valuation ring with maximal ideal $\mathfrak{m}$ and fraction field $K$.
+Assume that the residue field $k=A/\mathfrak{m}$ has $q=p^r$ elements with $p$ prime.
 Let $S$ be an integral scheme with a morphism $S \to \Spec A$ that is projective and smooth of relative dimension $2$.
 Then the projective surface $\overline{S}=S_{\overline{\mathbb{Q}}}$ and $\tilde{S}=S_{\overline{k}}$ are smooth over the algebraically closed field $\overline{\mathbb{Q}}$ and $\overline{k}$, respectively.
 We will assume that $\overline{S}$ and $\tilde{S}$ are integrals, i.e., they are irreducible, nonsingular, projective surfaces.
 
-For $l \neq p$ be a prime number, we denote by $H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_l)$ the $l$-adic \'etale cohomology group of $X$ and by $H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_l)(1)$ the Tate twist of it.
+For a prime number $l \neq p$, we denote by $H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_l)$ the $l$-adic \'etale cohomology group of $X$ and by $H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_l)(1)$ its Tate twist.
 
 \begin{thm}{(\cite[Proposition 6.2.]{ref:vanluijk2007})}
-
     There are natural injective homomorphisms
     \begin{equation*}
         \NS (\overline{S}) \otimes_{\mathbb{Z}} \mathbb{Q}_{l} \hookrightarrow \NS (\tilde{S}) \otimes_{\mathbb{Z}} \mathbb{Q}_{l} \hookrightarrow H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_{l})(1)
@@ -32,7 +32,7 @@ Set $\varphi:=F^{r}$ and let $\varphi^{(i)}$ denote the automorphism on $H_{\tex
 
 \begin{rem}{(\cite[Remark 6.5.]{ref:vanluijk2007})}
     Tate's conjecture states that the upper bound mentioned in Corollary~\ref{cor:ns_upper_bound} is actually equal to the rank of $\NS (\tilde{S})$.
-    Tate's conjecture has been proven for elliptic K3 surfaces.
+    Tate's conjecture has been proven for elliptic K3 surfaces by Artin and Swinnerton-Dyer \cite{ref:Artin1973}.
 \end{rem}
 
 Now we want to calculate the characteristic polynomial $\chara (\varphi^{(2)})$.
@@ -96,8 +96,8 @@ Here, by \eqref{eq:trcomposition} and Corollary~\ref{cor:lefschetz}, we have
 \end{thm}
 \begin{proof}
     We denote by $S=\mathcal{E}_{0,u}^{(1 + 3u)} \to \mathbb{P}^1$ the elliptic surface with the generic fiber $E_{0,u}^{(1 + 3u)}$.
-    Put $\mathfrak{p}=(5)\in \Spec \mathbb{Z}$ and $A = \mathbb{Z}_{\mathfrak{p}}$.
-    The residue field $k=A/\mathfrak{p}\cong \mathbb{F}_{5}$.
+    Put $\mathfrak{p}=(5) \in \Spec \mathbb{Z}$ and $A = \mathbb{Z}_{\mathfrak{p}}$.
+    The residue field $k=A/\mathfrak{p} \cong \mathbb{F}_{5}$.
     $S$ defines an elliptic surface $\tilde{S} = S_{\overline{\mathbb{F}_{5}}} \to \mathbb{P}^1$.
     We can check that $\tilde{S}$ has exactly the same types of singular fibers as $S$.
 
@@ -120,35 +120,62 @@ Here, by \eqref{eq:trcomposition} and Corollary~\ref{cor:lefschetz}, we have
     \begin{equation*}
         \dim_{\mathbb{Q}_{l}} H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_{l}) = 22.
     \end{equation*}
-    $V$ is of rank 19, on which the Frobenius automorphism acts by multiplication by $p$.
-
+    $V$ is of rank 19, on which the Frobenius automorphism acts by multiplication by $5$.
+    Thus
     \begin{equation*}
         \chara (\varphi^{(2)} | V) = (x - 5)^{19}
     \end{equation*}
 
+    In order to calculate the characteristic polynomial of $\varphi^{(2)}_{W}$, we need to compute the number of points on $\tilde{S}$ over finite fields $\mathbb{F}_{5^{m}}$.
     Note that all the multiplicative fibers are split in $\mathbb{F}_{5^{m}}$ for $m=1,2,3$.
-
-    \begin{equation*}
-        t_{m} = \# \tilde{S}(\mathbb{F}_{5^{m}}) - 1 - 5^{2m} - 19 \cdot 5^{m}
-    \end{equation*}
-
+    We count the number of points on each special fibers.
+    For non-singular fibers, the Schoof-Elkies-Atkin (SEA) algorithm, which calculates the number of points on an elliptic curve over a finite field, is known and can be used.
+    For each singular fiber, the number of points is determined by the type of the fiber.
+    Singular fibers' configurations are as shown in Table~\ref{tab:kodaira} where each component is $\mathbb{P}^{1}$ (TODO: 絵を貼る).
+    We get Table~\ref{tab:reductionpoints} by subtracting from $m_v\times\#\mathbb{P}^1(\mathbb{F}_{q^m}) = m_v(q^m + 1)$ the number of points that are counted twice or more.
     \begin{table}[ht]
         \centering
-        % \caption{Sample Table}
+        \caption{Number of points on each singular fiber over a finite field\\ (TODO: $I_n$ と $I_n^*$しか使わないが他も書くか？)}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Type             & Configuration & $\mathcal{E}_v(\mathbb{F}_{q^{m}})$ \\
+            \hline
+            $\mathrm{I}_n$   & x             & $nq^m$                              \\
+            $\mathrm{II}$    & x             & x                                   \\
+            $\mathrm{III}$   & x             & x                                   \\
+            $\mathrm{IV}$    & x             & x                                   \\
+            $\mathrm{I}_n^*$ & x             & $(n+5) q^m+1$                         \\
+            $\mathrm{II}^*$  & x             & x                                \\
+            $\mathrm{III}^*$ & x             & x                                 \\
+            $\mathrm{IV}^*$  & x             & x                                 \\
+            \hline
+        \end{tabular}
+        \label{tab:reductionpoints}
+    \end{table}
+    
+    \begin{equation*}
+        t_{m} = \# \tilde{S}(\mathbb{F}_{5^{m}}) - 1 - 5^{2m} - 19 \cdot 5^{m}.
+    \end{equation*}
+
+    These calculations result in Table~\ref{tab:tm}.
+    \begin{table}[hb]
+        \centering
+        \caption{$\# \tilde{S}(\mathbb{F}_{5^{m}})$ and $t_{m}$}
         \begin{tabular}{|c|c|c|c|}
             \hline
-            m                                & 1   & 2    & 3     \\
+            $m$                                & 1   & 2    & 3     \\
             \hline
             $\# \tilde{S}(\mathbb{F}_{5^m})$ & 120 & 1080 & 18264 \\
             \hline
             $t_m$                            & -1  & -21  & 263   \\
             \hline
         \end{tabular}
-        \label{tab:sample}
+        \label{tab:tm}
     \end{table}
 
+    Therefore, we have
     \begin{equation*}
-        \chara(\varphi_{W}^{(2)}) = x^{3} + x^{2} + 11 x - 77
+        \chara(\varphi_{W}^{(2)}) = x^{3} + x^{2} + 11 x - 77.
     \end{equation*}
 
     If $\chara (\varphi_{W}^{(2)})$ has a root of the form $x=5 \zeta$ for some root of unity $\zeta$, then $\zeta$ is a root of the polynomial

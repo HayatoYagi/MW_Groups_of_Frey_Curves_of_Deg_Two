@@ -4,6 +4,23 @@
 \begin{document}
 \section{Introduction}
 
+An elliptic curve is a smooth projective curve of genus $1$.
+For points on an elliptic curve we can define an addition law, which makes the set of points on an elliptic curve into an abelian group with the identity element being the point at infinity.
+For an elliptic curve $E$ defined over a field $K$, the Mordell-Weil group $E(K)$ is a group consisting of all K-rational points on $E$.
+
+\begin{thm}{(Mordell's Theorem)}
+    \label{thm:mordell}
+    Let $E$ be an elliptic curve defined over a number field $K$.
+    Then the Mordell-Weil group $E(K)$ is a finitely generated abelian group.
+\end{thm}
+By the structure theorem of finite abelian groups, the Mordell-Weil group can be decomposed into a free part and a torsion part:
+\begin{equation*}
+    E(K) \cong \mathbb{Z}^{\oplus r} \oplus E(K)_{\text{tors}}
+\end{equation*}
+where $r$ is the rank of the Mordell-Weil group and $E(K)_{\text{tors}}$ is the torsion subgroup of $E(K)$.
+The Mordell-Weil group is an important object in the study of elliptic curves.
+Especially, the rank of the Mordell-Weil group is important and difficult to determine.
+
 Let $a,b,c$ be positive integers which satisfy the Fermat's equation
 \begin{equation*}
     a^{n} + b^{n} = c^{n}.
@@ -17,37 +34,27 @@ The Frey curve took an important role in the proof of Fermat's Last Theorem by W
 Wiles proved that the Frey curve cannot exist, which implies that the Fermat's equation has no nontrivial solution.
 
 In this paper, we consider elliptic curves in the form of the Frey curves for $n=2$.
-In other words, let $(a,b,c)$ be a Pythagorean triple, i.e., $a^{2} + b^{2} = c^{2}$, and consider the elliptic curve defined by the Weierstrass equation
-\begin{equation*}
+In other words, let $(a,b,c)\in\mathbb{Z}^3$ be a Pythagorean triple and consider the elliptic curve defined by the Weierstrass equation
+\begin{equation}
+    \label{eq:2frey}
     y^{2} = x(x - a^{2})(x + b^{2}),
-\end{equation*}
+\end{equation}
 which we call the Frey curve of degree $2$.
 The Frey curves of degree $2$ do exist infinitely unlike for $n \geq 3$.
 
-% 楕円曲線の研究において Mordell-Weil 群は重要な対象であることを書く
-For an elliptic curve $E$ defined over a field $K$, the Mordell-Weil group $E(K)$ is a group consisting of all K-rational points on $E$.
-The Mordell-Weil group is an important object in the study of elliptic curves.
-
-\begin{thm}{(Mordell's Theorem)}
-    \label{thm:mordell}
-    Let $E$ be an elliptic curve defined over a number field $K$.
-    Then the Mordell-Weil group $E(K)$ is a finitely generated abelian group.
-\end{thm}
-By the structure theorem of finite abelian groups, the Mordell-Weil group can be decomposed into a free part and a torsion part:
-\begin{equation*}
-    E(K) \cong \mathbb{Z}^{\oplus r} \oplus E(K)_{\text{tors}}
-\end{equation*}
-where $r$ is the rank of the Mordell-Weil group and $E(K)_{\text{tors}}$ is the torsion subgroup of $E(K)$.
-
-We can one-parameterize Pythagorean triples by rational numbers and then the Frey curves of degree $2$ are isomorphic to
+We can parameterize Pythagorean triples $(a,b,c)$ by $m,n \in \mathbb{Z}$ with $(m,n)=1$ as $(a,b,c) = (2mn, m^{2} - n^{2}, m^{2} + n^{2})$.
+Then the equation \eqref{eq:2frey} can be written as $y^{2} = x(x - 4m^2n^2)(x + (m^{2} - n^2)^{2})$.
+We replace $x,y$ by $n^2x, n^3y$ and put $s = m/n$.
+Then we get an elliptic curve
 \begin{equation}
     \label{eq:E_{1,s}}
-    E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2})
+    E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2}).
 \end{equation}
-for some $s \in \mathbb{Q}$.
 We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mathbb{Q}}(s)$.
 
-For any elliptic curves $E$ over a function field $k(C)$ of a smooth irreducible projective curve $C$ over an algebraically closed field $k$, there is an elliptic surface $\pi: \mathcal{E} \to C$ with the generic fiber $E$ called the \Neron{} model, and we can use some theorems in the theory of surfaces.
+For any elliptic curves $E$ over a function field $k(C)$ of a smooth irreducible projective curve $C$ over an algebraically closed field $k$, there is an elliptic surface $\pi: \mathcal{E} \to C$ with the generic fiber $E$ called the \Neron{} model.
+We can use tools in the theory of surfaces by associating an elliptic surface $\mathcal{E}_{1,s} \to \mathbb{P}^1$ to $E_{1,s}$.
+
 The elliptic surface $E/k(C)$ is called the generic fiber of the elliptic surface $\mathcal{E} \to C$.
 For $s \in \overline{\mathbb{Q}}$, $\mathcal{E}_s:=\pi^{-1}(s)$ is called the special fiber at $s$.
 For all but finitely many $s \in \overline{\mathbb{Q}}$, the special fiber at $s$ is non-singular, which means that is an elliptic curve.

@@ -5,7 +5,7 @@
 \usepackage{subfiles} % 大規模な文章を分割して記述して，統合するためのパッケージ
 \usepackage[unicode,hidelinks,pdfusetitle]{hyperref}
 \numberwithin{equation}{section}
-\usepackage[sorting=none,date=year,isbn=false,doi,giveninits,urldate=iso,seconds]{biblatex} % biblatexを使用するためのパッケージ
+\usepackage[sorting=nyt,date=year,isbn=false,doi=false,url=false,giveninits]{biblatex} % biblatexを使用するためのパッケージ
 \addbibresource{references.bib}
 
 \theoremstyle{definition}
@@ -36,9 +36,13 @@
 \subfile{sections/title}
 \newpage
 
-\maketitle
+\subfile{sections/abstract_ja}
+\newpage
 
 \subfile{sections/abstract}
+\newpage
+
+\maketitle
 
 \subfile{sections/introduction.tex}
 \subfile{sections/main_theorem.tex}
