@@ -132,7 +132,7 @@ Here, by \eqref{eq:trcomposition} and Corollary~\ref{cor:lefschetz}, we have
     For non-singular fibers, the Schoof-Elkies-Atkin (SEA) algorithm, which calculates the number of points on an elliptic curve over a finite field, is known and can be used.
     For each singular fiber, the number of points is determined by the type of the fiber.
     Singular fibers' configurations are as shown in Table~\ref{tab:kodaira} where each component is $\mathbb{P}^{1}$ (TODO: 絵を貼る).
-    We get the next table by subtracting from $m_v\times\#\mathbb{P}^1(\mathbb{F}_{q^m}) = m_v(q^m + 1)$ the number of points that are counted twice or more.
+    We get Table~\ref{tab:reductionpoints} by subtracting from $m_v\times\#\mathbb{P}^1(\mathbb{F}_{q^m}) = m_v(q^m + 1)$ the number of points that are counted twice or more.
     \begin{table}[ht]
         \centering
         \caption{Number of points on each singular fiber over a finite field\\ (TODO: $I_n$ と $I_n^*$しか使わないが他も書くか？)}
@@ -150,13 +150,14 @@ Here, by \eqref{eq:trcomposition} and Corollary~\ref{cor:lefschetz}, we have
             $\mathrm{IV}^*$  & x             & x                                 \\
             \hline
         \end{tabular}
+        \label{tab:reductionpoints}
     \end{table}
     
     \begin{equation*}
         t_{m} = \# \tilde{S}(\mathbb{F}_{5^{m}}) - 1 - 5^{2m} - 19 \cdot 5^{m}.
     \end{equation*}
 
-    These calculations result in the following table.
+    These calculations result in Table~\ref{tab:tm}.
     \begin{table}[hb]
         \centering
         \caption{$\# \tilde{S}(\mathbb{F}_{5^{m}})$ and $t_{m}$}
@@ -169,6 +170,7 @@ Here, by \eqref{eq:trcomposition} and Corollary~\ref{cor:lefschetz}, we have
             $t_m$                            & -1  & -21  & 263   \\
             \hline
         \end{tabular}
+        \label{tab:tm}
     \end{table}
 
     Therefore, we have
