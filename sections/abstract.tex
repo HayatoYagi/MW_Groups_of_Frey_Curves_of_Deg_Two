@@ -5,13 +5,13 @@
 \renewcommand{\abstractname}{Thesis Abstract}
 \begin{abstract}
     % 400 words 程度
-    We study a family of elliptic curves $y^2 = x (x - a^2)(x+b^2)$, where $(a,b,c)$ are Pythagorean triples.
+    For Pythagorean triples $(a,b,c) \in \mathbb{Q}^{3}$, we study a family of elliptic curves $y^2 = x (x - a^2)(x+b^2)$.
     This is the family of the Frey curves of degree $2$.
-    We can one-parameterize Pythagorean triples by rational numbers and consider the family as an elliptic curve over a function field.
+    Using the parameterization of Pythagorean triples $(a,b,c) = (2mn, m^{2} - n^{2}, m^{2} + n^{2})$ by $m,n \in \mathbb{Q}$ with $(m,n)=1$ and putting $s = m/n$, we can one-parameterize Frey curves of degree two, and consider the family as an elliptic curve
     \begin{equation*}
         E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2})
     \end{equation*}
-
+    over a function field $\overline{\mathbb{Q}}(s)$.
     It is known that the generic rank of the Mordell-Weil group of $E_{1,s}$ over $\overline{\mathbb{Q}}(s)$ is $0$.
     We found an infinite subfamily of $E_{1,s}$ whose Mordell-Weil rank over $\overline{\mathbb{Q}}(s)$ is $1$, which means that there are infinitely many $s \in \overline{\mathbb{Q}}$ such that the Mordell-Weil group of $E_{1,s}$ has positive rank over $\overline{\mathbb{Q}}$.
     % \textcolor{red}{TODO: $\mathbb{Q}(s)$上でランク正の無限族じゃないと，Frey curve が無限個とは言い難い}
@@ -19,9 +19,10 @@
     We use the theory of elliptic surfaces to prove it.
     Each elliptic curve over a function field corresponds to an elliptic surface.
     The Shioda-Tate formula gives the relation between the Mordell-Weil rank and the \Neron-Severi rank of elliptic surfaces.
-    We compute the types of special fibers of the elliptic surfaces and consider an upper bound of the rank of the \Neron-Severi group.
-
-    It is relatively easy to prove that the generic rank of the subfamily is less than $2$.
-    In order to prove that the generic rank is exactly $1$, we calculate the characteristic polynomial of the action of the Frobenius automorphism on the second $l$-adic \'etale cohomology group using Lefschetz fixed point theorem to get the sharp upper bound of the rank of the \Neron-Severi group.
+    
+    We determine the types of special fibers of the elliptic surfaces and an upper bound of the rank of the \Neron-Severi group.
+    Using this we can prove that the generic rank of the subfamily is no more than $2$.
+    However, the upper bound is not sharp.
+    In order to prove that the generic rank is exactly $1$, we calculate the characteristic polynomial of the action of the Frobenius automorphism on the second $l$-adic \'etale cohomology group using Lefschetz fixed point theorem and get the sharp upper bound of the rank of the \Neron-Severi group.
 \end{abstract}
 \end{document}
