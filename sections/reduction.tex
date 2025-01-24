@@ -131,11 +131,11 @@ Here, by \eqref{eq:trcomposition} and Corollary~\ref{cor:lefschetz}, we have
     We count the number of points on each special fibers.
     For non-singular fibers, the Schoof-Elkies-Atkin (SEA) algorithm, which calculates the number of points on an elliptic curve over a finite field, is known and can be used.
     For each singular fiber, the number of points is determined by the type of the fiber.
-    Singular fibers' configurations are shown in the table below where each component is $\mathbb{P}^{1}$.
-    $\mathbb{P}^1(\mathbb{F}_{q^m}) = q^m + 1$ and we get the next table by subtracting the number of points that are counted twice or more.
+    Singular fibers' configurations are as shown in Table~\ref{tab:kodaira} where each component is $\mathbb{P}^{1}$ (TODO: 絵を貼る).
+    We get the next table by subtracting from $m_v\times\#\mathbb{P}^1(\mathbb{F}_{q^m}) = m_v(q^m + 1)$ the number of points that are counted twice or more.
     \begin{table}[ht]
         \centering
-        \caption{Number of points on each singular fiber over a finite field}
+        \caption{Number of points on each singular fiber over a finite field\\ (TODO: $I_n$ と $I_n^*$しか使わないが他も書くか？)}
         \begin{tabular}{|c|c|c|}
             \hline
             Type             & Configuration & $\mathcal{E}_v(\mathbb{F}_{q^{m}})$ \\
@@ -157,7 +157,7 @@ Here, by \eqref{eq:trcomposition} and Corollary~\ref{cor:lefschetz}, we have
     \end{equation*}
 
     These calculations result in the following table.
-    \begin{table}[ht]
+    \begin{table}[hb]
         \centering
         \caption{$\# \tilde{S}(\mathbb{F}_{5^{m}})$ and $t_{m}$}
         \begin{tabular}{|c|c|c|c|}
