@@ -69,6 +69,11 @@ jobs:
         with:
           name: pdf
 
+      - name: Download artifact masterabs
+        uses: actions/download-artifact@v4
+        with:
+          name: masterabs
+
       # Releaseを作成する
       # https://github.com/YOURNAME/YOURREPO/releases に 'Release タグ名' で作成
       - name: Create release
@@ -76,4 +81,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VERSION=$(echo ${{ github.ref }} | sed -e "s#refs/tags/##g")
-          gh release create ${VERSION} -t "${VERSION}" --generate-notes ./${{ env.ARTIFACT_NAME }}
+          gh release create ${VERSION} -t "${VERSION}" --generate-notes ./${{ env.ARTIFACT_NAME }} ./masterabs.pdf
