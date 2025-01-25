@@ -41,6 +41,16 @@ jobs:
           # アップロードするファイルを変更する場合、以下を変える
           path: ./${{ env.ARTIFACT_NAME }}
 
+      # masterabs を build
+      - name: Build masterabs
+        run: platex masterabs && biber masterabs && platex masterabs && platex masterabs && dvipdfmx masterabs.dvi
+
+      - name: Upload artifact masterabs
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: ./masterabs.pdf
+
   # GitHubのReleaseを作成するジョブ
   # v1.0.0のようなタグがpushされた時のみ実行
   release:
