@@ -131,23 +131,17 @@ Here, by \eqref{eq:trcomposition} and Corollary~\ref{cor:lefschetz}, we have
     We count the number of points on each special fibers.
     For non-singular fibers, the Schoof-Elkies-Atkin (SEA) algorithm, which calculates the number of points on an elliptic curve over a finite field, is known and can be used.
     For each singular fiber, the number of points is determined by the type of the fiber.
-    Singular fibers' configurations are as shown in Table~\ref{tab:kodaira} where each component is $\mathbb{P}^{1}$ (TODO: 絵を貼る).
-    We get Table~\ref{tab:reductionpoints} by subtracting from $m_v\times\#\mathbb{P}^1(\mathbb{F}_{q^m}) = m_v(q^m + 1)$ the number of points that are counted twice or more.
+    Singular fibers' configurations are as shown in Table~\ref{tab:reductionpoints} where each component is $\mathbb{P}^{1}$.
+    We get the number of points by subtracting from $m_v \times \#\mathbb{P}^1(\mathbb{F}_{q^m}) = m_v(q^m + 1)$ the number of points that are counted twice or more.
     \begin{table}[H]
         \centering
-        \caption{Number of points on each singular fiber over a finite field\\ (TODO: $I_n$ と $I_n^*$しか使わないが他も書くか？)}
-        \begin{tabular}{|c|c|c|}
+        \caption{Number of points on each singular fiber over a finite field}
+        \begin{tabular}{|c|c|c|c|}
             \hline
-            Type             & Configuration & $\mathcal{E}_v(\mathbb{F}_{q^{m}})$ \\
+            Type             & Configuration                                                                      & $m_v$ & $\mathcal{E}_v(\mathbb{F}_{q^{m}})$ \\
             \hline
-            $\mathrm{I}_n$   & x             & $nq^m$                              \\
-            $\mathrm{II}$    & x             & x                                   \\
-            $\mathrm{III}$   & x             & x                                   \\
-            $\mathrm{IV}$    & x             & x                                   \\
-            $\mathrm{I}_n^*$ & x             & $(n+5) q^m+1$                         \\
-            $\mathrm{II}^*$  & x             & x                                \\
-            $\mathrm{III}^*$ & x             & x                                 \\
-            $\mathrm{IV}^*$  & x             & x                                 \\
+            $\mathrm{I}_n$   & \raisebox{-0.5 \height}{\includegraphics[width=4cm, height=3cm]{figures/I_n.png}}  & $n$   & $nq^m$                              \\
+            $\mathrm{I}_n^*$ & \raisebox{-0.5 \height}{\includegraphics[width=4cm, height=2cm]{figures/I_nx.png}} & $n+5$ & $(n+5) q^m+1$                       \\
             \hline
         \end{tabular}
         \label{tab:reductionpoints}
@@ -163,7 +157,7 @@ Here, by \eqref{eq:trcomposition} and Corollary~\ref{cor:lefschetz}, we have
         \caption{$\# \tilde{S}(\mathbb{F}_{5^{m}})$ and $t_{m}$}
         \begin{tabular}{|c|c|c|c|}
             \hline
-            $m$                                & 1   & 2    & 3     \\
+            $m$                              & 1   & 2    & 3     \\
             \hline
             $\# \tilde{S}(\mathbb{F}_{5^m})$ & 120 & 1080 & 18264 \\
             \hline
