@@ -4,11 +4,32 @@
 \begin{document}
 \section{Introduction}
 
-An elliptic curve is a smooth projective curve of genus $1$.
-On points on an elliptic curve we can define an addition law, which makes the set of points on an elliptic curve into an abelian group with the identity element being the point at infinity.
-For an elliptic curve $E$ defined over a field $K$, the Mordell-Weil group $E(K)$ is a group consisting of all $K$-rational points on $E$.
+An elliptic curve defined over a field $K$ is a curve defined by a Weierstrass equation
+\begin{equation*}
+    E: y^{2} = x^{3} + Ax^2 + Bx + C
+\end{equation*}
+where $A,B,C \in K$ and the discriminant $\Delta = -4A^3C + A^2B^2 + 18ABC - 4B^3 - 27C^2$ is nonzero.
+On points on an elliptic curve defined over $\mathbb{Q}$, we can define an addition law geometrically.
+For two points $P,Q$ on $E$, the point $-(P+Q)$ is defined as the third point of intersection of the line passing through $P$ and $Q$ with the curve.
+The sum $P+Q$ is the point symmetric to $-(P+Q)$ with respect to the $x$-axis.
+The definition can be extended to any field $K$.
+The set of points on an elliptic curve forms an abelian group with the identity element being the point at infinity.
+The Mordell-Weil group $E(K)$ is a group consisting of all $K$-rational points on $E$.
+\begin{figure}[H]
+    \centering
+    \caption{$E: y^2 = x(x-3^2)(x+4^2)$}
+    \includegraphics[keepaspectratio, width=0.7\linewidth]{figures/3-4-5.png}
+    \label{fig:elliptic_curve}
+\end{figure}
 
-\begin{thm}{(Mordell's Theorem)}
+\begin{thm}
+    The kernel of multiplication by $2$ map $[2]: E(K) \to E(K)$ is
+    \begin{equation*}
+        E(K)[2] = \{ \mathcal{O} \} \cup \{ (x,y) \in E(K) \mid y = 0 \}.
+    \end{equation*}
+\end{thm}
+
+\begin{thm}{(Mordell-Weil's Theorem)}
     \label{thm:mordell}
     Let $E$ be an elliptic curve defined over a number field $K$.
     Then the Mordell-Weil group $E(K)$ is a finitely generated abelian group.
@@ -67,6 +88,7 @@ The Mordell's Theorem also holds for elliptic curves over a function field.
 \end{thm}
 
 On the relation between the Mordell-Weil group of an elliptic curve over a function field and its special fibers, the following theorem is known.
+We can reduce results obtained by treating a family of elliptic curves uniformly as an elliptic surface to results for each elliptic curve.
 \begin{thm}{(Specialization Theorem, \cite[Theorem 11.4.]{ref:advancedaec})}
     \label{thm:specialization}
     Let $\mathcal{E} \to C$ be a non-split elliptic surface defined over a number field $k$ and $E$ be the corresponding elliptic curve over the function field $k(C)$.

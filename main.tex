@@ -6,6 +6,8 @@
 \numberwithin{equation}{section}
 \usepackage[sorting=nyt,date=year,isbn=false,doi=false,url=false,giveninits]{biblatex} % biblatexを使用するためのパッケージ
 \addbibresource{references.bib}
+\usepackage[dvipdfmx]{graphicx} % 画像の挿入、テキストや図の操作のためのパッケージ
+\usepackage{here} % 好きな位置にfigなどを置くためのパッケージ
 
 \theoremstyle{definition}
 \newtheorem{thm}{Theorem}[section]
@@ -50,7 +52,6 @@
 \subfile{sections/rank.tex}
 \subfile{sections/reduction.tex}
 \subfile{sections/acknowledgments.tex}
-\newpage
 
 \subfile{sections/references}
 
