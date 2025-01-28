@@ -170,6 +170,32 @@ The following theorem behaves a key role in the proof of the main theorem.
     \end{equation*}
 \end{thm}
 
+\section{Reductions}
+Let $A$ be a discrete valuation ring with maximal ideal $\mathfrak{m}$ and fraction field $K$.
+Assume that the residue field $k=A/\mathfrak{m}$ has $q=p^r$ elements with $p$ prime.
+Let $S$ be an integral scheme with a morphism $S \to \Spec A$ that is projective and smooth of relative dimension $2$.
+Then the projective surface $\overline{S}=S_{\overline{\mathbb{Q}}}$ and $\tilde{S}=S_{\overline{k}}$ are smooth over the algebraically closed field $\overline{\mathbb{Q}}$ and $\overline{k}$, respectively.
+We will assume that $\overline{S}$ and $\tilde{S}$ are integrals, i.e., they are irreducible, nonsingular, projective surfaces.
+
+For a prime number $l \neq p$, we denote by $H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_l)$ the $l$-adic \'etale cohomology group of $X$ and by $H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_l)(1)$ its Tate twist.
+
+Let $F: S_k \to S_k$ denote the absolute Frobenius, which acts as the identity on the points and by $f \mapsto f^p$ on the structure sheaf.
+Set $\varphi:=F^{r}$ and let $\varphi^{(i)}$ denote the automorphism on $H_{\text{\'et}}^{i}(\tilde{S}, \mathbb{Q}_l)$ induced by $\varphi \times 1$ acting on $S_k \times_{\Spec k} \Spec \overline{k} \cong \tilde{S}$.
+
+\begin{thm}{(\cite[Corollary 6.4.]{ref:vanluijk2007})}
+    \label{cor:ns_upper_bound}
+    The ranks of $\NS (\overline{S})$ and $\NS (\tilde{S})$ are bounded from above by the number of eigenvalues $\lambda$ of $\varphi^{(2)}$ for which $\lambda/q$ is a root of unity, counted with multiplicity.
+\end{thm}
+
+\begin{equation*}
+    \chara(\varphi^{(2)}) = (x-5)^{19}(x^{3} + x^{2} + 11 x - 77).
+\end{equation*}
+By Corollary~\ref{cor:ns_upper_bound}, $\rho(\mathcal{E}_{0,u}^{(1 + 3u)}) \leq 19$.
+Then by Theorem~\ref{thm:shioda}, we have
+\begin{equation*}
+    \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) \leq 19 - (2 + (2 - 1) + (4 - 1) \times 2 + (5 - 1) + (7 - 1)) = 0.
+\end{equation*}
+
 %%%%%%%%%%%%% 参考文献 %%%%%%%%%%%
 % \begin{thebibliography}{99}
 %     \bibitem{ref:naskrecki2013} Bartosz Naskręcki, Mordell-Weil ranks of families of elliptic curves associated to Pythagorean triples, Acta Arithmetica, 160 (2013), no. 2, 159-183.
