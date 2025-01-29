@@ -159,11 +159,18 @@ The following is our main result.
 The important point is that we prove that the generic rank of $E_{2,t}$ is exactly $1$, not only the existence of a point of infinite order.
 Our proof is based on the method of Naskręcki in \cite{ref:naskrecki2013}.
 
+\section{Proof of Main Theorem}
+\begin{lem}
+    \begin{equation*}
+        \rank E_{2,t}(\overline{\mathbb{Q}}(t)) \geq 1
+    \end{equation*}
+\end{lem}
+\begin{proof}
+    \begin{equation*}
+        \left(s^{2} - 1, \sqrt{-1} s(s^{2} - 1) \frac{t^{2} + 3}{t^{2} - 3} \right) \in E_{2,t}(\overline{\mathbb{Q}}(t)) \setminus E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}}.
+    \end{equation*}
+\end{proof}
 
-\section{Preliminaries}
-
-In order to get the lower bound of the rank of the Mordell-Weil group, finding points of infinite order is enough.
-It is quite difficult to get a good upper bound of the rank.
 The following theorem behaves a key role in the proof of the main theorem.
 \begin{thm}{(Shioda-Tate formula, \cite[Corollary 5.3]{ref:shioda1990})}
     \label{thm:shioda}
@@ -176,19 +183,6 @@ The following theorem behaves a key role in the proof of the main theorem.
         \rho (\mathcal{E}) = 2 + \sum_{v \in R} (m_{v} - 1) + \rank(E(k(C))).
     \end{equation*}
 \end{thm}
-
-\section{Proof of Main Theorem}
-
-\begin{lem}
-    \begin{equation*}
-        \rank E_{2,t}(\overline{\mathbb{Q}}(t)) \geq 1
-    \end{equation*}
-\end{lem}
-\begin{proof}
-    \begin{equation*}
-        \left(s^{2} - 1, \sqrt{-1} s(s^{2} - 1) \frac{t^{2} + 3}{t^{2} - 3} \right) \in E_{2,t}(\overline{\mathbb{Q}}(t)) \setminus E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}}.
-    \end{equation*}
-\end{proof}
 
 \begin{thm}
     Let
@@ -205,8 +199,8 @@ The following theorem behaves a key role in the proof of the main theorem.
                                                     & + \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u))     \\
                                                     & + \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)).
         \end{aligned}
+        \vspace{1em}
     \end{equation}
-    \vspace{0.5em}
 \end{thm}
 
 \begin{lem}
@@ -227,20 +221,20 @@ Let $A$ be a discrete valuation ring with maximal ideal $\mathfrak{m}$ and fract
 Assume that the residue field $k=A/\mathfrak{m}$ has $q=p^r$ elements with $p$ prime.
 Let $S$ be an integral scheme with a morphism $S \to \Spec A$ that is projective and smooth of relative dimension $2$.
 Then the projective surface $\overline{S}=S_{\overline{\mathbb{Q}}}$ and $\tilde{S}=S_{\overline{k}}$ are smooth over the algebraically closed field $\overline{\mathbb{Q}}$ and $\overline{k}$, respectively.
-We will assume that $\overline{S}$ and $\tilde{S}$ are integrals, i.e., they are irreducible, nonsingular, projective surfaces.
-
+% We will assume that $\overline{S}$ and $\tilde{S}$ are integrals, i.e., they are irreducible, nonsingular, projective surfaces.
 For a prime number $l \neq p$, we denote by $H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_l)$ the $l$-adic \'etale cohomology group of $X$ and by $H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_l)(1)$ its Tate twist.
+Let $\varphi^(i)$ be the Frobenius automorphism acting on $H_{\text{\'et}}^{i}(\tilde{S}, \mathbb{Q}_l)$.
+Under some assumptions, we have the following theorem.
+% \begin{thm}{(\cite[Proposition 6.2.]{ref:vanluijk2007})}
+%     There are natural injective homomorphisms
+%     \begin{equation*}
+%         \NS (\overline{S}) \otimes_{\mathbb{Z}} \mathbb{Q}_{l} \hookrightarrow \NS (\tilde{S}) \otimes_{\mathbb{Z}} \mathbb{Q}_{l} \hookrightarrow H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_{l})(1)
+%     \end{equation*}
+%     of finite-dimensional vector spaces over $\mathbb{Q}_l$.
+% \end{thm}
 
-\begin{thm}{(\cite[Proposition 6.2.]{ref:vanluijk2007})}
-    There are natural injective homomorphisms
-    \begin{equation*}
-        \NS (\overline{S}) \otimes_{\mathbb{Z}} \mathbb{Q}_{l} \hookrightarrow \NS (\tilde{S}) \otimes_{\mathbb{Z}} \mathbb{Q}_{l} \hookrightarrow H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_{l})(1)
-    \end{equation*}
-    of finite-dimensional vector spaces over $\mathbb{Q}_l$.
-\end{thm}
-
-Let $F: S_k \to S_k$ denote the absolute Frobenius, which acts as the identity on the points and by $f \mapsto f^p$ on the structure sheaf.
-Set $\varphi:=F^{r}$ and let $\varphi^{(i)}$ denote the automorphism on $H_{\text{\'et}}^{i}(\tilde{S}, \mathbb{Q}_l)$ induced by $\varphi \times 1$ acting on $S_k \times_{\Spec k} \Spec \overline{k} \cong \tilde{S}$.
+% Let $F: S_k \to S_k$ denote the absolute Frobenius, which acts as the identity on the points and by $f \mapsto f^p$ on the structure sheaf.
+% Set $\varphi:=F^{r}$ and let $\varphi^{(i)}$ denote the automorphism on $H_{\text{\'et}}^{i}(\tilde{S}, \mathbb{Q}_l)$ induced by $\varphi \times 1$ acting on $S_k \times_{\Spec k} \Spec \overline{k} \cong \tilde{S}$.
 
 \begin{cor}{(\cite[Corollary 6.4.]{ref:vanluijk2007})}
     \label{cor:ns_upper_bound}
@@ -293,13 +287,7 @@ Then, we have
     \chara(\varphi^{(2)}) = (x - 5)^{19}(x^{3} + x^{2} + 11 x - 77).
 \end{equation*}
 By Corollary~\ref{cor:ns_upper_bound}, $\rho(\mathcal{E}_{0,u}^{(1 + 3u)}) \leq 19$.
-Then by Theorem~\ref{thm:shioda}, we have
-\begin{equation*}
-    \begin{aligned}
-        \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) & \leq 19 - (2 + (2 - 1) + (4 - 1) \times 2 + (5 - 1) + (7 - 1)) \\
-                                                           & = 0.
-    \end{aligned}
-\end{equation*}
+Then by Theorem~\ref{thm:shioda}, we have $\rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) \leq 0$.
 
 %%%%%%%%%%%%% 参考文献 %%%%%%%%%%%
 \printbibliography
