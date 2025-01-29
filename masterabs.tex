@@ -177,7 +177,52 @@ The following theorem behaves a key role in the proof of the main theorem.
     \end{equation*}
 \end{thm}
 
-\section{Reductions}
+\section{Proof of Main Theorem}
+
+\begin{lem}
+    \begin{equation*}
+        \rank E_{2,t}(\overline{\mathbb{Q}}(t)) \geq 1
+    \end{equation*}
+\end{lem}
+\begin{proof}
+    \begin{equation*}
+        \left(s^{2} - 1, \sqrt{-1} s(s^{2} - 1) \frac{t^{2} + 3}{t^{2} - 3} \right) \in E_{2,t}(\overline{\mathbb{Q}}(t)) \setminus E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}}.
+    \end{equation*}
+\end{proof}
+
+\begin{thm}
+    Let
+    \begin{equation*}
+        E_{0,u}: y^{2} = x(x - 4u)(x + (u - 1)^{2})
+    \end{equation*}
+    be an elliptic curve over $\overline{\mathbb{Q}}(u)$.
+    Then, we have
+    \vspace{1em}
+    \begin{equation}
+        \label{eq:rankdecomposition}
+        \begin{aligned}
+            \rank E_{2,t}(\overline{\mathbb{Q}}(t)) & = \rank E_{1,s}(\overline{\mathbb{Q}}(s))                \\
+                                                    & + \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u))     \\
+                                                    & + \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)).
+        \end{aligned}
+    \end{equation}
+    \vspace{0.5em}
+\end{thm}
+
+\begin{lem}
+    \label{lem:easyranks}
+    \begin{equation*}
+        \rank E_{1,s}(\overline{\mathbb{Q}}(s)) = 0,
+    \end{equation*}
+    \begin{equation*}
+        \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)) = 1.
+    \end{equation*}
+\end{lem}
+It is relatively easy to prove Lemma~\ref{lem:easyranks}.
+We can compute $m_v$ and upper bounds of $\rho(\mathcal{E})$ in Theorem~\ref{thm:shioda} by Tate's algorithm.
+However, the upper bound computed in the same way for $E_{0,u}^{(1 + 3u)}$ is not sharp.
+We need a more sophisticated method to estimate the rank of $E_{0,u}^{(1 + 3u)}$, which we will explain below.
+
 Let $A$ be a discrete valuation ring with maximal ideal $\mathfrak{m}$ and fraction field $K$.
 Assume that the residue field $k=A/\mathfrak{m}$ has $q=p^r$ elements with $p$ prime.
 Let $S$ be an integral scheme with a morphism $S \to \Spec A$ that is projective and smooth of relative dimension $2$.
@@ -186,30 +231,74 @@ We will assume that $\overline{S}$ and $\tilde{S}$ are integrals, i.e., they are
 
 For a prime number $l \neq p$, we denote by $H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_l)$ the $l$-adic \'etale cohomology group of $X$ and by $H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_l)(1)$ its Tate twist.
 
+\begin{thm}{(\cite[Proposition 6.2.]{ref:vanluijk2007})}
+    There are natural injective homomorphisms
+    \begin{equation*}
+        \NS (\overline{S}) \otimes_{\mathbb{Z}} \mathbb{Q}_{l} \hookrightarrow \NS (\tilde{S}) \otimes_{\mathbb{Z}} \mathbb{Q}_{l} \hookrightarrow H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_{l})(1)
+    \end{equation*}
+    of finite-dimensional vector spaces over $\mathbb{Q}_l$.
+\end{thm}
+
 Let $F: S_k \to S_k$ denote the absolute Frobenius, which acts as the identity on the points and by $f \mapsto f^p$ on the structure sheaf.
 Set $\varphi:=F^{r}$ and let $\varphi^{(i)}$ denote the automorphism on $H_{\text{\'et}}^{i}(\tilde{S}, \mathbb{Q}_l)$ induced by $\varphi \times 1$ acting on $S_k \times_{\Spec k} \Spec \overline{k} \cong \tilde{S}$.
 
-\begin{thm}{(\cite[Corollary 6.4.]{ref:vanluijk2007})}
+\begin{cor}{(\cite[Corollary 6.4.]{ref:vanluijk2007})}
     \label{cor:ns_upper_bound}
     The ranks of $\NS (\overline{S})$ and $\NS (\tilde{S})$ are bounded from above by the number of eigenvalues $\lambda$ of $\varphi^{(2)}$ for which $\lambda/q$ is a root of unity, counted with multiplicity.
-\end{thm}
+\end{cor}
 
-\begin{equation}
-    \label{eq:rankdecomposition}
-    \begin{aligned}
-        \rank E_{2,t}(\overline{\mathbb{Q}}(t)) &= \rank E_{1,s}(\overline{\mathbb{Q}}(s)) \\
-                                                &+ \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) \\
-                                                &+ \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)). \\
-    \end{aligned}
-\end{equation}
+We apply Corollary~\ref{cor:ns_upper_bound} with $A = \mathbb{Z}_{(5)}$ and $S = \mathcal{E}_{0,u}^{(1 + 3u)} \to \mathbb{P}^1$.
+The characteristic polynomial of $\varphi^{(2)}$ can be calculated if we know the traces of $(\varphi^{(2)})^m$ for $m=1,2,3$.
+The traces can be calculated by the Lefschetz fixed point theorem:
+\begin{equation*}
+    \# \tilde{S}(\mathbb{F}_{q^{m}}) = \sum_{i = 0}^{n} ( - 1)^{i} \Tr((\varphi^{(i)})^{m}).
+\end{equation*}
 
+Tate's algorithm gives the types of singular fibers of $\mathcal{E}_{0,u}^{(1 + 3u)}$ as shown in Table~\ref{tab:E_{0,u}^{(1 + 3u)}}, 
+and the number of points on $\tilde{S}(\mathbb{F}_{5^{m}})$ are calculated as shown in Table~\ref{tab:tm}.
+
+\begin{table}[ht]
+    \centering
+    \caption{Singular fibers of $E_{0,u}^{(1 + 3u)}$}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Place            & Type    & $m_v$ & $e$ \\
+        \hline
+        $u=0$            & $I_2$   & 2     & 2   \\
+        $u=\pm 1$        & $I_4$   & 4     & 4   \\
+        $u=-\frac{1}{3}$ & $I_0^*$ & 5     & 6   \\
+        $u=\infty$       & $I_2^*$ & 7     & 8   \\
+        \hline
+    \end{tabular}
+    \label{tab:E_{0,u}^{(1 + 3u)}}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \caption{$\# \tilde{S}(\mathbb{F}_{5^{m}})$ and $t_{m}$}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        $m$                              & 1   & 2    & 3     \\
+        \hline
+        $\# \tilde{S}(\mathbb{F}_{5^m})$ & 120 & 1080 & 18264 \\
+        \hline
+        % $t_m$                            & -1  & -21  & 263   \\
+        % \hline
+    \end{tabular}
+    \label{tab:tm}
+\end{table}
+
+Then, we have
 \begin{equation*}
     \chara(\varphi^{(2)}) = (x - 5)^{19}(x^{3} + x^{2} + 11 x - 77).
 \end{equation*}
 By Corollary~\ref{cor:ns_upper_bound}, $\rho(\mathcal{E}_{0,u}^{(1 + 3u)}) \leq 19$.
 Then by Theorem~\ref{thm:shioda}, we have
 \begin{equation*}
-    \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) \leq 19 - (2 + (2 - 1) + (4 - 1) \times 2 + (5 - 1) + (7 - 1)) = 0.
+    \begin{aligned}
+        \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) & \leq 19 - (2 + (2 - 1) + (4 - 1) \times 2 + (5 - 1) + (7 - 1)) \\
+                                                           & = 0.
+    \end{aligned}
 \end{equation*}
 
 %%%%%%%%%%%%% 参考文献 %%%%%%%%%%%
