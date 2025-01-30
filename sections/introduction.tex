@@ -52,7 +52,7 @@ for any integer $n \geq 3$ and consider the elliptic curve defined by the Weiers
 \end{equation*}
 which is called the Frey curve.
 The Frey curve played an important role in the proof of Fermat's Last Theorem by Wiles.
-Wiles proved that the Frey curve cannot exist, which implies that the Fermat's equation has no nontrivial solution.
+Wiles proved that the Frey curves do not exist, which implies that the Fermat's equation has no nontrivial solution.
 
 In this paper, we consider the $n=2$ case of the Frey curves.
 In other words, let $(a,b,c) \in \mathbb{Z}^3$ be a Pythagorean triple and consider the elliptic curve defined by the Weierstrass equation
@@ -76,9 +76,8 @@ We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mat
 For any elliptic curves $E$ over a function field $k(C)$ of a smooth irreducible projective curve $C$ over an algebraically closed field $k$, there is an elliptic surface $\pi: \mathcal{E} \to C$ with the generic fiber $E$ called the \Neron{} model.
 We can use tools in the theory of surfaces by associating an elliptic surface $\mathcal{E}_{1,s} \to \mathbb{P}^1$ to $E_{1,s}$.
 
-The elliptic surface $E/k(C)$ is called the generic fiber of the elliptic surface $\mathcal{E} \to C$.
 For $s \in \overline{\mathbb{Q}}$, $\mathcal{E}_s:=\pi^{-1}(s)$ is called the special fiber at $s$.
-For all but finitely many $s \in \overline{\mathbb{Q}}$, the special fiber at $s$ is non-singular, which means that is an elliptic curve.
+For all but finitely many $s \in \overline{\mathbb{Q}}$, the special fiber $\mathcal{E}_s$ at $s$ is non-singular, which means that $\mathcal{E}_s$ is an elliptic curve.
 
 The Mordell's Theorem also holds for elliptic curves over a function field.
 \begin{thm}{(\cite[Theorem 6.1.]{ref:advancedaec})}
@@ -92,7 +91,7 @@ We can reduce results obtained by treating a family of elliptic curves uniformly
 \begin{thm}{(Specialization Theorem, \cite[Theorem 11.4.]{ref:advancedaec})}
     \label{thm:specialization}
     Let $\mathcal{E} \to C$ be a non-split elliptic surface defined over a number field $k$ and $E$ be the corresponding elliptic curve over the function field $k(C)$.
-    Let $k'=k$ or $\overline{k}$.
+    Let $k'=k$ or $\overline{k}$ where $\overline{k}$ is the algebraic closure of $k$.
     Then for all but finitely many $s \in C(k')$, a homomorphism
     \begin{equation*}
         E(k(C)) \hookrightarrow \mathcal{E}_{s}(k'),
@@ -106,7 +105,7 @@ We can reduce results obtained by treating a family of elliptic curves uniformly
 \end{lem}
 
 \begin{rem}
-    We can easily check that all elliptic surfaces in this paper have non-constant $j$-invariants, therefore, they do not split.
+    All elliptic surfaces appearing in this paper have non-constant $j$-invariants, therefore, they do not split.
     Thus we can apply the Specialization Theorem (Theorem~\ref{thm:specialization}).
 \end{rem}
 
