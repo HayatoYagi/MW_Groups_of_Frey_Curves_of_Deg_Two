@@ -4,8 +4,12 @@
 \usepackage{subfiles} % 大規模な文章を分割して記述して，統合するためのパッケージ
 \usepackage[dvipdfmx,unicode,hidelinks,pdfusetitle]{hyperref}
 \numberwithin{equation}{section}
+
 \usepackage[sorting=nyt,date=year,isbn=false,doi=false,url=false,giveninits]{biblatex} % biblatexを使用するためのパッケージ
+\renewbibmacro*{in:}{} % in: を削除
+\DeclareFieldFormat[book]{title}{#1} % book の title を bold にしない
 \addbibresource{references.bib}
+
 \usepackage[dvipdfmx]{graphicx} % 画像の挿入、テキストや図の操作のためのパッケージ
 \usepackage{here} % 好きな位置にfigなどを置くためのパッケージ
 
