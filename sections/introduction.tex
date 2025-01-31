@@ -71,18 +71,64 @@ Then we get an elliptic curve
     \label{eq:E_{1,s}}
     E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2}).
 \end{equation}
-We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mathbb{Q}}(s)$.
+We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mathbb{Q}}(s)$ instead of evaluating coefficientsat particular values of $s$.
 
-For any elliptic curves $E$ over a function field $k(C)$ of a smooth irreducible projective curve $C$ over an algebraically closed field $k$, there is an elliptic surface $\pi: \mathcal{E} \to C$ with the generic fiber $E$ called the \Neron{} model.
+For any elliptic curves $E$ over a function field $k(C)$ of a smooth irreducible projective curve $C$ over an algebraically closed field $k$, we can associate an elliptic surface $\pi: \mathcal{E} \to C$.
 We can use tools in the theory of surfaces by associating an elliptic surface $\mathcal{E}_{1,s} \to \mathbb{P}^1$ to $E_{1,s}$.
 
+\begin{dfn}{(\cite[III\S 3 Definition]{ref:advancedaec})}
+    Let $C$ be a non-singular projective curve.
+    An elliptic surface over $C$ consists of the following data:
+    \begin{enumerate}[label=(\roman*)]
+        \item a surface $\mathcal{E}$, by which we mean a two dimensional projective variety.
+        \item a morphism $\pi: \mathcal{E} \to C$ such that for all but finitely many points $s\in C(k)$, the special fiber $\mathcal{E}_s:=\pi^{-1}(s)$ at $s$ is a non-singular curve of genus $1$.
+    \end{enumerate}
+\end{dfn}
+\begin{prop}{(\cite[Proposition III.3.8.]{ref:advancedaec})}
+    Let $E$ be an elliptic curve over a function field $k(C)$ with the Weierstrass equation
+    \begin{equation*}
+        E: y^{2} = x^{3} + a_2 x^{2} + a_4 x + a_6, \quad a_2, a_4, a_6 \in k(C).
+    \end{equation*}
+    We associate an elliptic surface
+    \begin{equation*}
+        \mathcal{E} = \left\{
+            ([X,Y,Z], s)\in \mathbb{P}^2 \times C \mid Y^{2}Z = X^3 + a_2 X^2 Z + a_4 X Z^2 + a_6 Z^3
+         \right\}
+    \end{equation*}
+    to $E/k(C)$, which is a subvariety of $\mathbb{P}^2 \times C$ of dimension $2$.
+    We say that $E/k(C)$ is the generic fiber of $\mathcal{E} \to C$.
+    \begin{enumerate}[label=(\alph*)]
+        \item For two Weierstrass equation for $E$, the corresponding elliptic surfaces are $k$-birationally equation over $C$.
+        \item For an elliptic surface $\mathcal{E}$ over $C$ defined over $k$, the corresponding elliptic curve $E$ over $k(C)$ is uniquely determined up to $k(C)$-isomorphism.
+        \item There is a natural isomorphism
+            \begin{equation*}
+                k(\mathcal{E}) \cong k(C)(E)
+            \end{equation*}
+            as $k(C)$-algebras.
+    \end{enumerate}
+\end{prop}
+We can define addition law on $\mathcal{E(C/k)}$, which is induced by the addition law on each non-singular fiber, and make it into an abelian group.
+\begin{prop}{(\cite[Proposition III.3.10. (c)]{ref:advancedaec})}
+    Let $E$ be an elliptic curve over a function field $k(C)$ and $\mathcal{E} \to C$ be the corresponding elliptic surface.
+    Then there is a natural group isomorphism
+    We say that $E/k(C)$ is the generic fiber of $\mathcal{E} \to C$.
+    Then there is a natural group isomorphism
+    \begin{equation*}
+        E(k(C)) \cong \mathcal{E}(C/k).
+    \end{equation*}
+\end{prop}
+
+
+We have to associate a \Neron{} model to an elliptic curve over a function field to use the Tate's algorithm mentioned later.
+
 \begin{dfn}{(\cite[IV\S 5 Definition]{ref:advancedaec})}
+    \label{dfn:neron}
     Let $A$ be a Dedekind domain with the fraction field $K$, and let $E/K$ be an elliptic curve.
     A \Neron{} model for $E/K$ is a smooth group scheme $\mathcal{E}/A$ with the generic fiber is $E/K$ and which satisfies the following universal property:
     Let $\mathcal{X}/A$ be a smooth $A$-scheme with the generic fiber $X/K$, and let $\phi_K: X \to E$ be a rational map defined over $K$.
     Then there exists a unique $A$-morphism $\phi_A: \mathcal{X} \to \mathcal{E}$ extending $\phi_K$.
 \end{dfn}
-
+The universal property in Definition~\ref{dfn:neron} is called the \Neron{} mapping property.
 The following two propositions state the existence and the uniqueness of the \Neron{} model.
 \begin{prop}{(\cite[Proposition IV.5.2. (a)]{ref:advancedaec})}
     Let $A$ be a Dedekind domain with the fraction field $K$, and let $E/K$ be an elliptic curve.
@@ -96,9 +142,6 @@ The following two propositions state the existence and the uniqueness of the \Ne
     Let $\mathcal{C}/A$ be a minimal proper regular model for $E/K$, and let $\mathcal{E}/A$ be the largest subscheme of $\mathcal{C}/A$ which is smooth over $A$.
     Then $\mathcal{E}/A$ is a \Neron{} model for $E/K$.
 \end{prop}
-
-For $s \in \overline{\mathbb{Q}}$, $\mathcal{E}_s:=\pi^{-1}(s)$ is called the special fiber at $s$.
-For all but finitely many $s \in \overline{\mathbb{Q}}$, the special fiber $\mathcal{E}_s$ at $s$ is non-singular, which means that $\mathcal{E}_s$ is an elliptic curve.
 
 The Mordell-Weil's Theorem also holds for elliptic curves over a function field.
 \begin{thm}{(\cite[Theorem III.6.1.]{ref:advancedaec})}
