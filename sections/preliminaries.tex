@@ -6,7 +6,9 @@
 
 In order to get the lower bound of the rank of the Mordell-Weil group, finding points of infinite order is enough.
 It is quite difficult to get a sharp upper bound of the rank.
-The following theorem plays a key role in the proof of the main theorem.
+The proof of the main theorem is divided into two major steps.
+First, the Mordell-Weil rank is tied to the Picard number, and then the Picard number is evaluated.
+The following theorem plays a key role in the first step.
 \begin{thm}{(Shioda-Tate formula, \cite[Corollary 5.3]{ref:shioda1990})}
     \label{thm:shioda}
     Let $\mathcal{E} \to C$ be an elliptic surface over a smooth projective curve $C$ over an algebraically closed field $k$.
@@ -20,7 +22,7 @@ The following theorem plays a key role in the proof of the main theorem.
 \end{thm}
 
 We have the following theorem giving an upper bound of the Picard number $\rho(\mathcal{E})$.
-
+We use this estimate for some elliptic surfaces, but note that some surfaces appear in this paper for which this value is not sharp.
 \begin{thm}{(\cite[Twierdzenie 2.2.9, 2.2.10, 2.2.19]{ref:naskreckiphd})}
     Let $\mathcal{E}$ and $R$ be as in Theorem~\ref{thm:shioda}.
     Let $\chi(\mathcal{E})$ be the arithmetic genus of $\mathcal{E}$, $e(\mathcal{E}_v)$ be the local Euler number of the special fiber at $v$, and $g(C)$ be the genus of $C$. \label{thm:rho}
@@ -59,12 +61,12 @@ The following table shows the correspondence between Kodaira symbols and the val
     \label{tab:kodaira}
 \end{table}
 
-For the torsion subgroup of the Mordell-Weil group, we have the following theorem.
+For the torsion subgroup of the Mordell-Weil group, we have the following theorems.
 \begin{thm}{(\cite[Lem.3.5]{ref:naskrecki2013})}
     \label{thm:torsion}
     Let $\mathcal{E}$ and $R$ be as in Theorem~\ref{thm:shioda}.
     Let $E$ be the generic fiber of $\mathcal{E}$.
-    Then we have
+    Then there is an injective homomorphism
     \begin{equation*}
         E(\overline{\mathbb{Q}}(s))_{\text{tors}} \hookrightarrow \prod_{v \in R} G(\mathcal{E}_{v}),
     \end{equation*}
@@ -72,4 +74,13 @@ For the torsion subgroup of the Mordell-Weil group, we have the following theore
     If $\mathcal{E}_{v}$ is of type $\mathrm{I}_n$ in Kodaira symbol, then $G(\mathcal{E}_{v}) \cong \mathbb{Z} / n \mathbb{Z}$.
 \end{thm}
 
+\begin{thm}{(Mazur's Theorem)}
+    \label{thm:mazur}
+    Let $E$ be an elliptic curve defined over $\mathbb{Q}$.
+    Then the torsion subgroup $E(\mathbb{Q})_{\text{tors}}$ is isomorphic to one of the following groups.
+    \begin{align*}
+        (1) & \quad \mathbb{Z} / n \mathbb{Z} \quad                                   &  & (1 \leq n \leq 10 \; \text{or}\; n = 12), \\
+        (2) & \quad \mathbb{Z} / 2 \mathbb{Z} \oplus \mathbb{Z} / 2n \mathbb{Z} \quad &  & (1 \leq n \leq 4).
+    \end{align*}
+\end{thm}
 \end{document}

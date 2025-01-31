@@ -9,25 +9,25 @@ An elliptic curve defined over a field $K$ of characteristic $\neq 2$ is a curve
     E: y^{2} = x^{3} + Ax^2 + Bx + C
 \end{equation*}
 where $A,B,C \in K$ and the discriminant $\Delta = -4A^3C + A^2B^2 + 18ABC - 4B^3 - 27C^2$ is nonzero.
-On points on an elliptic curve defined over $\mathbb{Q}$, we can define an addition law geometrically.
+On points on an elliptic curve defined over $\mathbb{Q}$, we can define an addition law geometrically as follows.
+\begin{figure}[H]
+    \centering
+    \caption{$E: y^2 = x(x-3^2)(x+4^2)$}
+    \includegraphics[keepaspectratio, width=\linewidth]{figures/3-4-5.png}
+    \label{fig:elliptic_curve}
+\end{figure}
 For two points $P,Q$ on $E$, the point $-(P+Q)$ is defined as the third point of intersection of the line passing through $P$ and $Q$ with the curve.
 The sum $P+Q$ is the point symmetric to $-(P+Q)$ with respect to the $x$-axis.
 The definition can be extended to any field $K$ of characteristic $\neq 2$.
 The set of points on an elliptic curve forms an abelian group with the identity element being the point at infinity.
 The Mordell-Weil group $E(K)$ is a group consisting of all $K$-rational points on $E$.
-\begin{figure}[H]
-    \centering
-    \caption{$E: y^2 = x(x-3^2)(x+4^2)$}
-    \includegraphics[keepaspectratio, width=0.7\linewidth]{figures/3-4-5.png}
-    \label{fig:elliptic_curve}
-\end{figure}
 
-\begin{thm}
+\begin{prop}
     The kernel of multiplication by $2$ map $[2]: E(K) \to E(K)$ is
     \begin{equation*}
         E(K)[2] = \{ \mathcal{O} \} \cup \{ (x,y) \in E(K) \mid y = 0 \}.
     \end{equation*}
-\end{thm}
+\end{prop}
 
 \begin{thm}{(Mordell-Weil's Theorem)}
     \label{thm:mordell}
@@ -46,22 +46,22 @@ Let $a,b,c$ be positive integers which satisfy the Fermat's equation
 \begin{equation*}
     a^{n} + b^{n} = c^{n}.
 \end{equation*}
-for any integer $n \geq 3$ and consider the elliptic curve defined by the Weierstrass equation
+for any integer $n \geq 2$ and consider the elliptic curve defined by the Weierstrass equation
 \begin{equation*}
     y^{2} = x(x - a^{n})(x + b^{n}),
 \end{equation*}
 which is called the Frey curve.
 The Frey curve played an important role in the proof of Fermat's Last Theorem by Wiles.
-Wiles proved that the Frey curves do not exist, which implies that the Fermat's equation has no nontrivial solution.
+Wiles proved that the Frey curves do not exist for $n \geq 3$, which implies that the Fermat's equation has no nontrivial solution.
 
 In this paper, we consider the case $n=2$ of the Frey curves.
-In other words, let $(a,b,c) \in \mathbb{Z}^3$ be a Pythagorean triple and consider the elliptic curve defined by the Weierstrass equation
+In other words, let $(a,b,c) \in \mathbb{Z}_{> 0}^3$ be a Pythagorean triple and consider the elliptic curve defined by the Weierstrass equation
 \begin{equation}
     \label{eq:2frey}
     y^{2} = x(x - a^{2})(x + b^{2}),
 \end{equation}
 which we call the Frey curve of degree $2$.
-The Frey curves of degree $2$ do exist infinitely unlike for $n \geq 3$.
+The Frey curves of degree $2$ do exist infinitely.
 
 We can parameterize Pythagorean triples $(a,b,c)$ by $m,n \in \mathbb{Z}$ with $(m,n)=1$ as $(a,b,c) = (2mn, m^{2} - n^{2}, m^{2} + n^{2})$.
 Then the equation \eqref{eq:2frey} can be written as $y^{2} = x(x - 4m^2n^2)(x + (m^{2} - n^2)^{2})$.
@@ -79,7 +79,7 @@ We can use tools in the theory of surfaces by associating an elliptic surface $\
 For $s \in \overline{\mathbb{Q}}$, $\mathcal{E}_s:=\pi^{-1}(s)$ is called the special fiber at $s$.
 For all but finitely many $s \in \overline{\mathbb{Q}}$, the special fiber $\mathcal{E}_s$ at $s$ is non-singular, which means that $\mathcal{E}_s$ is an elliptic curve.
 
-The Mordell's Theorem also holds for elliptic curves over a function field.
+The Mordell-Weil's Theorem also holds for elliptic curves over a function field.
 \begin{thm}{(\cite[Theorem 6.1.]{ref:advancedaec})}
     \label{thm:mordell_function_field}
     Let $\mathcal{E} \to C$ be an elliptic surface defined over a field $k$ and $E$ be the corresponding elliptic curve over the function field $k(C)$.
