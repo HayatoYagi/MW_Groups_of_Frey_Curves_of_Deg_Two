@@ -9,6 +9,10 @@ Actually, the discriminant of $E_{2,t}$ is
 \begin{equation*}
     \Delta_{E_{2,t}} = 4096t^{4}(t - 1)^{4}(t + 1)^{4}(t - 3)^{4}(t + 3)^{4}(t^{2} - 3)^{4}(t^{4} - 2t^{2} + 9)^{4},
 \end{equation*}
+% the $j$-invariant is
+% \begin{equation*}
+%     j_{E_{2,t}} = \frac{(s^{8} - 4 s^{7} - 4 s^{6} + 52 s^{5} + 22 s^{4} - 156 s^{3} - 36 s^{2} + 108 s + 81)^{3} (s^{8} + 4 s^{7} - 4 s^{6} - 52 s^{5} + 22 s^{4} + 156 s^{3} - 36 s^{2} - 108 s + 81)^{3}}{t^{4}(t - 1)^{4}(t + 1)^{4}(t - 3)^{4}(t + 3)^{4}(t^{2} - 3)^{4}(t^{4} - 2t^{2} + 9)^{4}}
+% \end{equation*}
 and the types of the singular fibers of $E_{2,t}$ are calculated as in Table~\ref{tab:E_{2,t}} by Tate's algorithm.
 Then in a similar way to the proof of Theorem~\ref{thm:E_{1,s}}, we get $\rank E_{2,t}(\overline{\mathbb{Q}}(t)) \leq 2$.
 On the other hand, we have only one point of infinite order in $E_{2,t}(\overline{\mathbb{Q}}(t))$.
@@ -36,13 +40,17 @@ On the other hand, we have only one point of infinite order in $E_{2,t}(\overlin
     \end{equation*}
 \end{lem}
 \begin{proof}
+    Since $E_{2,t}$ is given by substituting $s = \frac{2t}{t^{2} - 3}$ into $E_{1,s}$,
+    \begin{equation*}
+        E_{1,s}(\overline{\mathbb{Q}}(s))_{\text{tors}} \subset E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}}.
+    \end{equation*}
     By Theorem~\ref{thm:torsion}, we have
     \begin{equation*}
         E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}} \hookrightarrow (\mathbb{Z} / 4 \mathbb{Z})^{12}.
     \end{equation*}
-    Obviously, we have
+    Therefore,
     \begin{equation*}
-        E_{1,s}(\overline{\mathbb{Q}}(s))_{\text{tors}} \subset E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}}.
+        E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}} = E_{1,s}(\overline{\mathbb{Q}}(s))_{\text{tors}} \cong \mathbb{Z} / 4 \mathbb{Z} \oplus \mathbb{Z} / 4 \mathbb{Z}.
     \end{equation*}
 \end{proof}
 
@@ -134,7 +142,7 @@ The rank of $E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u))$ in the equation \e
     and thus the rank is positive.
     The discriminant of $E_{0,u}^{(u(1 + 3u))}$ is
     \begin{equation*}
-        \Delta(E_{0,u}^{(u(1 + 3u))}) = 256u^{8}(u - 1)^{4}(u + 1)^{4}(3u + 1)^{6},
+        \Delta_{E_{0,u}^{(u(1 + 3u))}} = 256u^{8}(u - 1)^{4}(u + 1)^{4}(3u + 1)^{6},
     \end{equation*}
     and the types of the singular fibers of $E_{0,u}^{(u(1 + 3u))}$ are calculated as in Table~\ref{tab:E_{0,u}^{(u(1 + 3u))}} by Tate's algorithm.
     \begin{table}[H]

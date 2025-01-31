@@ -71,7 +71,7 @@ Then we get an elliptic curve
     \label{eq:E_{1,s}}
     E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2}).
 \end{equation}
-We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mathbb{Q}}(s)$ instead of evaluating coefficients at particular values of $s$.
+We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mathbb{Q}}(s)$ where $\overline{\mathbb{Q}}$ is the algebraic closure of $\mathbb{Q}$ instead of evaluating coefficients at particular values of $s$.
 
 For any elliptic curves $E$ over a function field $k(C)$ of a smooth irreducible projective curve $C$ over an algebraically closed field $k$, we can associate an elliptic surface $\pi: \mathcal{E} \to C$.
 We can use tools in the theory of surfaces by associating an elliptic surface $\mathcal{E}_{1,s} \to \mathbb{P}^1$ to $E_{1,s}$.
@@ -87,18 +87,18 @@ We can use tools in the theory of surfaces by associating an elliptic surface $\
 \begin{prop}{(\cite[Proposition III.3.8.]{ref:advancedaec})}
     Let $E$ be an elliptic curve over a function field $k(C)$ with the Weierstrass equation
     \begin{equation*}
-        E: y^{2} = x^{3} + a_2 x^{2} + a_4 x + a_6, \quad a_2, a_4, a_6 \in k(C).
+        E: y^{2} = x^{3} + a_2(s) x^{2} + a_4(s) x + a_6(s), \quad a_2(s), a_4(s), a_6(s) \in k(C).
     \end{equation*}
     We associate an elliptic surface
     \begin{equation*}
         \mathcal{E} = \left\{
-            ([X,Y,Z], s)\in \mathbb{P}^2 \times C \mid Y^{2}Z = X^3 + a_2 X^2 Z + a_4 X Z^2 + a_6 Z^3
+            ([X,Y,Z], s_0)\in \mathbb{P}^2 \times C \mid Y^{2}Z = X^3 + a_2(s_0) X^2 Z + a_4(s_0) X Z^2 + a_6(s_0) Z^3
          \right\}
     \end{equation*}
     to $E/k(C)$, which is a subvariety of $\mathbb{P}^2 \times C$ of dimension $2$.
     We say that $E/k(C)$ is the generic fiber of $\mathcal{E} \to C$.
     \begin{enumerate}[label=(\alph*)]
-        \item For two Weierstrass equation for $E$, the corresponding elliptic surfaces are $k$-birationally equation over $C$.
+        \item For two Weierstrass equations for $E$, the corresponding elliptic surfaces are $k$-birationally equivalent over $C$.
         \item For an elliptic surface $\mathcal{E}$ over $C$ defined over $k$, the corresponding elliptic curve $E$ over $k(C)$ is uniquely determined up to $k(C)$-isomorphism.
         \item There is a natural isomorphism
             \begin{equation*}
@@ -122,7 +122,7 @@ We have to associate a \Neron{} model to an elliptic curve over a function field
 \begin{dfn}{(\cite[IV\S 5 Definition]{ref:advancedaec})}
     \label{dfn:neron}
     Let $A$ be a Dedekind domain with the fraction field $K$, and let $E/K$ be an elliptic curve.
-    A \Neron{} model for $E/K$ is a smooth group scheme $\mathcal{E}/A$ with the generic fiber is $E/K$ and which satisfies the following universal property:
+    A \Neron{} model for $E/K$ is a smooth group scheme $\mathcal{E}/A$ whose generic fiber is $E/K$ and which satisfies the following universal property:
     Let $\mathcal{X}/A$ be a smooth $A$-scheme with the generic fiber $X/K$, and let $\phi_K: X \to E$ be a rational map defined over $K$.
     Then there exists a unique $A$-morphism $\phi_A: \mathcal{X} \to \mathcal{E}$ extending $\phi_K$.
 \end{dfn}
