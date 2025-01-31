@@ -95,14 +95,14 @@ An elliptic curve defined over a field $K$ of characteristic $\neq 2$ is a curve
     E: y^{2} = x^{3} + Ax^2 + Bx + C
 \end{equation*}
 where $A,B,C \in K$ and the discriminant $\Delta = -4A^3C + A^2B^2 + 18ABC - 4B^3 - 27C^2$ is nonzero.
-On points on an elliptic curve defined over $\mathbb{Q}$, we can define an addition law geometrically.
+When $K=\mathbb{Q}$, we can define an addition law geometrically on points on an elliptic curve defined over $\mathbb{Q}$.
 %  as shown in Figure~\ref{fig:elliptic_curve}.
 For two points $P,Q$ on $E$, the point $-(P+Q)$ is defined as the third point of intersection of the line passing through $P$ and $Q$ with the curve.
 The sum $P+Q$ is the point symmetric to $-(P+Q)$ with respect to the $x$-axis.
 The definition can be extended to any field $K$ of characteristic $\neq 2$.
 The set of points on an elliptic curve forms an abelian group with the identity element being the point at infinity.
 The Mordell-Weil group $E(K)$ is a group consisting of all $K$-rational points on $E$.
-The Mordell-Weil theorem states that the Mordell-Weil group is a finitely generated abelian group.
+The Mordell-Weil theorem states that the Mordell-Weil group is a finitely generated abelian group if $K$ satisfies some finite conditions.
 The Mordell-Weil group is an important object in the study of the arithmetic of elliptic curves.
 Especially, the rank of the Mordell-Weil group is important and difficult to determine, in general.
 % \begin{figure}[ht]
@@ -127,7 +127,7 @@ Then we get an elliptic curve
     \label{eq:E_{1,s}}
     E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2}).
 \end{equation*}
-We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mathbb{Q}}(s)$.
+We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mathbb{Q}}(s)$, where $\overline{\mathbb{Q}}$ is the algebraic closure of $\mathbb{Q}$.
 We associate an elliptic surface $\mathcal{E}_{1,s} \to \mathbb{P}^1$ to $E_{1,s}$.
 
 
@@ -169,7 +169,7 @@ Our proof is based on the method of Naskręcki in \cite{ref:naskrecki2013}.
 \section{Sketch of the proof}
 The torsion subgroup is relatively simple, so only rank is discussed here.
 The proof is divided into two major steps.
-First, the Mordell-Weil rank is tied to the Picard number, and then the Picard number is evaluated.
+First, we relate the Mordell-Weil rank to the Picard number, and then the Picard number is evaluated.
 The following theorem plays a key role in the first step.
 \begin{thm}{(Shioda-Tate formula, \cite[Corollary 5.3]{ref:shioda1990})}
     \label{thm:shioda}
@@ -216,7 +216,7 @@ We have an estimation that $\rho(\mathcal{E}) \leq \frac{5}{6} e(\mathcal{E})$ b
     \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)) = 1.
 \end{equation*}
 However, the upper bounds computed in the same way for $E_{0,u}^{(1 + 3u)}$ and $E_{2,t}$ are not sharp.
-$E_{0,u}^{(1 + 3u)}$ is a K3 surface, which is relatively well studied, while $E_{2,t}$ is not.
+We can prove that $E_{0,u}^{(1 + 3u)}$ is a K3 surface, which is relatively well studied, while $E_{2,t}$ is not.
 Also, it has lower order coefficients in the Weierstrass equation.
 These properties make the following computation feasible.
 

@@ -17,7 +17,7 @@ For a prime number $l \neq p$, we denote by $H_{\text{\'et}}^{2}(\tilde{S}, \mat
 \begin{thm}{(\cite[Proposition 6.2.]{ref:vanluijk2007})}
     There are natural injective homomorphisms
     \begin{equation*}
-        \NS (\overline{S}) \otimes_{\mathbb{Z}} \mathbb{Q}_{l} \hookrightarrow \NS (\tilde{S}) \otimes_{\mathbb{Z}} \mathbb{Q}_{l} \hookrightarrow H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_{l})(1)
+        \NS (\overline{S}) \otimes_{\mathbb{Z}} \mathbb{Q}_{l} \hookrightarrow \NS (\tilde{S}) \otimes_{\mathbb{Z}} \mathbb{Q}_{l} \hookrightarrow H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_{l}(1)) = H_{\text{\'et}}^{2}(\tilde{S}, \mathbb{Q}_{l})(1)
     \end{equation*}
     of finite-dimensional vector spaces over $\mathbb{Q}_l$.
 \end{thm}
@@ -100,6 +100,11 @@ Here, by \eqref{eq:trcomposition} and Corollary~\ref{cor:lefschetz}, we have
 \end{thm}
 \begin{proof}
     We denote by $S=\mathcal{E}_{0,u}^{(1 + 3u)} \to \mathbb{P}^1$ the elliptic surface with the generic fiber $E_{0,u}^{(1 + 3u)}$.
+    The discriminant of $E_{0,u}^{(1 + 3u)}$ is
+    \begin{equation*}
+        \Delta_{E_{0,u}^{(1 + 3u)}} = 256 u^2 (u - 1)^4 (u + 1)^4 (3u + 1)^6
+    \end{equation*}
+    and the types of the singular fibers of $E_{0,u}^{(1 + 3u)}$ are calculated as in Table~\ref{tab:E_{0,u}^{(1 + 3u)}} by Tate's algorithm.
     Put $\mathfrak{p}=(5) \in \Spec \mathbb{Z}$ and $A = \mathbb{Z}_{\mathfrak{p}}$.
     The residue field $k=A/\mathfrak{p} \cong \mathbb{F}_{5}$.
     $S$ defines an elliptic surface $\tilde{S} = S_{\overline{\mathbb{F}_{5}}} \to \mathbb{P}^1$.
