@@ -4,7 +4,7 @@
 \begin{document}
 \section{Introduction}
 
-An elliptic curve defined over a field $K$ is a curve defined by a Weierstrass equation
+An elliptic curve defined over a field $K$ of characteristic $\neq 2$ is a curve defined by a Weierstrass equation
 \begin{equation*}
     E: y^{2} = x^{3} + Ax^2 + Bx + C
 \end{equation*}
@@ -12,7 +12,7 @@ where $A,B,C \in K$ and the discriminant $\Delta = -4A^3C + A^2B^2 + 18ABC - 4B^
 On points on an elliptic curve defined over $\mathbb{Q}$, we can define an addition law geometrically.
 For two points $P,Q$ on $E$, the point $-(P+Q)$ is defined as the third point of intersection of the line passing through $P$ and $Q$ with the curve.
 The sum $P+Q$ is the point symmetric to $-(P+Q)$ with respect to the $x$-axis.
-The definition can be extended to any field $K$.
+The definition can be extended to any field $K$ of characteristic $\neq 2$.
 The set of points on an elliptic curve forms an abelian group with the identity element being the point at infinity.
 The Mordell-Weil group $E(K)$ is a group consisting of all $K$-rational points on $E$.
 \begin{figure}[H]
@@ -40,7 +40,7 @@ By the structure theorem of finite abelian groups, the Mordell-Weil group can be
 \end{equation*}
 where $r$ is the rank of the Mordell-Weil group and $E(K)_{\text{tors}}$ is the torsion subgroup of $E(K)$.
 The Mordell-Weil group is an important object in the arithmetic of elliptic curves.
-Especially, the rank of the Mordell-Weil group is important and difficult to determine in general.
+Especially, the rank of the Mordell-Weil group is important and difficult to determine, in general.
 
 Let $a,b,c$ be positive integers which satisfy the Fermat's equation
 \begin{equation*}

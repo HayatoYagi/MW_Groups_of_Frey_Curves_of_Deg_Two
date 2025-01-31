@@ -5,9 +5,11 @@
 \usepackage[dvipdfmx,unicode,hidelinks,pdfusetitle]{hyperref}
 \numberwithin{equation}{section}
 
-\usepackage[sorting=nyt,date=year,isbn=false,doi=false,url=false,giveninits]{biblatex} % biblatexを使用するためのパッケージ
+% \usepackage[sorting=nyt,date=year,isbn=false,doi=false,url=false,giveninits]{biblatex} % biblatexを使用するためのパッケージ
+\usepackage[backend=biber, bibstyle=math-numeric,sentencedtitle=false, dashed=false]{biblatex}
 \renewbibmacro*{in:}{} % in: を削除
-\DeclareFieldFormat[book]{title}{#1} % book の title を bold にしない
+\DeclareFieldFormat[book]{title}{\textit{#1}} % book の title を bold にしない
+\DeclareFieldFormat[article,misc]{title}{\textup{#1}} % article の title を italic にしない
 \addbibresource{references.bib}
 
 \usepackage[dvipdfmx]{graphicx} % 画像の挿入、テキストや図の操作のためのパッケージ

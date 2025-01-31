@@ -28,6 +28,7 @@
 \newtheorem{dfn}[thm]{Definition}
 \newtheorem{eg}[thm]{Example}
 \newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
 \newtheorem{cor}[thm]{Corollary}
 \theoremstyle{remark}
 \newtheorem{rem}[thm]{Remark}
@@ -42,7 +43,11 @@
 
 \usepackage[T1]{fontenc}
 
-\usepackage[sorting=nyt,date=year,isbn=false,doi=false,url=false,giveninits]{biblatex} % biblatexを使用するためのパッケージ
+% \usepackage[sorting=nyt,date=year,isbn=false,doi=false,url=false,giveninits]{biblatex} % biblatexを使用するためのパッケージ
+\usepackage[backend=biber, bibstyle=math-numeric,sentencedtitle=false, dashed=false]{biblatex}
+\renewbibmacro*{in:}{} % in: を削除
+\DeclareFieldFormat[book]{title}{\textit{#1}} % book の title を bold にしない
+\DeclareFieldFormat[article,misc]{title}{\textup{#1}} % article の title を italic にしない
 \addbibresource{references.bib}
 
 %-------------- end preamble ----------------------------------
@@ -85,7 +90,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%  本文　%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-An elliptic curve defined over a field $K$ is a curve defined by a Weierstrass equation
+An elliptic curve defined over a field $K$ of characteristic $\neq 2$ is a curve defined by a Weierstrass equation
 \begin{equation*}
     E: y^{2} = x^{3} + Ax^2 + Bx + C
 \end{equation*}
@@ -100,12 +105,12 @@ The sum $P+Q$ is the point symmetric to $-(P+Q)$ with respect to the $x$-axis.
     \label{fig:elliptic_curve}
 \end{figure}
 
-The definition can be extended to any field $K$.
+The definition can be extended to any field $K$ of characteristic $\neq 2$.
 The set of points on an elliptic curve forms an abelian group with the identity element being the point at infinity.
 The Mordell-Weil group $E(K)$ is a group consisting of all $K$-rational points on $E$.
 The Mordell-Weil theorem states that the Mordell-Weil group is a finitely generated abelian group.
 The Mordell-Weil group is an important object in the study of the arithmetic of elliptic curves.
-Especially, the rank of the Mordell-Weil group is important and difficult to determine in general.
+Especially, the rank of the Mordell-Weil group is important and difficult to determine, in general.
 
 Let $(a,b,c) \in \mathbb{Z}^3$ be a Pythagorean triple, namely integers satisfies $a^{2} + b^{2} = c^{2}$, and consider the elliptic curve defined by the Weierstrass equation
 \begin{equation}
@@ -128,7 +133,7 @@ We associate an elliptic surface $\mathcal{E}_{1,s} \to \mathbb{P}^1$ to $E_{1,s
 
 \section{Main Theorem}
 
-\begin{thm}
+\begin{prop}
     \label{thm:E_{1,s}}
     The Mordell-Weil group of $E_{1,s}$ over $\overline{\mathbb{Q}}(s)$ satisfies
     \begin{equation*}
@@ -140,7 +145,7 @@ We associate an elliptic surface $\mathcal{E}_{1,s} \to \mathbb{P}^1$ to $E_{1,s
     %     T_1 & := (2s(s+1)^2, 2s(s+1)^2(s^2+1)),                               \\
     %     T_2 & := (2 \sqrt{-1} s(s^2-1),2 \sqrt{-1} s(s+\sqrt{-1})^2(s^2-1)).
     % \end{align*}
-\end{thm}
+\end{prop}
 
 By substituting $s = \frac{2t}{t^{2} - 3}$ into $E_{1,s}$, we get a new family of elliptic curves
 \begin{equation*}
@@ -160,12 +165,8 @@ The following is our main result.
 The important point is that we prove that the generic rank of $E_{2,t}$ is exactly $1$, not only the existence of a point of infinite order.
 Our proof is based on the method of Naskręcki in \cite{ref:naskrecki2013}.
 
-\section{Sketch of proof}
-First, we compute types of singular fibers of elliptic surfaces by Tate's algorithm.
-The number of components $m_v$ and the local Euler number $e(\mathcal{E}_v)$ of each special fiber at $v$ are computed.
-The torsion subgroups are determined using these data.
-We know that there is a point of infinite order $\left(s^{2} - 1, \sqrt{-1} s(s^{2} - 1) \frac{t^{2} + 3}{t^{2} - 3} \right)$ on $E_{2,t}(\overline{\mathbb{Q}}(t))$.
-This implies that the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ is at least $1$.
+\section{Sketch of the proof}
+The torsion subgroup is relatively simple, so only rank is discussed here.
 The following theorem plays a key role in the proof of the main theorem.
 \begin{thm}{(Shioda-Tate formula, \cite[Corollary 5.3]{ref:shioda1990})}
     \label{thm:shioda}
@@ -178,8 +179,12 @@ The following theorem plays a key role in the proof of the main theorem.
         \rho (\mathcal{E}) = 2 + \sum_{v \in R} (m_{v} - 1) + \rank(E(k(C))).
     \end{equation*}
 \end{thm}
-Now, we are interested in the upper bounds of the rank of the \Neron-Severi groups.
-To make the later computation feasible, we decompose the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ into the ranks of elliptic curves with lower order coefficients in the Weierstrass equations.
+
+The number of components $m_v$ of each special fiber at $v$ is computed by Tate's algorithm.
+Now, we are interested in the upper bound of the rank of the \Neron-Severi group to prove that the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ is exactly $1$, since we know that there is a point of infinite order $(s^{2} - 1, \sqrt{-1} s(s^{2} - 1) \frac{t^{2} + 3}{t^{2} - 3} )$ on $E_{2,t}(\overline{\mathbb{Q}}(t))$.
+we calculate the characteristic polynomial of the action of the Frobenius automorphism on the second $l$-adic \'etale cohomology group using Lefschetz fixed point theorem to get the sharp upper bound of the rank of the \Neron-Severi group.
+We provide a detailed discussion below.
+
 \begin{thm}
     Let
     \begin{equation*}
@@ -195,19 +200,21 @@ To make the later computation feasible, we decompose the rank of $E_{2,t}(\overl
                                                     & + \rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u))     \\
                                                     & + \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)).
         \end{aligned}
-        \vspace{1em}
     \end{equation*}
+    \vspace{1em}
 \end{thm}
 
-We have an estimation that $\rho(\mathcal{E}) \leq \frac{5}{6} \sum_{v \in R} e(\mathcal{E}_v)$ by \cite{ref:naskreckiphd}, which gives
+We have an estimation that $\rho(\mathcal{E}) \leq \frac{5}{6} e(\mathcal{E})$ by \cite{ref:naskreckiphd} where the Euler number $e(\mathcal{E})$ is calculated by Tate's algorithm, which gives
 \begin{equation*}
     \rank E_{1,s}(\overline{\mathbb{Q}}(s)) = 0,
 \end{equation*}
 \begin{equation*}
     \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)) = 1.
 \end{equation*}
-However, the upper bound computed in the same way for $E_{0,u}^{(1 + 3u)}$ is not sharp.
-We need a more sophisticated method to determine the rank of $E_{0,u}^{(1 + 3u)}$, which we will explain below.
+However, the upper bounds computed in the same way for $E_{0,u}^{(1 + 3u)}$ and $E_{2,t}$ are not sharp.
+$E_{0,u}^{(1 + 3u)}$ is a K3 surface, which is relatively well studied, while $E_{2,t}$ is not.
+Also, it has lower order coefficients in the Weierstrass equation.
+These properties make the following computation feasible.
 
 Let $A$ be a discrete valuation ring with maximal ideal $\mathfrak{m}$ and fraction field $K$.
 Assume that the residue field $k=A/\mathfrak{m}$ has $q=p^r$ elements with $p$ prime.
@@ -278,8 +285,8 @@ Using the computation above, we obtain
 \begin{equation*}
     \chara(\varphi^{(2)}) = (x - 5)^{19}(x^{3} + x^{2} + 11 x - 77).
 \end{equation*}
-By Corollary~\ref{cor:ns_upper_bound}, $\rho(\mathcal{E}_{0,u}^{(1 + 3u)}) \leq 19$.
-Then by Theorem~\ref{thm:shioda}, we have $\rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) \leq 0$.
+By Theorem~\ref{cor:ns_upper_bound}, $\rho(\mathcal{E}_{0,u}^{(1 + 3u)}) \leq 19$.
+Then by Theorem~\ref{thm:shioda}, we have $\rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) \leq 0$, and get $\rank E_{2,t}(\overline{\mathbb{Q}}(t)) = 1$.
 
 %%%%%%%%%%%%% 参考文献 %%%%%%%%%%%
 \printbibliography
