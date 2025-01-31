@@ -52,11 +52,12 @@ On the other hand, we have only one point of infinite order in $E_{2,t}(\overlin
     \end{equation*}
 \end{lem}
 \begin{proof}
+    We have a point of infinite order
     \begin{equation*}
         \left(s^{2} - 1, \sqrt{-1} s(s^{2} - 1) \frac{t^{2} + 3}{t^{2} - 3} \right) \in E_{2,t}(\overline{\mathbb{Q}}(t)) \setminus E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}}.
     \end{equation*}
 \end{proof}
-Now, our goal is to show the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ is not greater than $1$.
+Now, our goal is to show the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ is $\leq 1$.
 We use another method to estimate an upper bound of the rank of \Neron-Severi group, which we will explain in Section~\ref{sec:reduction}.
 Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms of ranks of elliptic curves with lower order coefficients in the Weierstrass equations to make the later computation feasible.
 
@@ -74,14 +75,14 @@ Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms 
     to be the quadratic twist of $E$ by $u$.
 \end{dfn}
 
-\begin{thm}{(\cite[Exercise 10.16]{ref:aec})}
-    \label{thm:twist}
+\begin{prop}{(\cite[Exercise 10.16]{ref:aec})}
+    \label{prop:twist}
     Let $E$ be an elliptic curve over a function field $k(C)$ and $u \in k(C)^*$.
     Then, the following equation holds
     \begin{equation*}
         \rank E(k(C)(\sqrt{u})) = \rank E(k(C)) + \rank E^{(u)}(k(C)).
     \end{equation*}
-\end{thm}
+\end{prop}
 
 \begin{thm}
     Let
@@ -107,9 +108,9 @@ Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms 
 \begin{proof}
     Since solving $s = \frac{2t}{t^{2} - 3}$ for $t$ yields $t = \frac{1 \pm \sqrt{1 + 3s^{2}}}{s}$, we have
     \begin{equation*}
-        E_{2,t}(\overline{\mathbb{Q}}(t)) = E_{1,s}(\overline{\mathbb{Q}}(s)(\sqrt{1 + 3s^{2}}))
+        E_{2,t}(\overline{\mathbb{Q}}(t)) = E_{1,s}(\overline{\mathbb{Q}}(s)(\sqrt{1 + 3s^{2}})).
     \end{equation*}
-    By Theorem~\ref{thm:twist}, we get \eqref{eq:twist1}.
+    By Proposition~\ref{prop:twist}, we get \eqref{eq:twist1}.
     Similarly, $E_{1,s}$ is obtained by substituting $u = s^{2}$ into $E_{0,u}$, so we have
     \begin{equation*}
         E_{1,s}^{(1 + 3s^{2})}(\overline{\mathbb{Q}}(s)) = E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)(\sqrt{u})),
@@ -158,7 +159,7 @@ The rank of $E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u))$ in the equation \e
 \end{proof}
 
 The remaining task is to calculate the rank of $E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u))$.
-Theorem~\ref{thm:rho} gives the rank is not greater than $1$, which is not sharp.
+Theorem~\ref{thm:rho} gives the rank is $\leq 1$, which is not sharp.
 We will show the rank is $0$ in the next section.
 
 \end{document}

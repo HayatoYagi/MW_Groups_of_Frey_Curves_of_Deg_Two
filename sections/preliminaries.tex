@@ -6,13 +6,15 @@
 
 In order to get the lower bound of the rank of the Mordell-Weil group, finding points of infinite order is enough.
 It is quite difficult to get a sharp upper bound of the rank.
-The following theorem plays a key role in the proof of the main theorem.
+The proof of the main theorem is divided into two major steps.
+First, the Mordell-Weil rank is tied to the Picard number, and then the Picard number is evaluated.
+The following theorem plays a key role in the first step.
 \begin{thm}{(Shioda-Tate formula, \cite[Corollary 5.3]{ref:shioda1990})}
     \label{thm:shioda}
     Let $\mathcal{E} \to C$ be an elliptic surface over a smooth projective curve $C$ over an algebraically closed field $k$.
     Let $R \subset C$ be the set of points where the special fiber of $\mathcal{E}$ is singular.
     For each $v \in R$, let $m_{v}$ be the number of components of the special fiber of $\mathcal{E}$ at $v$.
-    Let $\rho(\mathcal{E})$ denote the rank of the \Neron-Severi group of $\mathcal{E}$.
+    Let $\rho(\mathcal{E})$ denote the rank of the \Neron-Severi group of $\mathcal{E}$, and call it the Picard number.
     Then, we have
     \begin{equation*}
         \rho (\mathcal{E}) = 2 + \sum_{v \in R} (m_{v} - 1) + \rank(E(k(C))).
@@ -20,7 +22,7 @@ The following theorem plays a key role in the proof of the main theorem.
 \end{thm}
 
 We have the following theorem giving an upper bound of the Picard number $\rho(\mathcal{E})$.
-
+We use this estimate for some elliptic surfaces, but note that some surfaces appear in this paper for which this value is not sharp.
 \begin{thm}{(\cite[Twierdzenie 2.2.9, 2.2.10, 2.2.19]{ref:naskreckiphd})}
     Let $\mathcal{E}$ and $R$ be as in Theorem~\ref{thm:shioda}.
     Let $\chi(\mathcal{E})$ be the arithmetic genus of $\mathcal{E}$, $e(\mathcal{E}_v)$ be the local Euler number of the special fiber at $v$, and $g(C)$ be the genus of $C$. \label{thm:rho}
@@ -36,7 +38,7 @@ We have the following theorem giving an upper bound of the Picard number $\rho(\
     If $\chi(\mathcal{E}) = 2$, the elliptic surface $\mathcal{E}$ is called an elliptic K3 surface.
 \end{thm}
 
-We can compute types of each special fibers denoted by Kodaira symbols by Tate's algorithm (\cite[IV \S 9]{ref:advancedaec}).
+We can compute types of each special fibers denoted by Kodaira symbols by Tate's algorithm.
 The following table shows the correspondence between Kodaira symbols and the values of $m_v$ and $e(\mathcal{E}_v)$ appearing in the two theorems above.
 
 \begin{table}[H]
@@ -59,12 +61,62 @@ The following table shows the correspondence between Kodaira symbols and the val
     \label{tab:kodaira}
 \end{table}
 
-For the torsion subgroup of the Mordell-Weil group, we have the following theorem.
+\begin{algo}{(Tate's algorithm, \cite[IV \S 9]{ref:advancedaec})}
+    Let $A$ be a discrete valuation ring with maximal ideal $\mathfrak{m}$, uniformizing element $\pi$, and fraction field $K$.
+    Assume that the residue field $k=A/\mathfrak{m}$ is perfect and of characteristic $p$.
+    Let $v$ be the normalized valuation on $K$.
+    Let $E/K$ be an elliptic curve given by the Weierstrass equation
+    \begin{equation*}
+        E: y^{2} + a_{1} xy + a_{3} y = x^{3} + a_{2} x^{2} + a_{4} x + a_{6}.
+    \end{equation*}
+    Let $\mathcal{E}/R$ be a \Neron{} model of $E/K$. 
+    Let $\tilde{\mathcal{E}}=\mathcal{E} \times_{A} k$ be the special fiber of $\mathcal{E}$.
+
+    Making a change of variables, we may assume that the Weierstrass equation has coefficients $a_1, a_2, a_3, a_4, a_6 \in A$.
+    Let
+    \begin{align*}
+        &b_2 = a_1^2 + 4 a_2, \\
+        &b_4 = a_1 a_3 + 2 a_4, \\
+        &b_6 = a_3^2 + 4 a_6, \\
+        &b_8 = a_1^2 a_6 + 4 a_2 a_6 - a_1 a_3 a_4 + a_2 a_3^2 - a_4^2, \\
+        &\Delta = -b_2^2 b_8 - 8 b_4^3 - 27 b_6^2 + 9 b_2 b_4 b_6.
+    \end{align*}
+
+    \begin{enumerate}[label=Step \arabic*., leftmargin=2cm]
+        \item If $\pi \nmid \Delta$, then the special fiber $\tilde{\mathcal{E}}$ is non-singular, that is to say, $\tilde{\mathcal{E}}$ is an elliptic curve and the type is $\mathrm{I}_0$.
+        \item Assume $\pi \mid \Delta$.
+            Make a change of variables to move the singular point to the origin.
+            Then $\pi \mid a_3, a_4, a_6$.
+            If $\pi \nmid b_2$, then the type is $\mathrm{I}_n$ with $n = v(\Delta)$.
+            Furthere, let $k'$ be the splitting field over $k$ of the polynomial $T^2 + a_1 T - a_2$.
+            If $k' = k$, then $E$ has split multiplicative reduction, whereas if $k' \neq k$, then $E$ has non-split multiplicative reduction.
+        \item Assume now that $\pi \mid b_2$.
+            If $\pi^2 \nmid a_6$, then the type is $\mathrm{II}$.
+        \item Assume that $\pi^2 \mid a_6$.
+            If $\pi^3 \nmid b_8$, then the type is $\mathrm{III}$.
+        \item Assume that $\pi^3 \mid b_8$.
+            If $\pi^3 \nmid b_6$, then the type is $\mathrm{IV}$.
+        \item Assume that $\pi^3 \mid b_6$.
+            Then we can change coordinates to get
+            \begin{equation*}
+                \pi \mid a_1, a_2,\quad \pi^2 \mid a_3, a_4,\quad \pi^3 \mid a_6.
+            \end{equation*}
+            We consider te factorization over the algebraically closed field $\overline{k}$ of the polynomial
+            \begin{equation*}
+                P(T) = T^3 + \pi^{-1}a_2 T^2 + \pi^{-2}a_4 T + \pi^{-3}a_6.
+            \end{equation*}
+            If $P(T)$ has distinct roots in $\overline{k}$, then the type is $\mathrm{I}_0^*$.
+        \item If $p \neq 2$ and $P(T)$ has one simple root and one double root in $\overline{k}$, then the type is $\mathrm{I}_n^*$ with $n = v(\Delta)-6$.
+    \end{enumerate}
+    Although the step continues, we omit the rest of the steps since they are not used in this paper.
+\end{algo}
+
+For the torsion subgroup of the Mordell-Weil group, we have the following theorems.
 \begin{thm}{(\cite[Lem.3.5]{ref:naskrecki2013})}
     \label{thm:torsion}
     Let $\mathcal{E}$ and $R$ be as in Theorem~\ref{thm:shioda}.
     Let $E$ be the generic fiber of $\mathcal{E}$.
-    Then we have
+    Then there is an injective homomorphism
     \begin{equation*}
         E(\overline{\mathbb{Q}}(s))_{\text{tors}} \hookrightarrow \prod_{v \in R} G(\mathcal{E}_{v}),
     \end{equation*}
@@ -72,4 +124,13 @@ For the torsion subgroup of the Mordell-Weil group, we have the following theore
     If $\mathcal{E}_{v}$ is of type $\mathrm{I}_n$ in Kodaira symbol, then $G(\mathcal{E}_{v}) \cong \mathbb{Z} / n \mathbb{Z}$.
 \end{thm}
 
+\begin{thm}{(Mazur's Theorem)}
+    \label{thm:mazur}
+    Let $E$ be an elliptic curve defined over $\mathbb{Q}$.
+    Then the torsion subgroup $E(\mathbb{Q})_{\text{tors}}$ is isomorphic to one of the following groups.
+    \begin{align*}
+        (1) & \quad \mathbb{Z} / n \mathbb{Z} \quad                                   &  & (1 \leq n \leq 10 \; \text{or}\; n = 12), \\
+        (2) & \quad \mathbb{Z} / 2 \mathbb{Z} \oplus \mathbb{Z} / 2n \mathbb{Z} \quad &  & (1 \leq n \leq 4).
+    \end{align*}
+\end{thm}
 \end{document}
