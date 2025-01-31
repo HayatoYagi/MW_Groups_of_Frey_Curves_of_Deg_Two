@@ -76,11 +76,32 @@ We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mat
 For any elliptic curves $E$ over a function field $k(C)$ of a smooth irreducible projective curve $C$ over an algebraically closed field $k$, there is an elliptic surface $\pi: \mathcal{E} \to C$ with the generic fiber $E$ called the \Neron{} model.
 We can use tools in the theory of surfaces by associating an elliptic surface $\mathcal{E}_{1,s} \to \mathbb{P}^1$ to $E_{1,s}$.
 
+\begin{dfn}{(\cite[IV\S 5 Definition]{ref:advancedaec})}
+    Let $A$ be a Dedekind domain with the fraction field $K$, and let $E/K$ be an elliptic curve.
+    A \Neron{} model for $E/K$ is a smooth group scheme $\mathcal{E}/A$ with the generic fiber is $E/K$ and which satisfies the following universal property:
+    Let $\mathcal{X}/A$ be a smooth $A$-scheme with the generic fiber $X/K$, and let $\phi_K: X \to E$ be a rational map defined over $K$.
+    Then there exists a unique $A$-morphism $\phi_A: \mathcal{X} \to \mathcal{E}$ extending $\phi_K$.
+\end{dfn}
+
+The following two propositions state the existence and the uniqueness of the \Neron{} model.
+\begin{prop}{(\cite[Proposition IV.5.2. (a)]{ref:advancedaec})}
+    Let $A$ be a Dedekind domain with the fraction field $K$, and let $E/K$ be an elliptic curve.
+    Suppose that $\mathcal{E}_1/A$ and $\mathcal{E}_2/A$ are \Neron{} models for $E/K$.
+    Then there exists a unique $A$-isomorphism $\mathcal{E}_1 \to \mathcal{E}_2$ whose restriction to the generic fiber is the identity.
+    In other words, the \Neron{} model is unique up to unique isomorphism.
+\end{prop}
+
+\begin{prop}{(\cite[Theorem IV.6.1.]{ref:advancedaec})}
+    Let $A$ be a Dedekind domain with the fraction field $K$, and let $E/K$ be an elliptic curve.
+    Let $\mathcal{C}/A$ be a minimal proper regular model for $E/K$, and let $\mathcal{E}/A$ be the largest subscheme of $\mathcal{C}/A$ which is smooth over $A$.
+    Then $\mathcal{E}/A$ is a \Neron{} model for $E/K$.
+\end{prop}
+
 For $s \in \overline{\mathbb{Q}}$, $\mathcal{E}_s:=\pi^{-1}(s)$ is called the special fiber at $s$.
 For all but finitely many $s \in \overline{\mathbb{Q}}$, the special fiber $\mathcal{E}_s$ at $s$ is non-singular, which means that $\mathcal{E}_s$ is an elliptic curve.
 
 The Mordell-Weil's Theorem also holds for elliptic curves over a function field.
-\begin{thm}{(\cite[Theorem 6.1.]{ref:advancedaec})}
+\begin{thm}{(\cite[Theorem III.6.1.]{ref:advancedaec})}
     \label{thm:mordell_function_field}
     Let $\mathcal{E} \to C$ be an elliptic surface defined over a field $k$ and $E$ be the corresponding elliptic curve over the function field $k(C)$.
     If $\mathcal{E} \to C$ does not split, then the Mordell-Weil group $E(k(C))$ is a finitely generated abelian group.
@@ -88,7 +109,7 @@ The Mordell-Weil's Theorem also holds for elliptic curves over a function field.
 
 On the relation between the Mordell-Weil group of an elliptic curve over a function field and its special fibers, the following theorem is known.
 We can reduce results obtained by treating a family of elliptic curves uniformly as an elliptic surface to results for each elliptic curve.
-\begin{thm}{(Specialization Theorem, \cite[Theorem 11.4.]{ref:advancedaec})}
+\begin{thm}{(Specialization Theorem, \cite[Theorem III.11.4.]{ref:advancedaec})}
     \label{thm:specialization}
     Let $\mathcal{E} \to C$ be a non-split elliptic surface defined over a number field $k$ and $E$ be the corresponding elliptic curve over the function field $k(C)$.
     Let $k'=k$ or $\overline{k}$ where $\overline{k}$ is the algebraic closure of $k$.
