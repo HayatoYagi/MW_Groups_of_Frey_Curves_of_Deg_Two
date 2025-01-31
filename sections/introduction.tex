@@ -9,7 +9,7 @@ An elliptic curve defined over a field $K$ of characteristic $\neq 2$ is a curve
     E: y^{2} = x^{3} + Ax^2 + Bx + C
 \end{equation*}
 where $A,B,C \in K$ and the discriminant $\Delta = -4A^3C + A^2B^2 + 18ABC - 4B^3 - 27C^2$ is nonzero.
-On points on an elliptic curve defined over $\mathbb{Q}$, we can define an addition law geometrically as follows.
+When $K=\mathbb{Q}$, we can define an addition law geometrically on points on an elliptic curve defined over $\mathbb{Q}$ as follows.
 \begin{figure}[H]
     \centering
     \caption{$E: y^2 = x(x-3^2)(x+4^2)$}
@@ -71,7 +71,7 @@ Then we get an elliptic curve
     \label{eq:E_{1,s}}
     E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2}).
 \end{equation}
-We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mathbb{Q}}(s)$ instead of evaluating coefficientsat particular values of $s$.
+We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mathbb{Q}}(s)$ instead of evaluating coefficients at particular values of $s$.
 
 For any elliptic curves $E$ over a function field $k(C)$ of a smooth irreducible projective curve $C$ over an algebraically closed field $k$, we can associate an elliptic surface $\pi: \mathcal{E} \to C$.
 We can use tools in the theory of surfaces by associating an elliptic surface $\mathcal{E}_{1,s} \to \mathbb{P}^1$ to $E_{1,s}$.
@@ -107,11 +107,9 @@ We can use tools in the theory of surfaces by associating an elliptic surface $\
             as $k(C)$-algebras.
     \end{enumerate}
 \end{prop}
-We can define addition law on $\mathcal{E(C/k)}$, which is induced by the addition law on each non-singular fiber, and make it into an abelian group.
+We can define an addition law on $\mathcal{E}(C/k)$, which is induced by the addition law on each non-singular fiber, and make it into an abelian group.
 \begin{prop}{(\cite[Proposition III.3.10. (c)]{ref:advancedaec})}
     Let $E$ be an elliptic curve over a function field $k(C)$ and $\mathcal{E} \to C$ be the corresponding elliptic surface.
-    Then there is a natural group isomorphism
-    We say that $E/k(C)$ is the generic fiber of $\mathcal{E} \to C$.
     Then there is a natural group isomorphism
     \begin{equation*}
         E(k(C)) \cong \mathcal{E}(C/k).
