@@ -8,10 +8,8 @@
 \DeclareMathOperator{\ch}{ch}
 \newcommand{\Neron}{N\'eron}
 
-\title{
-    On the Mordell-Weil groups of elliptic surfaces \\
-    associated with Frey curves of degree two
-}
+\title{2次Frey曲線に付随する楕円曲面のMordell-Weil群について}
+\subtitle{On the Mordell-Weil groups of elliptic surfaces associated with Frey curves of degree two}
 \author{八木 颯仁}
 \institute{慶應義塾大学 栗原研究室 修士2年}
 \date{\today}
@@ -27,6 +25,8 @@
     Frey 曲線は Fermat 方程式の解に対応して定まり、 $n\geq 3$ に対しては\textbf{存在しない}曲線である。
     
     本研究では $n=2$ の場合の Frey 曲線の族について、それらをまとめて一つの楕円曲面と結び付けて扱うことで、 Mordell-Weil 群の構造についていくつかの結果を得た。
+    Generic fiber のランクは $0$ であるが、ランクが正の 2次 Frey 曲線も無限個存在することが知られている。
+    部分族で generic ランクが $1$ のものを発見した。
 
     \vspace{1cm}
     \tableofcontents
@@ -48,43 +48,22 @@
     \begin{equation*}
         E(K) \cong \mathbb{Z}^{\oplus r} \oplus E(K)_{\mathrm{tors}}
     \end{equation*}
-    と書ける。ここで $r$ は\color{blue}\textbf{ランク}\color{black}、$E(K)_{\mathrm{tors}}$ は\color{blue}\textbf{捩れ部分群}\color{black}である。
+    と書ける。ここで $r$ は\color{blue}\textbf{ランク}\color{black}、$E(K)_{\mathrm{tors}}$ は\color{blue}\textbf{捩れ部分群}\color{black} (torsion subgroup) である。
 \end{frame}
 
-\begin{frame}
-    \begin{figure}[htbp]
-        \centering
-        \includegraphics[keepaspectratio, height=8.5cm]{figures/3-4-5.png}
-        \vspace{-1.5cm}
-        \caption{
-            \rightline{
-                $E: y^2 = x(x-3^2)(x+4^2)$
-            }
-        }
-    \end{figure}
-\end{frame}
-
-% \begin{frame}{楕円曲線とは}
-%     \begin{thm}[Mordell-Weil]
-%         $E(\mathbb{Q})$は有限生成アーベル群であり, したがって次のように書ける。
-%         \begin{equation}
-%             E(\mathbb{Q}) \simeq \mathbb{Z}^r \times E(\mathbb{Q})_{\mathrm{tors}}.
-%         \end{equation}
-%         ただし$E(\mathbb{Q})_\mathrm{tors}$は$E(\mathbb{Q})$の元のうち位数が有限のもの全体の集合である。
-
-%         $r$を$E(\mathbb{Q})$の\color{blue}\textbf{ランク}\color{black}、$E(\mathbb{Q})_\mathrm{tors}$を\color{blue}\rm{\textbf{torsion subgroup}}\color{black}と呼ぶ。
-%     \end{thm}
-%     \begin{thm}[Mazur]
-%         \label{thm:mazur}
-%         $E(\mathbb{Q})_{\text{tors}}$は次のいずれかに同型である。
-%         \begin{equation}
-%             \begin{aligned}
-%                 (1)\quad & \mathbb{Z}/n\mathbb{Z}                                &  & (1 \leq n \leq 10\,\mbox{もしくは}\,n=12), \\
-%                 (2)\quad & \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2n\mathbb{Z} &  & (1 \leq n \leq 4).
-%             \end{aligned}
-%         \end{equation}
-%     \end{thm}
+% \begin{frame}
+%     \begin{figure}[htbp]
+%         \centering
+%         \includegraphics[keepaspectratio, height=8.5cm]{figures/3-4-5.png}
+%         \vspace{-1.5cm}
+%         \caption{
+%             \rightline{
+%                 $E: y^2 = x(x-3^2)(x+4^2)$
+%             }
+%         }
+%     \end{figure}
 % \end{frame}
+
 
 \begin{frame}{Frey 曲線とは}
     \begin{dfn*}

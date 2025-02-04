@@ -30,4 +30,4 @@
 \usetheme{Madrid}
 \usefonttheme{professionalfonts} 
 
-\newcommand\Sha[1]{\ensuremath{\mathop{\text{\normalfont ш}}#1}}
+\newcommand\Sha[1]{\ensuremath{\mathop{\text{\normalfont Ш}}#1}}
