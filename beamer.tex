@@ -71,19 +71,7 @@
 % \end{frame}
 
 
-\begin{frame}{Frey 曲線とは}
-    \begin{dfn*}
-        Fermat 方程式
-        \begin{equation}
-            x^n + y^n = z^n, \quad xyz \neq 0, \quad n \geq 2
-        \end{equation}
-        の解$(x, y, z)=(a,b,c)$に対し、
-        \begin{equation}
-            y^2 = x (x-a^n) (x+b^n)
-        \end{equation}
-        は楕円曲線を与える。これを\color{blue}\textbf{Frey 曲線}\color{black}と呼ぶ。
-    \end{dfn*}
-    $n\geq 3$ のとき、Frey 曲線は存在しないことが知られている。
+\begin{frame}{Frey 曲線}
     本研究では Frey 曲線の$2$次の場合を扱う。
     \begin{dfn*}
         原始ピタゴラス数 $(a,b,c)$を以下を満たす正整数の$3$つ組で互いに素なものとする。
@@ -97,29 +85,37 @@
             E: y^2 = x (x-a^2) (x+b^2)
         \end{equation}
     \end{dfn*}
-    原始ピタゴラス数は無限に存在する。
-\end{frame}
-
-\begin{frame}{Frey 曲線とは}
     原始ピタゴラス数 $(a,b,c)$ は$2$つの互いに素な正整数 $m > n$ によって
     \begin{equation*}
         (a,b,c) = (2mn, m^{2} - n^{2}, m^{2} + n^{2})
     \end{equation*}
     とパラメトライズされる。
-    これを先ほどの式に代入すると $y^{2} = x(x - 4m^2n^2)(x + (m^{2} - n^2)^{2})$ と書け、
+    これを上の式に代入すると $y^{2} = x(x - 4m^2n^2)(x + (m^{2} - n^2)^{2})$ と書け、
     $x,y$ を $n^2x, n^3y$ で置き換えて $s = m/n$ とおくと
-    \begin{equation*}
-        \label{eq:E_{1,s}}
-        E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2})
-    \end{equation*}
-    という方程式を得る。
-    本研究では、$s$ に値を代入した個々の楕円曲線について考える代わりに、 $E_{1,s}$ を関数体 $\overline{\mathbb{Q}}(s)$ 上の楕円曲線として考える。
+    \begin{eg*}
+        \begin{equation*}
+            \label{eq:E_{1,s}}
+            E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2})
+        \end{equation*}
+    \end{eg*}
+    という方程式を得る。    
+\end{frame}
+
+\begin{frame}{Frey 曲線}
+    \begin{eg*}
+        \begin{equation*}
+            E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2})
+        \end{equation*}
+    \end{eg*}
+    本研究では、$s$ に値を代入した個々の楕円曲線について考える代わりに、 $E_{1,s}$ を\textbf{関数体} $\overline{\mathbb{Q}}(s)$ \textbf{上の楕円曲線}として考える。
+    \vspace{1cm}
+
     $E_{1,s}$ に対して
     \begin{equation*}
-        \mathcal{E}_{1,s} = \left\{ ([X,Y,Z],s_0) \in \mathbb{P}^{2} \times \mathbb{P}^{1} \mid Y^{2}Z = X(X - 4s_{0}^{2}Z)(X + (s_{0}^{2} - 1)^{2}Z) \right\}
+        \mathcal{E}_{1} = \left\{ ([X,Y,Z],s_0) \in \mathbb{P}^{2} \times \mathbb{P}^{1} \mid Y^{2}Z = X(X - 4s_{0}^{2}Z)(X + (s_{0}^{2} - 1)^{2}Z) \right\}
     \end{equation*}
-    という $\mathbb{P}^{2} \times \mathbb{P}^{1}$ の$2$次元部分多様体を考えることで、$E_{1,s}$ に対して楕円曲面 $\pi: \mathcal{E}_{1,s}\to \mathbb{P}^{1}$ を対応させることができる。
-    $E_{1,s}$ を $\mathcal{E}_{1,s} \to \mathbb{P}^{1}$ の generic fiber と呼び、 $\mathcal{E}_{1,s_0}:=\pi^{-1}(s_0)$ を special fiber と呼ぶ。
+    という $\mathbb{P}^{2} \times \mathbb{P}^{1}$ の$2$次元部分多様体を考えることで、$E_{1,s}$ に対して\textbf{楕円曲面} $\pi: \mathcal{E}_{1}\to \mathbb{P}^{1}$ \textbf{を対応させる}ことができる。
+    $E_{1,s}$ を $\mathcal{E}_{1} \to \mathbb{P}^{1}$ の generic fiber と呼び、 $\mathcal{E}_{1,s_0}:=\pi^{-1}(s_0)$ を special fiber と呼ぶ。
     有限個を除きすべての special fibers は非特異、すなわち楕円曲線である。
 \end{frame}
 
@@ -127,13 +123,17 @@
     関数体上の Mordell-Weil 群と special fiber の Mordell-Weil 群の間には以下の関係がある。
     \begin{thm}[Specialization Theorem, \cite{ref:advancedaec}]
         \label{thm:specialization}
-        $\pi:\mathcal{E} \to \mathbb{P}^1$ を $\mathbb{Q}$ 上の non-split な楕円曲面、 $E$ を対応する $\mathbb{Q}(\mathbb{P}^1)$ 上の楕円曲線とする。
+        \begin{itemize}
+            \item $\pi:\mathcal{E} \to \mathbb{P}^1$ を $\mathbb{Q}$ 上の non-split な楕円曲面
+            \item $E$ を対応する $\mathbb{Q}(\mathbb{P}^1)$ 上の楕円曲線
+            \item $\mathcal{E}_s:=\pi^{-1}(s)$ を $s$ での special fiber
+        \end{itemize}
+        とする。
         このとき有限個を除くすべての $s \in \mathbb{P}^1(\overline{\mathbb{Q}})$に対して specialization homomorphism
         \begin{equation*}
-            E(\mathbb{Q}(\mathbb{P}^1)) \hookrightarrow \mathcal{E}_{s}(\overline{\mathbb{Q}}),
+            E(\overline{\mathbb{Q}}(\mathbb{P}^1)) \hookrightarrow \mathcal{E}_{s}(\overline{\mathbb{Q}})
         \end{equation*}
-        が定義できて、これは単射である。
-        ただし $\mathcal{E}_s:=\pi^{-1}(s)$ である。
+        が定義できて、これは\textbf{単射}である。
     \end{thm}
     特に有限個の点を除き generic fiber のランクより special fiber のランクが小さくなることはない。
     したがって関数体上でランクの高い楕円曲線を見つけると、 $s$ に値を代入することで$\overline{\mathbb{Q}}$上ランクの高い楕円曲線を無限個見つけることができる。
@@ -141,7 +141,7 @@
 
 \section{主定理}
 \begin{frame}{主定理}
-    \begin{proposition}
+    \begin{proposition}[Y.]
         \begin{equation*}
             E_{1,s}(\overline{\mathbb{Q}}(s)) \cong \mathbb{Z} / 4 \mathbb{Z} \oplus \mathbb{Z} / 4 \mathbb{Z},
         \end{equation*}
@@ -153,7 +153,7 @@
         E_{2,t}: y^{2} = x \left(x - 4 \left(\frac{2t}{t^{2} - 3} \right)^{2} \right) \left(x + \left(\left(\frac{2t}{t^{2} - 3} \right)^{2} - 1 \right)^{2} \right),
     \end{equation*}
     という $E_{1,s}$ の部分族を考える。
-    \begin{thm}[主定理]
+    \begin{thm}[Y.]
         \begin{equation*}
             E_{2,t}(\overline{\mathbb{Q}}(t)) \cong \mathbb{Z} \oplus \mathbb{Z} / 4 \mathbb{Z} \oplus \mathbb{Z} / 4 \mathbb{Z},
         \end{equation*}
@@ -171,7 +171,7 @@
     \end{equation*}
     は無限位数の点であることから $E_{2,t}(\overline{\mathbb{Q}}(t))$ のランクは$1$以上であることが分かる。
     重要なのは $E_{1,s}(\overline{\mathbb{Q}}(s))$ のランクが $0$ 以下、 $ E_{2,t}(\overline{\mathbb{Q}}(t))$ のランクが$1$以下であることを示すことである。
-    \vspace{1em}
+    \vspace{1cm}
 
     証明は大きく2つのステップに分けられる。
     \begin{enumerate}
@@ -183,10 +183,13 @@
 \begin{frame}{Shioda-Tate formula}
     \begin{thm}[Shioda-Tate formula, \cite{ref:shioda1990}]
         \label{thm:shioda}
-        $\mathcal{E} \to \mathbb{P}^1$ を代数閉体 $k$ 上で定義された楕円曲面とする。
-        $R \subset \mathbb{P}^1$ を、その上の special fiber が特異となる点全体の集合とする。
-        各 $v \in R$ に対し、 $m_{v}$ を $v$ の上の special fiber の既約成分の数とする。
-        $\rho(\mathcal{E})$ で $\mathcal{E}$ の \Neron-Severi 群のランクを表し、 Picard 数と呼ぶ。
+        \begin{itemize}
+            \item $\mathcal{E} \to \mathbb{P}^1$ を代数閉体 $k$ 上で定義された楕円曲面
+            \item $R \subset \mathbb{P}^1$ をその上の special fiber が特異となる点全体の集合
+            \item 各 $v \in R$ に対し、 $m_{v}$ を $v$ の上の special fiber の既約成分の数
+            \item $\rho(\mathcal{E})$ を $\mathcal{E}$ の \Neron-Severi 群のランク( Picard 数と呼ばれる)
+        \end{itemize}
+        とする。
         このとき
         \begin{equation*}
             \rho (\mathcal{E}) = 2 + \sum_{v \in R} (m_{v} - 1) + \rank(E(k(\mathbb{P}^1)))
@@ -197,9 +200,12 @@
 \end{frame}
 
 \begin{frame}{Picard 数の評価}
-    \begin{proposition}
-        $k$ と $\mathcal{E} \to \mathbb{P}^1$ と $R$ は先ほどの定理 (Shioda-Tate formula) と同じものとする。
-        各 $v \in R$ に対し、$e(\mathcal{E}_v)$ を special fiber $\mathcal{E}_v$ の Euler 数とする。
+    \begin{proposition}[\cite{ref:naskreckiphd}]
+        \begin{itemize}
+            \item $k$ と $\mathcal{E} \to \mathbb{P}^1$ と $R$ は先ほどの定理 (Shioda-Tate formula) と同じもの
+            \item 各 $v \in R$ に対し、$e(\mathcal{E}_v)$ を special fiber $\mathcal{E}_v$ の Euler 数
+        \end{itemize}
+        とする。
         このとき
         \begin{equation*}
             \rho(\mathcal{E}) \leq \frac{5}{6} \sum_{v \in R} e(\mathcal{E}_v)
@@ -226,13 +232,12 @@
         \end{tabular}
     \end{table}
     したがって $\rho(E_{1,s}) \leq 20$ であり、 $\rank(E_{1,s}) \leq 0$ であることが分かる。
-    \vspace{1em}
 \end{frame}
 
 \begin{frame}{$E_{2,t}(\overline{\mathbb{Q}}(t))$ のランク}
     ところが、同じ計算を $E_{2,t}$ に対して行っても、ランクが2以下であることしか分からない。
     Picard 数の評価がゆるい。別の方法でより良い評価を得る必要がある。その準備として次の定理が必要である。
-    \begin{thm}
+    \begin{thm}[Y.]
         \begin{equation*}
             E_{0,u}: y^{2} = x(x - 4u)(x + (u - 1)^{2})
         \end{equation*}
@@ -251,13 +256,15 @@
     既に $E_{1,s}$ のランクが $0$ であることが分かっている。
     また $E_{0,u}^{(u(1 + 3u))}$ のランクが $1$ であることも同じ方法で分かる。
     残るは $E_{0,u}^{(1 + 3u)}$ のランクを計算することである。
-    $E_{0,u}^{(1 + 3u)}$ は $E_{2,t}$ より係数の次数が低く、また対応する楕円曲面がK3曲面と呼ばれるよく研究された対象になることから、この後の計算が実行可能になる。
+    $E_{0,u}^{(1 + 3u)}$ は $E_{2,t}$ より係数の次数が低く、また対応する楕円曲面が\textbf{K3曲面}と呼ばれるよく研究された対象になることから、この後の計算が実行可能になる。
 \end{frame}
 
 \begin{frame}
-    $S:=\mathcal{E}_{0,u}^{(1 + 3u)}\to \mathbb{P}^{1}$ に対して $\tilde{S} = S_{\overline{\mathbb{F}_5}} \to \mathbb{P}^1$ という曲面が定義できる。
-    $l$ を $5$ と異なる素数として $l$-進 \'etale コホモロジーを $H^{i}_{\text{\'et}}(\tilde{S}, \mathbb{Q}_l)$、その Tate twist を $H^{i}_{\text{\'et}}(\tilde{S}, \mathbb{Q}_l)(1)$ と書く。
-    また $H^{i}_{\text{\'et}}(\tilde{S}, \mathbb{Q}_l)$に作用する Frobenius 自己同型を $\varphi^{(i)}$ と書く。
+    \begin{itemize}
+        \item $S:=\mathcal{E}_{0}^{(1 + 3u)}\to \mathbb{P}^{1}$ に対して $\tilde{S} = S_{\overline{\mathbb{F}_5}} \to \mathbb{P}^1$ という reduction が定義できる。
+        \item $l$ を $5$ と異なる素数として $l$-進 \'etale コホモロジーを $H^{i}_{\text{\'et}}(\tilde{S}, \mathbb{Q}_l)$ と書く。
+        \item $H^{i}_{\text{\'et}}(\tilde{S}, \mathbb{Q}_l)$に作用する Frobenius 自己同型を $\varphi^{(i)}$ と書く。
+    \end{itemize}
     このとき以下の定理が成り立つ。
     \begin{thm}[\cite{ref:vanluijk2007}]
         \label{cor:ns_upper_bound}
@@ -308,6 +315,22 @@
     \end{equation*}
     と計算でき、 $\rho(\mathcal{E}_{0,u}^{(1 + 3u)}) \leq 19$ と分かる。
     Shioda-Tate formula により $\rank E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u)) \leq 0$ が従い、主定理のランク部分である $\rank E_{2,t}(\overline{\mathbb{Q}}(t)) = 1$ が得られる。
+\end{frame}
+
+\begin{frame}
+    \begin{table}[H]
+        \centering
+        \caption{Number of points on each singular fiber over a finite field}
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            Type             & Configuration                                                                      & $m_v$ & $\mathcal{E}_v(\mathbb{F}_{q^{m}})$ \\
+            \hline
+            $\mathrm{I}_n$   & \raisebox{-0.5 \height}{\includegraphics[width=4cm, height=3cm]{figures/I_n.png}}  & $n$   & $nq^m$                              \\
+            $\mathrm{I}_n^*$ & \raisebox{-0.5 \height}{\includegraphics[width=4cm, height=2cm]{figures/I_nx.png}} & $n+5$ & $(n+5) q^m+1$                       \\
+            \hline
+        \end{tabular}
+        \label{tab:reductionpoints}
+    \end{table}
 \end{frame}
 
 \begin{frame}{参考文献}
