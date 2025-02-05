@@ -43,13 +43,23 @@ jobs:
 
       # masterabs を build
       - name: Build masterabs
-        run: platex masterabs && biber masterabs && platex masterabs && platex masterabs && dvipdfmx masterabs.dvi
+        run: sh ./bin/build-masterabs.sh
 
       - name: Upload artifact masterabs
         uses: actions/upload-artifact@v4
         with:
           name: masterabs
           path: ./masterabs.pdf
+
+      # beamer を build
+      - name: Build beamer
+        run: sh ./bin/build-beamer.sh
+
+      - name: Upload artifact beamer
+        uses: actions/upload-artifact@v4
+        with:
+          name: beamer
+          path: ./beamer.pdf
 
   # GitHubのReleaseを作成するジョブ
   # v1.0.0のようなタグがpushされた時のみ実行
@@ -81,4 +91,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VERSION=$(echo ${{ github.ref }} | sed -e "s#refs/tags/##g")
-          gh release create ${VERSION} -t "${VERSION}" --generate-notes ./${{ env.ARTIFACT_NAME }} ./masterabs.pdf
+          gh release create ${VERSION} -t "${VERSION}" --generate-notes ./${{ env.ARTIFACT_NAME }} ./masterabs.pdf ./beamer.pdf
