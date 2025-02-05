@@ -32,11 +32,11 @@
         \end{equation}
         は楕円曲線を与える。これを\color{blue}\textbf{Frey 曲線}\color{black}と呼ぶ。
     \end{dfn*}
+    本研究では $n=2$ の場合の Frey 曲線の族について、それらをまとめて一つの\textbf{楕円曲面}と結び付けて扱うことで、 Mordell-Weil 群の構造についていくつかの結果を得た。
     \begin{itemize}
-        \item 本研究では $n=2$ の場合の Frey 曲線の族について、それらをまとめて一つの\textbf{楕円曲面}と結び付けて扱うことで、 Mordell-Weil 群の構造についていくつかの結果を得た。
-        \item 2次 Frey 曲線の generic rank は $0$ であるが、ランクが正の 2次 Frey 曲線も無限個存在することが知られている。
+        \item 2次 Frey 曲線の generic rank は $0$ であるが、ランクが正の 2次 Frey 曲線も無限個存在するのでは？
+        \item ランクが $1$ の無限部分族を具体的にパラメトライズされた形で構成できないか？
     \end{itemize}
-    \hspace{2em} $\rightarrow$ Generic rank が $1$ の無限部分族を具体的にパラメトライズされた形で構成できないか？
     \vspace{1em}
     \tableofcontents
 \end{frame}
@@ -77,7 +77,7 @@
 \begin{frame}{2次 Frey 曲線}
     本研究では Frey 曲線の$2$次の場合を扱う。
     \begin{dfn*}
-        原始ピタゴラス数 $(a,b,c)$を以下を満たす正整数の$3$つ組で互いに素なものとする。
+        $(a,b,c)$を以下を満たす正整数の$3$つ組とする。
         \begin{equation}
             \label{eq:pythagorean_triple}
             a^2+b^2=c^2.
@@ -88,6 +88,7 @@
             E: y^2 = x (x-a^2) (x+b^2)
         \end{equation}
     \end{dfn*}
+    $(a,b,c)$ が互いに素でない場合は適当な変数変換によって原始ピタゴラス数の場合に帰着できる。
     原始ピタゴラス数 $(a,b,c)$ は$2$つの互いに素な正整数 $m > n$ によって
     \begin{equation*}
         (a,b,c) = (2mn, m^{2} - n^{2}, m^{2} + n^{2})
