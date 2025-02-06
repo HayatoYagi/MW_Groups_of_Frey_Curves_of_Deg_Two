@@ -105,22 +105,24 @@
     という方程式を得る。    
 \end{frame}
 
-\begin{frame}{2次 Frey 曲線}
+\begin{frame}
     \begin{eg*}
         \begin{equation*}
             E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2})
         \end{equation*}
     \end{eg*}
     本研究では、$s$ に値を代入した個々の楕円曲線について考える代わりに、 $E_{1,s}$ を\textbf{関数体} $\overline{\mathbb{Q}}(s)$ \textbf{上の楕円曲線}として考える。
-    \vspace{1cm}
-
-    $E_{1,s}$ に対して
+    さらに$E_{1,s}$ に対して
     \begin{equation*}
         \mathcal{E}_{1} = \left\{ ([X,Y,Z],s_0) \in \mathbb{P}^{2} \times \mathbb{P}^{1} \mid Y^{2}Z = X(X - 4s_{0}^{2}Z)(X + (s_{0}^{2} - 1)^{2}Z) \right\}
     \end{equation*}
     という $\mathbb{P}^{2} \times \mathbb{P}^{1}$ の$2$次元部分多様体を考えることで、$E_{1,s}$ に対して\textbf{楕円曲面} $\pi: \mathcal{E}_{1}\to \mathbb{P}^{1}$ \textbf{を対応させる}ことができる。
     $E_{1,s}$ を $\mathcal{E}_{1} \to \mathbb{P}^{1}$ の generic fiber と呼び、 $\mathcal{E}_{1,s_0}:=\pi^{-1}(s_0)$ を special fiber と呼ぶ。
     有限個を除きすべての special fibers は非特異、すなわち楕円曲線である。
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[keepaspectratio, height=4.5cm]{figures/elliptic_surface.jpg}
+    \end{figure}
 \end{frame}
 
 \section{主定理}
