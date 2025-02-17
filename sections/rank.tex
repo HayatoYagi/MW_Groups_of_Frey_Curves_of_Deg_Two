@@ -15,7 +15,7 @@ Actually, the discriminant of $E_{2,t}$ is
 % \end{equation*}
 and the types of the singular fibers of $E_{2,t}$ are calculated as in Table~\ref{tab:E_{2,t}} by Tate's algorithm.
 Then in a similar way to the proof of Theorem~\ref{thm:E_{1,s}}, we get $\rank E_{2,t}(\overline{\mathbb{Q}}(t)) \leq 2$.
-On the other hand, we have only one point of infinite order in $E_{2,t}(\overline{\mathbb{Q}}(t))$.
+We will see later that this bound is not sharp.
 \begin{table}[H]
     \centering
     \caption{Singular fibers of $E_{2,t}$}
@@ -48,9 +48,14 @@ On the other hand, we have only one point of infinite order in $E_{2,t}(\overlin
     \begin{equation*}
         E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}} \hookrightarrow (\mathbb{Z} / 4 \mathbb{Z})^{12}.
     \end{equation*}
-    Therefore,
+    Since $E_{1,s}(\overline{\mathbb{Q}}(s))_{\text{tors}} \cong (\mathbb{Z} / 4 \mathbb{Z})^2$ by Theorem~\ref{thm:E_{1,s}}, we have
     \begin{equation*}
-        E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}} = E_{1,s}(\overline{\mathbb{Q}}(s))_{\text{tors}} \cong \mathbb{Z} / 4 \mathbb{Z} \oplus \mathbb{Z} / 4 \mathbb{Z}.
+        (\mathbb{Z} / 4 \mathbb{Z})^2 \cong E_{1,s}(\overline{\mathbb{Q}}(s))_{\text{tors}} \subset E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}} \subset (\mathbb{Z} / 4 \mathbb{Z})^{12}.
+    \end{equation*}
+    There are no more points of order $2$ in $E_{2,t}(\overline{\mathbb{Q}}(t))$ than $E_{1,s}(\overline{\mathbb{Q}}(s))$.
+    Therefore, we have
+    \begin{equation*}
+        E_{2,t}(\overline{\mathbb{Q}}(t))_{\text{tors}} \cong \mathbb{Z} / 4 \mathbb{Z} \oplus \mathbb{Z} / 4 \mathbb{Z}.
     \end{equation*}
 \end{proof}
 
@@ -91,6 +96,7 @@ Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms 
         \rank E(k(C)(\sqrt{u})) = \rank E(k(C)) + \rank E^{(u)}(k(C)).
     \end{equation*}
 \end{prop}
+We omit the proof of Proposition~\ref{prop:twist}.
 
 \begin{thm}
     Let
@@ -126,7 +132,7 @@ Beforehand, we express the rank of $E_{2,t}(\overline{\mathbb{Q}}(t))$ in terms 
     then we get \eqref{eq:twist2}.
 \end{proof}
 
-We already know that the rank of $E_{1,s}(\overline{\mathbb{Q}})$ is $0$.
+We already know that the rank of $E_{1,s}(\overline{\mathbb{Q}}(s))$ is $0$.
 The rank of $E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u))$ in the equation \eqref{eq:rankdecomposition} can also be calculated easily as follows.
 
 \begin{thm}
@@ -160,10 +166,15 @@ The rank of $E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u))$ in the equation \e
         \end{tabular}
         \label{tab:E_{0,u}^{(u(1 + 3u))}}
     \end{table}
-    In the same way as the proof of Theorem~\ref{thm:E_{1,s}}, we have $e(\mathcal{E}_{0,u}^{(u(1 + 3u))}) = 8 + 4 \times 2 + 6 + 2 = 24$ and
+    Using Theorem~\ref{thm:shioda} and Theorem~\ref{thm:rho}, we have 
     \begin{equation*}
-        \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)) \leq 20 - (2 + (7 - 1) + (4 - 1) \times 2 + (5 - 1) + (2 - 1)) = 1.
+        e(\mathcal{E}_{0,u}^{(u(1 + 3u))}) = 8 + 4 \times 2 + 6 + 2 = 24
     \end{equation*}
+    and
+    \begin{align*}
+        \rank E_{0,u}^{(u(1 + 3u))}(\overline{\mathbb{Q}}(u)) & \leq 20 - (2 + (7 - 1) + (4 - 1) \times 2 + (5 - 1) + (2 - 1)) \\
+                                                              &= 1.
+    \end{align*}
 \end{proof}
 
 The remaining task is to calculate the rank of $E_{0,u}^{(1 + 3u)}(\overline{\mathbb{Q}}(u))$.

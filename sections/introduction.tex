@@ -19,7 +19,7 @@ When $K=\mathbb{Q}$, we can define an addition law geometrically on points on an
 For two points $P,Q$ on $E$, the point $-(P+Q)$ is defined as the third point of intersection of the line passing through $P$ and $Q$ with the curve.
 The sum $P+Q$ is the point symmetric to $-(P+Q)$ with respect to the $x$-axis.
 The definition can be extended to any field $K$ of characteristic $\neq 2$.
-The set of points on an elliptic curve forms an abelian group with the identity element being the point at infinity.
+The set of points on an elliptic curve forms an abelian group with the identity element being the point at infinity $\mathcal{O}$.
 The Mordell-Weil group $E(K)$ is a group consisting of all $K$-rational points on $E$.
 
 \begin{prop}
@@ -71,7 +71,7 @@ Then we get an elliptic curve
     \label{eq:E_{1,s}}
     E_{1,s}: y^{2} = x(x - 4s^{2})(x + (s^{2} - 1)^{2}).
 \end{equation}
-We consider $E_{1,s}$ as an elliptic curve over a function field $\overline{\mathbb{Q}}(s)$ where $\overline{\mathbb{Q}}$ is the algebraic closure of $\mathbb{Q}$ instead of evaluating coefficients at particular values of $s$.
+We regard $E_{1,s}$ as an elliptic curve over a function field $\mathbb{Q}(s)$ instead of evaluating coefficients at particular values of $s$.
 
 For any elliptic curves $E$ over a function field $k(C)$ of a smooth irreducible projective curve $C$ over an algebraically closed field $k$, we can associate an elliptic surface $\pi: \mathcal{E} \to C$.
 We can use tools in the theory of surfaces by associating an elliptic surface $\mathcal{E}_{1,s} \to \mathbb{P}^1$ to $E_{1,s}$.
@@ -96,10 +96,10 @@ We can use tools in the theory of surfaces by associating an elliptic surface $\
          \right\}
     \end{equation*}
     to $E/k(C)$, which is a subvariety of $\mathbb{P}^2 \times C$ of dimension $2$.
-    We say that $E/k(C)$ is the generic fiber of $\mathcal{E} \to C$.
     \begin{enumerate}[label=(\alph*)]
         \item For two Weierstrass equations for $E$, the corresponding elliptic surfaces are $k$-birationally equivalent over $C$.
         \item For an elliptic surface $\mathcal{E}$ over $C$ defined over $k$, the corresponding elliptic curve $E$ over $k(C)$ is uniquely determined up to $k(C)$-isomorphism.
+            We say that $E/k(C)$ is the generic fiber of $\mathcal{E} \to C$.
         \item There is a natural isomorphism
             \begin{equation*}
                 k(\mathcal{E}) \cong k(C)(E)
@@ -121,7 +121,7 @@ We have to associate a \Neron{} model to an elliptic curve over a function field
 
 \begin{dfn}{(\cite[IV\S 5 Definition]{ref:advancedaec})}
     \label{dfn:neron}
-    Let $A$ be a Dedekind domain with the fraction field $K$, and let $E/K$ be an elliptic curve.
+    Let $A$ be a Dedekind domain with fraction field $K$, and let $E/K$ be an elliptic curve.
     A \Neron{} model for $E/K$ is a smooth group scheme $\mathcal{E}/A$ whose generic fiber is $E/K$ and which satisfies the following universal property:
     Let $\mathcal{X}/A$ be a smooth $A$-scheme with the generic fiber $X/K$, and let $\phi_K: X \to E$ be a rational map defined over $K$.
     Then there exists a unique $A$-morphism $\phi_A: \mathcal{X} \to \mathcal{E}$ extending $\phi_K$.
@@ -129,14 +129,14 @@ We have to associate a \Neron{} model to an elliptic curve over a function field
 The universal property in Definition~\ref{dfn:neron} is called the \Neron{} mapping property.
 The following two propositions state the existence and the uniqueness of the \Neron{} model.
 \begin{prop}{(\cite[Proposition IV.5.2. (a)]{ref:advancedaec})}
-    Let $A$ be a Dedekind domain with the fraction field $K$, and let $E/K$ be an elliptic curve.
+    Let $A$ be a Dedekind domain with fraction field $K$, and let $E/K$ be an elliptic curve.
     Suppose that $\mathcal{E}_1/A$ and $\mathcal{E}_2/A$ are \Neron{} models for $E/K$.
     Then there exists a unique $A$-isomorphism $\mathcal{E}_1 \to \mathcal{E}_2$ whose restriction to the generic fiber is the identity.
     In other words, the \Neron{} model is unique up to unique isomorphism.
 \end{prop}
 
 \begin{prop}{(\cite[Theorem IV.6.1.]{ref:advancedaec})}
-    Let $A$ be a Dedekind domain with the fraction field $K$, and let $E/K$ be an elliptic curve.
+    Let $A$ be a Dedekind domain with fraction field $K$, and let $E/K$ be an elliptic curve.
     Let $\mathcal{C}/A$ be a minimal proper regular model for $E/K$, and let $\mathcal{E}/A$ be the largest subscheme of $\mathcal{C}/A$ which is smooth over $A$.
     Then $\mathcal{E}/A$ is a \Neron{} model for $E/K$.
 \end{prop}
